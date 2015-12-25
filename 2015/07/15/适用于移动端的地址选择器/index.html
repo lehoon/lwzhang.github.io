@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>适用于移动端的地址选择器 | zlw&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="适用于移动端的地址选择器">
+<meta property="og:url" content="http://yoursite.com/2015/07/15/适用于移动端的地址选择器/index.html">
+<meta property="og:site_name" content="zlw's Blog">
+<meta property="og:description" content="最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。">
+<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e5%9b%be%e7%89%8720150715210812.png">
+<meta property="og:updated_time" content="2015-12-25T14:05:52.197Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="适用于移动端的地址选择器">
+<meta name="twitter:description" content="最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。">
+  
+    <link rel="alternative" href="/atom.xml" title="zlw&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">zlw</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">zlw</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/babel/" style="font-size: 10px;"> babel</a> <a href="/tags/transform/" style="font-size: 10px;"> transform</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/babel-cli/" style="font-size: 10px;">babel-cli</a> <a href="/tags/babel-core/" style="font-size: 10px;">babel-core</a> <a href="/tags/babel-node/" style="font-size: 10px;">babel-node</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/compass/" style="font-size: 20px;">compass</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/curry/" style="font-size: 10px;">curry</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/placeholder/" style="font-size: 10px;">placeholder</a> <a href="/tags/rotate/" style="font-size: 10px;">rotate</a> <a href="/tags/sass/" style="font-size: 20px;">sass</a> <a href="/tags/spinners/" style="font-size: 10px;">spinners</a> <a href="/tags/sprite/" style="font-size: 20px;">sprite</a> <a href="/tags/sprites/" style="font-size: 20px;">sprites</a> <a href="/tags/transform/" style="font-size: 20px;">transform</a> <a href="/tags/transform多值顺序/" style="font-size: 10px;">transform多值顺序</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/刮奖效果/" style="font-size: 10px;">刮奖效果</a> <a href="/tags/合并图片/" style="font-size: 20px;">合并图片</a> <a href="/tags/图片渐入效果/" style="font-size: 10px;">图片渐入效果</a> <a href="/tags/地址选择器/" style="font-size: 10px;">地址选择器</a> <a href="/tags/城市选择器/" style="font-size: 10px;">城市选择器</a> <a href="/tags/小三角/" style="font-size: 10px;">小三角</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/滑动拼图/" style="font-size: 10px;">滑动拼图</a> <a href="/tags/滚动条/" style="font-size: 10px;">滚动条</a> <a href="/tags/科里化/" style="font-size: 10px;">科里化</a> <a href="/tags/雪碧图/" style="font-size: 20px;">雪碧图</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">zlw</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="null" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">zlw</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">zlw</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-适用于移动端的地址选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/15/适用于移动端的地址选择器/" class="article-date">
+  	<time datetime="2015-07-15T00:00:00.000Z" itemprop="datePublished">2015-07-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      适用于移动端的地址选择器
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/地址选择器/">地址选择器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/城市选择器/">城市选择器</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e5%9b%be%e7%89%8720150715210812.png" alt=""><br><a id="more"></a><br>直接上代码吧：</p>
+<pre><code>var provinces = {
+    &quot;A&quot;: {
+        &quot;安徽&quot;:[&quot;合肥市&quot;,&quot;芜湖市&quot;,&quot;蚌埠市&quot;,&quot;淮南市&quot;,&quot;马鞍山市&quot;,&quot;淮北市&quot;,&quot;铜陵市&quot;,&quot;安庆市&quot;,&quot;黄山市&quot;,&quot;滁州市&quot;,&quot;阜阳市&quot;,&quot;宿州市&quot;,&quot;巢湖市&quot;,&quot;六安市&quot;,&quot;亳州市&quot;,&quot;池州市&quot;,&quot;宣城市&quot;]
+    },
+    &quot;B&quot;: {
+        &quot;北京&quot;: [&quot;北京市&quot;]
+    },
+    &quot;C&quot;: {
+        &quot;重庆&quot;:[&quot;重庆市&quot;]
+    },
+    &quot;F&quot;: {
+        &quot;福建&quot;:[&quot;福州市&quot;,&quot;厦门市&quot;,&quot;莆田市&quot;,&quot;三明市&quot;,&quot;泉州市&quot;,&quot;漳州市&quot;,&quot;南平市&quot;,&quot;龙岩市&quot;,&quot;宁德市&quot;]
+    },
+    &quot;G&quot;: {
+        &quot;甘肃&quot;:[&quot;兰州市&quot;,&quot;嘉峪关市&quot;,&quot;金昌市&quot;,&quot;白银市&quot;,&quot;天水市&quot;,&quot;武威市&quot;,&quot;张掖市&quot;,&quot;平凉市&quot;,&quot;酒泉市&quot;,&quot;庆阳市&quot;,&quot;定西市&quot;,&quot;陇南市&quot;,&quot;临夏回族自治州&quot;,&quot;甘南藏族自治州&quot;],
+        &quot;广东&quot;:[&quot;广州市&quot;,&quot;深圳市&quot;,&quot;珠海市&quot;,&quot;汕头市&quot;,&quot;韶关市&quot;,&quot;佛山市&quot;,&quot;江门市&quot;,&quot;湛江市&quot;,&quot;茂名市&quot;,&quot;肇庆市&quot;,&quot;惠州市&quot;,&quot;梅州市&quot;,&quot;汕尾市&quot;,&quot;河源市&quot;,&quot;阳江市&quot;,&quot;清远市&quot;,&quot;东莞市&quot;,&quot;中山市&quot;,&quot;潮州市&quot;,&quot;揭阳市&quot;,&quot;云浮市&quot;],
+        &quot;广西&quot;:[&quot;南宁市&quot;,&quot;柳州市&quot;,&quot;桂林市&quot;,&quot;梧州市&quot;,&quot;北海市&quot;,&quot;防城港市&quot;,&quot;钦州市&quot;,&quot;贵港市&quot;,&quot;玉林市&quot;,&quot;百色市&quot;,&quot;贺州市&quot;,&quot;河池市&quot;,&quot;来宾市&quot;,&quot;崇左市&quot;],
+        &quot;贵州&quot;:[&quot;贵阳市&quot;,&quot;六盘水市&quot;,&quot;遵义市&quot;,&quot;安顺市&quot;,&quot;铜仁地区&quot;,&quot;黔西南布依族苗族自治州&quot;,&quot;毕节地区&quot;,&quot;黔东南苗族侗族自治州&quot;,&quot;黔南布依族苗族自治州&quot;]
+    },
+    &quot;H&quot;: {
+        &quot;海南&quot;:[&quot;海口市&quot;,&quot;三亚市&quot;],
+        &quot;河北&quot;:[&quot;石家庄市&quot;,&quot;唐山市&quot;,&quot;秦皇岛市&quot;,&quot;邯郸市&quot;,&quot;邢台市&quot;,&quot;保定市&quot;,&quot;张家口市&quot;,&quot;承德市&quot;,&quot;沧州市&quot;,&quot;廊坊市&quot;,&quot;衡水市&quot;],
+        &quot;河南&quot;:[&quot;郑州市&quot;,&quot;开封市&quot;,&quot;洛阳市&quot;,&quot;平顶山市&quot;,&quot;安阳市&quot;,&quot;鹤壁市&quot;,&quot;新乡市&quot;,&quot;焦作市&quot;,&quot;濮阳市&quot;,&quot;许昌市&quot;,&quot;漯河市&quot;,&quot;三门峡市&quot;,&quot;南阳市&quot;,&quot;商丘市&quot;,&quot;信阳市&quot;,&quot;周口市&quot;,&quot;驻马店市&quot;],
+        &quot;黑龙江&quot;:[&quot;哈尔滨市&quot;,&quot;齐齐哈尔市&quot;,&quot;鸡西市&quot;,&quot;鹤岗市&quot;,&quot;双鸭山市&quot;,&quot;大庆市&quot;,&quot;伊春市&quot;,&quot;佳木斯市&quot;,&quot;七台河市&quot;,&quot;牡丹江市&quot;,&quot;黑河市&quot;,&quot;绥化市&quot;,&quot;大兴安岭地区&quot;],
+        &quot;湖北&quot;:[&quot;武汉市&quot;,&quot;黄石市&quot;,&quot;十堰市&quot;,&quot;宜昌市&quot;,&quot;襄樊市&quot;,&quot;鄂州市&quot;,&quot;荆门市&quot;,&quot;孝感市&quot;,&quot;荆州市&quot;,&quot;黄冈市&quot;,&quot;咸宁市&quot;,&quot;随州市&quot;,&quot;恩施土家族苗族自治州&quot;,&quot;神农架&quot;],
+        &quot;湖南&quot;:[&quot;长沙市&quot;,&quot;株洲市&quot;,&quot;湘潭市&quot;,&quot;衡阳市&quot;,&quot;邵阳市&quot;,&quot;岳阳市&quot;,&quot;常德市&quot;,&quot;张家界市&quot;,&quot;益阳市&quot;,&quot;郴州市&quot;,&quot;永州市&quot;,&quot;怀化市&quot;,&quot;娄底市&quot;,&quot;湘西土家族苗族自治州&quot;]
+    },
+    &quot;J&quot;: {
+        &quot;吉林&quot;:[&quot;长春市&quot;,&quot;吉林市&quot;,&quot;四平市&quot;,&quot;辽源市&quot;,&quot;通化市&quot;,&quot;白山市&quot;,&quot;松原市&quot;,&quot;白城市&quot;,&quot;延边朝鲜族自治州&quot;],
+        &quot;江苏&quot;:[&quot;南京市&quot;,&quot;无锡市&quot;,&quot;徐州市&quot;,&quot;常州市&quot;,&quot;苏州市&quot;,&quot;南通市&quot;,&quot;连云港市&quot;,&quot;淮安市&quot;,&quot;盐城市&quot;,&quot;扬州市&quot;,&quot;镇江市&quot;,&quot;泰州市&quot;,&quot;宿迁市&quot;],
+        &quot;江西&quot;:[&quot;南昌市&quot;,&quot;景德镇市&quot;,&quot;萍乡市&quot;,&quot;九江市&quot;,&quot;新余市&quot;,&quot;鹰潭市&quot;,&quot;赣州市&quot;,&quot;吉安市&quot;,&quot;宜春市&quot;,&quot;抚州市&quot;,&quot;上饶市&quot;]
+    },
+    &quot;L&quot;: {
+        &quot;辽宁&quot;:[&quot;沈阳市&quot;,&quot;大连市&quot;,&quot;鞍山市&quot;,&quot;抚顺市&quot;,&quot;本溪市&quot;,&quot;丹东市&quot;,&quot;锦州市&quot;,&quot;营口市&quot;,&quot;阜新市&quot;,&quot;辽阳市&quot;,&quot;盘锦市&quot;,&quot;铁岭市&quot;,&quot;朝阳市&quot;,&quot;葫芦岛市&quot;]
+    },
+    &quot;N&quot;: {
+        &quot;内蒙古&quot;:[&quot;呼和浩特市&quot;,&quot;包头市&quot;,&quot;乌海市&quot;,&quot;赤峰市&quot;,&quot;通辽市&quot;,&quot;鄂尔多斯市&quot;,&quot;呼伦贝尔市&quot;,&quot;巴彦淖尔市&quot;,&quot;乌兰察布市&quot;,&quot;兴安盟&quot;,&quot;锡林郭勒盟&quot;,&quot;阿拉善盟&quot;],
+        &quot;宁夏&quot;:[&quot;银川市&quot;,&quot;石嘴山市&quot;,&quot;吴忠市&quot;,&quot;固原市&quot;,&quot;中卫市&quot;]
+    },
+    &quot;Q&quot;: {
+        &quot;青海&quot;:[&quot;西宁市&quot;,&quot;海东地区&quot;,&quot;海北藏族自治州&quot;,&quot;黄南藏族自治州&quot;,&quot;海南藏族自治州&quot;,&quot;果洛藏族自治州&quot;,&quot;玉树藏族自治州&quot;,&quot;海西蒙古族藏族自治州&quot;]
+    },
+    &quot;S&quot;: {
+        &quot;山东&quot;:[&quot;济南市&quot;,&quot;青岛市&quot;,&quot;淄博市&quot;,&quot;枣庄市&quot;,&quot;东营市&quot;,&quot;烟台市&quot;,&quot;潍坊市&quot;,&quot;济宁市&quot;,&quot;泰安市&quot;,&quot;威海市&quot;,&quot;日照市&quot;,&quot;莱芜市&quot;,&quot;临沂市&quot;,&quot;德州市&quot;,&quot;聊城市&quot;,&quot;滨州市&quot;,&quot;菏泽市&quot;],
+        &quot;山西&quot;:[&quot;太原市&quot;,&quot;大同市&quot;,&quot;阳泉市&quot;,&quot;长治市&quot;,&quot;晋城市&quot;,&quot;朔州市&quot;,&quot;晋中市&quot;,&quot;运城市&quot;,&quot;忻州市&quot;,&quot;临汾市&quot;,&quot;吕梁市&quot;],
+        &quot;陕西&quot;:[&quot;西安市&quot;,&quot;铜川市&quot;,&quot;宝鸡市&quot;,&quot;咸阳市&quot;,&quot;渭南市&quot;,&quot;延安市&quot;,&quot;汉中市&quot;,&quot;榆林市&quot;,&quot;安康市&quot;,&quot;商洛市&quot;],
+        &quot;上海&quot;:[&quot;上海市&quot;],
+        &quot;四川&quot;:[&quot;成都市&quot;,&quot;自贡市&quot;,&quot;攀枝花市&quot;,&quot;泸州市&quot;,&quot;德阳市&quot;,&quot;绵阳市&quot;,&quot;广元市&quot;,&quot;遂宁市&quot;,&quot;内江市&quot;,&quot;乐山市&quot;,&quot;南充市&quot;,&quot;眉山市&quot;,&quot;宜宾市&quot;,&quot;广安市&quot;,&quot;达州市&quot;,&quot;雅安市&quot;,&quot;巴中市&quot;,&quot;资阳市&quot;,&quot;阿坝藏族羌族自治州&quot;,&quot;甘孜藏族自治州&quot;,&quot;凉山彝族自治州&quot;]
+    },
+    &quot;T&quot;: {
+        &quot;天津&quot;: [&quot;天津市&quot;]
+    },
+    &quot;X&quot;: {
+        &quot;西藏&quot;:[&quot;拉萨市&quot;,&quot;昌都地区&quot;,&quot;山南地区&quot;,&quot;日喀则地区&quot;,&quot;那曲地区&quot;,&quot;阿里地区&quot;,&quot;林芝地区&quot;],
+        &quot;新疆&quot;:[&quot;乌鲁木齐市&quot;,&quot;克拉玛依市&quot;,&quot;吐鲁番地区&quot;,&quot;哈密地区&quot;,&quot;昌吉回族自治州&quot;,&quot;博尔塔拉蒙古自治州&quot;,&quot;巴音郭楞蒙古自治州&quot;,&quot;阿克苏地区&quot;,&quot;克孜勒苏柯尔克孜自治州&quot;,&quot;喀什地区&quot;,&quot;和田地区&quot;,&quot;伊犁哈萨克自治州&quot;,&quot;塔城地区&quot;,&quot;阿勒泰地区&quot;,&quot;石河子市&quot;,&quot;阿拉尔市&quot;,&quot;图木舒克市&quot;,&quot;五家渠市&quot;]
+    },
+    &quot;Y&quot;: {
+        &quot;云南&quot;:[&quot;昆明市&quot;,&quot;曲靖市&quot;,&quot;玉溪市&quot;,&quot;保山市&quot;,&quot;昭通市&quot;,&quot;丽江市&quot;,&quot;思茅市&quot;,&quot;临沧市&quot;,&quot;楚雄彝族自治州&quot;,&quot;红河哈尼族彝族自治州&quot;,&quot;文山壮族苗族自治州&quot;,&quot;西双版纳傣族自治州&quot;,&quot;大理白族自治州&quot;,&quot;德宏傣族景颇族自治州&quot;,&quot;怒江傈僳族自治州&quot;,&quot;迪庆藏族自治州&quot;]
+    },
+    &quot;Z&quot;: {
+        &quot;浙江&quot;:[&quot;杭州市&quot;,&quot;宁波市&quot;,&quot;温州市&quot;,&quot;嘉兴市&quot;,&quot;湖州市&quot;,&quot;绍兴市&quot;,&quot;金华市&quot;,&quot;衢州市&quot;,&quot;舟山市&quot;,&quot;台州市&quot;,&quot;丽水市&quot;]
+    }
+};
+
+(function ($, win, doc) {
+    var CityPicker = function (el, options) {
+        this.el = $(el);
+        this.options = options;
+        this.provinces = provinces;
+        this.pro = null;
+        this.city = null;
+        this.elType = this.el.is(&apos;input&apos;);
+
+        this.init();
+    };
+
+    var p = CityPicker.prototype;
+
+    p.init = function () {
+        this.initEvent();
+        this.preventPopKeyboard();
+
+    };
+
+    p.preventPopKeyboard = function () {
+        if (this.elType) {
+            this.el.prop(&quot;readonly&quot;, true);
+        }
+    };
+
+    p.initEvent = function () {
+        this.el.on(&quot;focus&quot;, function (e) {
+            var pickerBox = $(&quot;.picker-box&quot;);
+            if (pickerBox[0]) {
+                pickerBox.show();
+            } else {
+                this.create();
+            }
+        }.bind(this));
+    };
+
+    p.create = function () {
+        this.createCityPickerBox();
+        this.createProList();
+        this.proClick();
+        this.createNavBar();
+        this.navEvent();
+    };
+
+    p.createCityPickerBox = function () {
+        var proBox = &quot;&lt;div class=&apos;picker-box&apos;&gt;&lt;/div&gt;&quot;;
+        $(&quot;body&quot;).append(proBox);
+    };
+
+    p.createProList = function () {
+        var provinces = this.provinces;
+        var proBox;
+        var dl = &quot;&quot;;
+        for (var letterKey in provinces) {
+            var val = provinces[letterKey];
+            if (provinces.hasOwnProperty(letterKey)) {
+                var dt = &quot;&lt;dt id=&apos;&quot; + letterKey + &quot;&apos;&gt;&quot; + letterKey + &quot;&lt;/dt&gt;&quot;;
+                var dd = &quot;&quot;;
+                for (var proKey in val) {
+                    if (val.hasOwnProperty(proKey)) {
+                        dd += &quot;&lt;dd data-letter=&quot; + letterKey + &quot;&gt;&quot; + proKey + &quot;&lt;/dd&gt;&quot;;
+                    }
+                }
+                dl += &quot;&lt;dl&gt;&quot; + dt + dd + &quot;&lt;/dl&gt;&quot;;
+            }
+        }
+
+        proBox = &quot;&lt;section class=&apos;pro-picker&apos;&gt;&quot; + dl + &quot;&lt;/section&gt;&quot;;
+
+        $(&quot;.picker-box&quot;).append(proBox);
+    };
+
+    p.createCityList = function (letter, pro) {
+        var cities = this.provinces[letter][pro];
+        var ul, li = &quot;&quot;;
+        cities.forEach(function (city, i) {
+            li += &quot;&lt;li&gt;&quot; + city + &quot;&lt;/li&gt;&quot;;
+        });
+
+        ul = &quot;&lt;ul class=&apos;city-picker&apos;&gt;&quot; + li + &quot;&lt;/ul&gt;&quot;;
+        $(&quot;.picker-box&quot;).find(&quot;.city-picker&quot;).remove().end().append(ul);
+
+        this.cityClick();
+    };
+
+    p.proClick = function () {
+        var that = this;
+        $(&quot;.pro-picker&quot;).on(&quot;click&quot;, function (e) {
+            var target = e.target;
+            if ($(target).is(&quot;dd&quot;)) {
+                that.pro = $(target).html();
+                var letter = $(target).data(&quot;letter&quot;);
+                that.createCityList(letter, that.pro);
+
+                $(this).hide();
+            }
+        });
+    };
+
+    p.cityClick = function () {
+        var that = this;
+        $(&quot;.city-picker&quot;).on(&quot;click&quot;, function (e) {
+            var target = e.target;
+            if ($(target).is(&quot;li&quot;)) {
+                that.city = $(target).html();
+                if (that.elType) {
+                    that.el.val(that.pro + &quot;-&quot; + that.city);
+                } else {
+                    that.el.html(that.pro + &quot;-&quot; + that.city);
+                }
+
+                $(&quot;.picker-box&quot;).hide();
+                $(&quot;.pro-picker&quot;).show();
+                $(this).hide();
+            }
+        });
+    };
+
+    p.createNavBar = function () {
+        var str = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+        var arr = str.split(&quot;&quot;);
+        var a = &quot;&quot;;
+        arr.forEach(function (item, i) {
+            a += &apos;&lt;a href=&quot;#&apos; + item + &apos;&quot;&gt;&apos; + item + &apos;&lt;/a&gt;&apos;;
+        });
+
+        var div = &apos;&lt;div class=&quot;navbar&quot;&gt;&apos; + a + &apos;&lt;/div&gt;&apos;;
+
+        $(&quot;.picker-box&quot;).append(div);
+    };
+
+    p.navEvent = function () {
+        var that = this;
+        var navBar = $(&quot;.navbar&quot;);
+        var width = navBar.find(&quot;a&quot;).width();
+        var height = navBar.find(&quot;a&quot;).height();
+        navBar.on(&quot;touchstart&quot;, function (e) {
+            $(this).addClass(&quot;active&quot;);
+            that.createLetterPrompt($(e.target).html());
+        });
+
+        navBar.on(&quot;touchmove&quot;, function (e) {
+            e.preventDefault();
+            var touch = e.originalEvent.touches[0];
+            var pos = {&quot;x&quot;: touch.pageX, &quot;y&quot;: touch.pageY};
+            var x = pos.x, y = pos.y;
+            $(this).find(&quot;a&quot;).each(function (i, item) {
+                var offset = $(item).offset();
+                var left = offset.left, top = offset.top;
+                if (x &gt; left &amp;&amp; x &lt; (left + width) &amp;&amp; y &gt; top &amp;&amp; y &lt; (top + height)) {
+                    location.href = item.href;
+                    that.changeLetter($(item).html());
+                }
+            });
+        });
+
+        navBar.on(&quot;touchend&quot;, function () {
+            $(this).removeClass(&quot;active&quot;);
+            $(&quot;.prompt&quot;).hide();
+        })
+    };
+
+    p.createLetterPrompt = function (letter) {
+        var prompt = $(&quot;.prompt&quot;);
+        if (prompt[0]) {
+            prompt.show();
+        } else {
+            var span = &quot;&lt;span class=&apos;prompt&apos;&gt;&quot; + letter + &quot;&lt;/span&gt;&quot;;
+            $(&quot;.picker-box&quot;).append(span);
+        }
+    };
+
+
+    p.changeLetter = function (letter) {
+        var prompt = $(&quot;.prompt&quot;);
+        prompt.html(letter);
+    };
+
+    $.fn.CityPicker = function (options) {
+        return new CityPicker(this, options);
+    }
+}(window.jQuery, window, document));
+</code></pre><p>代码很简单。这边需要提到的一段代码是：</p>
+<pre><code>navBar.on(&quot;touchmove&quot;, function (e) {
+    e.preventDefault();
+    var touch = e.originalEvent.touches[0];
+    var pos = {&quot;x&quot;: touch.pageX, &quot;y&quot;: touch.pageY};
+    var x = pos.x, y = pos.y;
+    $(this).find(&quot;a&quot;).each(function (i, item) {
+        var offset = $(item).offset();
+        var left = offset.left, top = offset.top;
+        if (x &gt; left &amp;&amp; x &lt; (left + width) &amp;&amp; y &gt; top &amp;&amp; y &lt; (top + height)) {
+            location.href = item.href;
+            that.changeLetter($(item).html());
+        }
+    });
+});
+</code></pre><p>这段是通过字母导航省份的代码。当手指在字母上滑动时，<code>touchmove</code>事件并不能确定当前的字母是哪个，因为<code>e.target</code>永远是<code>touchstart</code>时的那个字母。所以我不得不通过坐标来判断手指位于哪个字母上，这样就导致一个问题，每次滑动都必须遍历26个字母的坐标，这样效率是非常低的，但是目前我也没有好的办法。</p>
+<p>该插件的使用方法非常简单：</p>
+<pre><code>// html代码
+&lt;input type=&quot;text&quot; class=&quot;city&quot; /&gt;
+
+// js代码
+
+$(&quot;.city&quot;).CityPicker();
+</code></pre><p>demo：<a href="https://rawgit.com/lwzhang/cityPicker/master/test.html#H" target="_blank" rel="external">https://rawgit.com/lwzhang/cityPicker/master/test.html</a>。最好用手机浏览器或者chrome模拟器打开。</p>
+<p>如果有需要的朋友，可以从这里<a href="https://github.com/lwzhang/cityPicker" target="_blank" rel="external">https://github.com/lwzhang/cityPicker</a>下载。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/02/利用box-shadow制作loading图/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          利用box-shadow制作loading图
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/14/css中常用的重置代码/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css中常用的重置代码</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="适用于移动端的地址选择器" data-title="适用于移动端的地址选择器" data-url="http://yoursite.com/2015/07/15/适用于移动端的地址选择器/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 zlw
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>HTML5实现刮奖效果 | zlw&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="要实现刮奖效果，最重要的是要找到一种方法：当刮开上层的涂层是就能看到下层的结果。而HTML5的canvas API中有一个属性globalCompositeOperation，这个属性有多个值，而实现刮奖效果要用到的值就是destination-out。意思就是：在已有内容和新图形不重叠的地方，已有内容保留，所有其他内容成为透明。这样可能不好理解，后面实现的时候会解释。有了globalCompos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5实现刮奖效果">
+<meta property="og:url" content="http://yoursite.com/2015/01/21/HTML5实现刮奖效果/index.html">
+<meta property="og:site_name" content="zlw's Blog">
+<meta property="og:description" content="要实现刮奖效果，最重要的是要找到一种方法：当刮开上层的涂层是就能看到下层的结果。而HTML5的canvas API中有一个属性globalCompositeOperation，这个属性有多个值，而实现刮奖效果要用到的值就是destination-out。意思就是：在已有内容和新图形不重叠的地方，已有内容保留，所有其他内容成为透明。这样可能不好理解，后面实现的时候会解释。有了globalCompos">
+<meta property="og:updated_time" content="2015-12-25T14:01:41.671Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5实现刮奖效果">
+<meta name="twitter:description" content="要实现刮奖效果，最重要的是要找到一种方法：当刮开上层的涂层是就能看到下层的结果。而HTML5的canvas API中有一个属性globalCompositeOperation，这个属性有多个值，而实现刮奖效果要用到的值就是destination-out。意思就是：在已有内容和新图形不重叠的地方，已有内容保留，所有其他内容成为透明。这样可能不好理解，后面实现的时候会解释。有了globalCompos">
+  
+    <link rel="alternative" href="/atom.xml" title="zlw&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">zlw</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">zlw</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/babel/" style="font-size: 10px;"> babel</a> <a href="/tags/transform/" style="font-size: 10px;"> transform</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/babel-cli/" style="font-size: 10px;">babel-cli</a> <a href="/tags/babel-core/" style="font-size: 10px;">babel-core</a> <a href="/tags/babel-node/" style="font-size: 10px;">babel-node</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/compass/" style="font-size: 20px;">compass</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/curry/" style="font-size: 10px;">curry</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/placeholder/" style="font-size: 10px;">placeholder</a> <a href="/tags/rotate/" style="font-size: 10px;">rotate</a> <a href="/tags/sass/" style="font-size: 20px;">sass</a> <a href="/tags/spinners/" style="font-size: 10px;">spinners</a> <a href="/tags/sprite/" style="font-size: 20px;">sprite</a> <a href="/tags/sprites/" style="font-size: 20px;">sprites</a> <a href="/tags/transform/" style="font-size: 20px;">transform</a> <a href="/tags/transform多值顺序/" style="font-size: 10px;">transform多值顺序</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/刮奖效果/" style="font-size: 10px;">刮奖效果</a> <a href="/tags/合并图片/" style="font-size: 20px;">合并图片</a> <a href="/tags/图片渐入效果/" style="font-size: 10px;">图片渐入效果</a> <a href="/tags/地址选择器/" style="font-size: 10px;">地址选择器</a> <a href="/tags/城市选择器/" style="font-size: 10px;">城市选择器</a> <a href="/tags/小三角/" style="font-size: 10px;">小三角</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/滑动拼图/" style="font-size: 10px;">滑动拼图</a> <a href="/tags/滚动条/" style="font-size: 10px;">滚动条</a> <a href="/tags/科里化/" style="font-size: 10px;">科里化</a> <a href="/tags/雪碧图/" style="font-size: 20px;">雪碧图</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">zlw</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="null" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">zlw</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">zlw</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-HTML5实现刮奖效果" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/01/21/HTML5实现刮奖效果/" class="article-date">
+  	<time datetime="2015-01-21T00:00:00.000Z" itemprop="datePublished">2015-01-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5实现刮奖效果
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/刮奖效果/">刮奖效果</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要实现刮奖效果，最重要的是要找到一种方法：当刮开上层的涂层是就能看到下层的结果。而HTML5的canvas API中有一个属性globalCompositeOperation，这个属性有多个值，而实现刮奖效果要用到的值就是destination-out。意思就是：在已有内容和新图形不重叠的地方，已有内容保留，所有其他内容成为透明。这样可能不好理解，后面实现的时候会解释。有了globalCompositeOperation这个属性，实现过程就很简单了。<br><a id="more"></a><br>我们需要有两个层，上面一层肯定是一个canvas元素，因为要能刮开就要用到画布。下面一层其实用什么元素都可以，既然上层用的是canvas元素，下层我们也用canvas元素，下面是html内容：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;刮刮乐&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;canvas id=&quot;underCanvas&quot; width=300 height=300 style=&quot;position: absolute; left: 0;top: 0;&quot;&gt;&lt;/canvas&gt;
+    &lt;canvas id=&quot;upCanvas&quot; width=300 height=300 style=&quot;position: absolute; left: 0; top: 0;&quot;&gt;&lt;/canvas&gt;
+    &lt;script src=&quot;./scratch.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 可能变化的值放在options中，方便修改
+        var options = {
+            text: {
+                fontWeight: &quot;bold&quot;,
+                fontSize: 30,
+                fontFamily: &quot;Arial&quot;,
+                align: &quot;center&quot;,
+                color: &apos;#F60&apos;
+            },
+            maskColor: &quot;red&quot;,
+            radius: 30,
+            awards: [&quot;一等奖&quot;, &quot;二等奖&quot;, &quot;三等奖&quot;, &quot;谢谢！&quot;]
+        };
+
+        new Scratch(options).init();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>先实现一个构造函数：</p>
+<pre><code>var Scratch = function (options) {
+    // 下层画布元素
+    this.underCanvas = doc.getElementById(&quot;underCanvas&quot;);
+    // 上层画布元素
+    this.upCanvas = doc.getElementById(&quot;upCanvas&quot;);
+    // 获取下层画布绘图上下文
+    this.underCtx = this.underCanvas.getContext(&quot;2d&quot;);
+    // 获取上层画布绘图上下文
+    this.upCtx = this.upCanvas.getContext(&quot;2d&quot;);
+       // 画布宽度
+    this.width = this.upCanvas.width;
+    // 画布高度
+    this.height = this.upCanvas.height;
+    // 自定义选项
+    this.options = options;
+    this.award = null;
+};
+</code></pre><p>在下层画布上画上刮奖的内容：</p>
+<pre><code>drawText: function () {
+    var ctx = this.underCtx;
+    var text = this.options.text;
+    ctx.font = text.fontWeight + &quot; &quot; + text.fontSize + &apos;px &apos; + text.fontFamily;
+    ctx.textAlign = text.align;
+    ctx.fillStyle = text.color;
+    this.award = this.options.awards[(Math.random() * this.options.awards.length) | 0]; //随机抽奖
+    ctx.fillText(this.award, this.width / 2, this.height / 2 + text.fontSize / 2);
+}
+</code></pre><p>这边奖的内容是随机出现的，因为奖肯定有很多种，可以用一个数组来存放奖的内容，然后随机显示：</p>
+<pre><code>this.award = this.options.awards[(Math.random() * this.options.awards.length) | 0];
+</code></pre><p>如果不知道上面的位运算是什么意思，可以参考我写的上一篇文章<a href="http://www.cnblogs.com/xljzlw/p/4231354.html" target="_blank" rel="external">“js中位运算的运用”</a>。</p>
+<p>然后在上层画布中画一层涂层：</p>
+<pre><code>drawMask: function () {
+    var ctx = this.upCtx;
+    ctx.fillStyle = this.options.maskColor;
+    ctx.fillRect(0, 0, this.width, this.height);
+    ctx.globalCompositeOperation = &apos;destination-out&apos;;
+}
+</code></pre><p>在上层画布中用了globalCompositeOperation这个属性，当再在画布上画东西时，那么后面画的内容和涂层重合的部分将变透明，而其余涂层部分不变。就是利用了这个原理实现了刮奖效果。</p>
+<p>需要刮开上层的涂层，就需要在上层画布上绑定事件：</p>
+<pre><code>addEvent: function () {
+    var that = this;
+    var upCanvas = this.upCanvas;
+    var callback1, callback2, callback3;
+    upCanvas.addEventListener(&quot;mousedown&quot;, callback1 = function (evt) {
+        upCanvas.addEventListener(&quot;mousemove&quot;, callback2 = function (evt) {
+            var x = evt.clientX - upCanvas.offsetLeft;
+            var y = evt.clientY - upCanvas.offsetTop;
+            var ctx = that.upCtx;
+            var options = that.options;
+            ctx.beginPath();
+            var gradient = ctx.createRadialGradient(x, y, 0, x, y, options.radius);
+            // 其实这边的颜色值是可以随便写的，因为都会变成透明，重要的是透明度
+            gradient.addColorStop(0, &quot;rgba(255, 255, 255, 0.5)&quot;);
+            gradient.addColorStop(1, &quot;rgba(255, 255, 255, 0)&quot;);
+            // 也可以不用渐变，直接用一种颜色，但渐变效果更好
+            ctx.fillStyle = gradient;
+            ctx.arc(x, y, options.radius, 0, Math.PI * 2, true);
+            ctx.fill();
+            ctx.closePath();
+            // 当刮开部分&gt;80%的时候提醒刮奖结果，这个可以自己设置
+            if (that.result() &gt; 0.8) {
+                alert(that.award);
+                upCanvas.removeEventListener(&quot;mousemove&quot;, callback2);
+            }
+        }, false);
+        doc.addEventListener(&quot;mouseup&quot;, callback3 = function () {
+            upCanvas.removeEventListener(&quot;mousemove&quot;, callback2);
+            doc.removeEventListener(&quot;mouseup&quot;, callback3);
+        }, false);
+    }, false);
+}
+</code></pre><p>我们需要在刮到一定程度时提醒刮奖的结果：</p>
+<pre><code>result: function () {
+    // 获取文字部分的宽、高
+    var textWidth = this.options.text.fontSize * this.award.length;
+    var textHeight = this.options.text.fontSize;
+    // 获取文字部分的像素，这样可以根据刮开文字的部分占全部文字部分的百分比来提示结果，比如说在刮开80%的时候提示刮奖结果
+    var imgData = this.upCtx.getImageData(this.width / 2 - textWidth / 2, this.height / 2 - textHeight / 2, textWidth, textHeight);
+    var pixelsArr = imgData.data;
+    var transPixelsArr = [];
+    for (var i = 0, j = pixelsArr.length; i &lt; j; i += 4) {
+        // a代表透明度
+        var a = pixelsArr[i + 3];
+        // 渐变的透明度＜=0.5，其实透明度的值是介于0~255之间的，0.5 * 255 = 127.5就是a的值
+        if (a &lt; 128) {
+            transPixelsArr.push(a);
+        }
+    }
+    // 小于128的透明度的值的个数占总透明度的的个数的百分比
+    return transPixelsArr.length / (pixelsArr.length / 4);
+}
+</code></pre><p>上面用到了getImageData()方法，这个方法返回像素数据。重要的是我们只是获取了下层文字部分的像素数据，因为我们只需要知道刮开的文字部分占全部文字部分的百分比。</p>
+<p>调用构造函数时，把可能改变的东西放在一个对象options中传递给构造函数：</p>
+<pre><code>// 可能变化的值放在options中，方便修改
+var options = {
+    // 文字部分的样式
+    text: {
+        fontWeight: &quot;bold&quot;,
+        fontSize: 30,
+        fontFamily: &quot;Arial&quot;,
+        align: &quot;center&quot;,
+        color: &apos;#F60&apos;
+    },
+    // 图层颜色
+    maskColor: &quot;red&quot;,
+    // 画逼半径
+    radius: 20,
+    // 奖项
+    awards: [&quot;一等奖&quot;, &quot;二等奖&quot;, &quot;三等奖&quot;, &quot;谢谢！&quot;]
+};
+
+new Scratch(options).init();
+</code></pre><p>完整代码可以查看Github：<a href="https://github.com/lwzhang/scratch" target="_blank" rel="external">https://github.com/lwzhang/scratch</a></p>
+<p>DEMO：<a href="http://lwzhang.github.io/scratch/scratch.html" target="_blank" rel="external">http://lwzhang.github.io/scratch/scratch.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/04/《数据结构与算法JavaScript描述》中的一处错误/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          《数据结构与算法JavaScript描述》中的一处错误
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="HTML5实现刮奖效果" data-title="HTML5实现刮奖效果" data-url="http://yoursite.com/2015/01/21/HTML5实现刮奖效果/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 zlw
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

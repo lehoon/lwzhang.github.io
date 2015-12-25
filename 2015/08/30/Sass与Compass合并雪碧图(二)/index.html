@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Sass与Compass合并雪碧图(二) | zlw&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="上一篇文章介绍了怎样使用compass合并雪碧图，生成的icons.css文件中单位是px，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用px单位肯定是不行的。所以需要做一下单位转换的工作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sass与Compass合并雪碧图(二)">
+<meta property="og:url" content="http://yoursite.com/2015/08/30/Sass与Compass合并雪碧图(二)/index.html">
+<meta property="og:site_name" content="zlw's Blog">
+<meta property="og:description" content="上一篇文章介绍了怎样使用compass合并雪碧图，生成的icons.css文件中单位是px，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用px单位肯定是不行的。所以需要做一下单位转换的工作。">
+<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131155.png">
+<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131942.png">
+<meta property="og:updated_time" content="2015-12-25T14:05:25.724Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sass与Compass合并雪碧图(二)">
+<meta name="twitter:description" content="上一篇文章介绍了怎样使用compass合并雪碧图，生成的icons.css文件中单位是px，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用px单位肯定是不行的。所以需要做一下单位转换的工作。">
+  
+    <link rel="alternative" href="/atom.xml" title="zlw&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">zlw</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">zlw</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/babel/" style="font-size: 10px;"> babel</a> <a href="/tags/transform/" style="font-size: 10px;"> transform</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/babel-cli/" style="font-size: 10px;">babel-cli</a> <a href="/tags/babel-core/" style="font-size: 10px;">babel-core</a> <a href="/tags/babel-node/" style="font-size: 10px;">babel-node</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/compass/" style="font-size: 20px;">compass</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/curry/" style="font-size: 10px;">curry</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/placeholder/" style="font-size: 10px;">placeholder</a> <a href="/tags/rotate/" style="font-size: 10px;">rotate</a> <a href="/tags/sass/" style="font-size: 20px;">sass</a> <a href="/tags/spinners/" style="font-size: 10px;">spinners</a> <a href="/tags/sprite/" style="font-size: 20px;">sprite</a> <a href="/tags/sprites/" style="font-size: 20px;">sprites</a> <a href="/tags/transform/" style="font-size: 20px;">transform</a> <a href="/tags/transform多值顺序/" style="font-size: 10px;">transform多值顺序</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/刮奖效果/" style="font-size: 10px;">刮奖效果</a> <a href="/tags/合并图片/" style="font-size: 20px;">合并图片</a> <a href="/tags/图片渐入效果/" style="font-size: 10px;">图片渐入效果</a> <a href="/tags/地址选择器/" style="font-size: 10px;">地址选择器</a> <a href="/tags/城市选择器/" style="font-size: 10px;">城市选择器</a> <a href="/tags/小三角/" style="font-size: 10px;">小三角</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/滑动拼图/" style="font-size: 10px;">滑动拼图</a> <a href="/tags/滚动条/" style="font-size: 10px;">滚动条</a> <a href="/tags/科里化/" style="font-size: 10px;">科里化</a> <a href="/tags/雪碧图/" style="font-size: 20px;">雪碧图</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">zlw</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="null" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">zlw</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">zlw</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Sass与Compass合并雪碧图(二)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/30/Sass与Compass合并雪碧图(二)/" class="article-date">
+  	<time datetime="2015-08-30T00:00:00.000Z" itemprop="datePublished">2015-08-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sass与Compass合并雪碧图(二)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compass/">compass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sprite/">sprite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sprites/">sprites</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/合并图片/">合并图片</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/雪碧图/">雪碧图</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/CSS/">CSS</a><a class="article-category-link" href="/categories/CSS/SASS/">SASS</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一篇文章介绍了怎样使用<code>compass</code>合并雪碧图，生成的<code>icons.css</code>文件中单位是<code>px</code>，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用<code>px</code>单位肯定是不行的。所以需要做一下单位转换的工作。<br><a id="more"></a><br>移动端使用<code>rem</code>作为单位是最合适不过了。并不是使用了<code>rem</code>就可以，还需要做一些准备工作。我们都知道<code>rem</code>是基于<code>html</code>标签的<code>font-size</code>的，所以需要使用js动态的计算<code>html</code>的<code>font-size</code>。这里我使用淘宝的<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external"><code>lib-flexible</code></a>。</p>
+<p>在上一篇文章中，有讲过雪碧地图（Sprite maps），如下面：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
+
+.icon {
+    width: image-width(sprite-file($icons, card-icon));
+    height: image-height(sprite-file($icons, card-icon));
+    background-image: sprite-url($icons);
+}
+</code></pre><p>生成css:</p>
+<pre><code>.icon {
+    width: 77px;
+    height: 64px;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+}
+</code></pre><p>现在，需要把<code>px</code>转换成<code>rem</code>。我们不可能在<code>icons.css</code>中转换，应该在<code>icons.scss</code>文件中转换。</p>
+<p>在<code>icons.scss</code>声明一个转换函数<code>px2rem</code>：</p>
+<pre><code>@function px2rem ($px) {
+    @return $px / 64px * 1rem;
+}
+</code></pre><p>这里的<code>64</code>是因为视觉稿是<code>640px</code>的，如果是<code>750px</code>的就是<code>75</code>。可以看一下<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external"><code>lib-flexible</code></a>的说明。</p>
+<p>加上转换函数的<code>icons.scss</code>文件是这样的：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
+
+@function px2rem ($px) {
+    @return $px / 64px * 1rem;
+}
+
+.icon {
+    width: px2rem(image-width(sprite-file($icons, card-icon)));
+    height: px2rem(image-height(sprite-file($icons, card-icon)));
+    background-image: sprite-url($icons);;
+}
+</code></pre><p>生成的<code>css</code>如下：</p>
+<pre><code>.icon {
+    width: 1.20313rem;
+    height: 1rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+}
+</code></pre><p>好了，第一步转换工作就完成了。我们都知道，使用雪碧图，肯定要使用<code>background-position</code>属性,它的单位也是<code>px</code>，也需要转换，所以需要在<code>icons.scss</code>加上：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
+
+@function px2rem ($px) {
+    @return $px / 64px * 1rem;
+}
+
+.icon {
+    width: px2rem(image-width(sprite-file($icons, card-icon)));
+    height: px2rem(image-height(sprite-file($icons, card-icon)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, car-icon));
+}
+</code></pre><p>但是，编译的时候出错了，错误如下：<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131155.png" alt="">    </p>
+<p>意思就是：<code>background-position</code>的值为<code>-250px 0</code>，并不能简单的使用<code>px2rem</code>函数，那该怎么办？我们先来判断一下传递给函数的参数的类型：</p>
+<pre><code>@function px2rem ($px) {
+    @warn type-of($px);
+    @return $px / 64px * 1rem;
+}
+</code></pre><p>再次编译(可以使用<code>compass watch</code>进行监听文件的修改)，命令行提示如下图:</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131942.png" alt=""></p>
+<p>从图中可以知道：<code>$width</code>、<code>$height</code>的类型是<code>number</code>,而<code>$pos</code>类型是<code>list</code>。知道了什么类型就可以对症下药了，修改函数如下：</p>
+<pre><code>@function px2rem ($px) {
+    @if (type-of($px) == &quot;number&quot;) {
+        @return $px / 64px * 1rem;
+    }
+
+    @if (type-of($px) == &quot;list&quot;) {
+        @return nth($px, 1) / 64px *1rem nth($px, 2) / 64px * 1rem;
+    }
+}
+</code></pre><p><code>nth</code>方法可以取出<code>list</code>中的每一项进行运算，输出css如下：</p>
+<pre><code>.icon {
+    width: 1.20313rem;
+    height: 1rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: -1.46875rem -1.40625rem;
+}
+</code></pre><p>这边又会有个问题：<code>background-position</code>的值优有可能是<code>0 0</code>、<code>0 100px</code>或者<code>100px 0</code>，而<code>0</code>是没有单位的，这样转换的时候会报错，继续对<code>px2rem</code>函数进行改造，如下：</p>
+<pre><code>@function px2rem ($px) {
+    @if (type-of($px) == &quot;number&quot;) {
+        @return $px / 64px * 1rem;
+    }
+
+    @if (type-of($px) == &quot;list&quot;) {
+          @if (nth($px, 1) == 0 and nth($px, 2) != 0) {
+            @return 0 nth($px, 2) / 64px * 1rem;
+          } @else if (nth($px, 1) == 0 and nth($px, 2) == 0) {
+            @return 0 0;
+          } @else if (nth($px, 1) != 0 and nth($px, 2) == 0) {
+            @return nth($px, 1) / 64px * 1rem 0;
+          } @else {
+            @return nth($px, 1) / 64px *1rem nth($px, 2) / 64px * 1rem;
+          }
+    }
+}
+</code></pre><p>上面对各种为<code>0</code>的情况进行了判断，避免了错误。</p>
+<p>下面还需要对<code>background-size</code>属性进行转换。在PC端如果图片不要缩放的话，其实不需要该属性，但在移动端一般是需要的。在移动端，可能很多人不知道该怎么用<code>background-size</code>属性，到底是设置整个雪碧图的大小，还是设置单个sprite的的大小呢？其实是设置整个雪碧图的大小。</p>
+<p>好像<code>compass</code>没有内置的方法获得雪碧图的大小，没关系，我们可以等到雪碧图生成的时候，再去查看雪碧图的大小。可以先用两个变量保存雪碧图的宽高，初始化为<code>0</code>：</p>
+<pre><code>$bigWidth: 0;
+$bigHeight: 0;
+</code></pre><p>等雪碧图生成后，查看图片大小，再修改，如：</p>
+<pre><code>$bigWidth: 242px;
+$bigHeight: 270px;
+</code></pre><p>这时<code>icons.scss</code>文件内容如下：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
+
+$bigWidth: 242px;
+$bigHeight: 270px;
+
+@function px2rem ($px) {
+    @if (type-of($px) == &quot;number&quot;) {
+        @return $px / 64px * 1rem;
+    }
+
+    @if (type-of($px) == &quot;list&quot;) {
+          @if (nth($px, 1) == 0 and nth($px, 2) != 0) {
+            @return 0 nth($px, 2) / 64px * 1rem;
+          } @else if (nth($px, 1) == 0 and nth($px, 2) == 0)  {
+            @return 0 0;
+          } @else if (nth($px, 1) != 0 and nth($px, 2) == 0) {
+            @return nth($px, 1) / 64px * 1rem 0;
+          } @else {
+            @return nth($px, 1) / 64px *1rem nth($px, 2) / 64px * 1rem;
+          }
+    }
+}
+
+.icon {
+    width: px2rem(image-width(sprite-file($icons, card-icon)));
+    height: px2rem(image-height(sprite-file($icons, card-icon)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, card-icon));
+    background-size: px2rem(($bigWidth, $bigHeight));
+    background-repeat: no-repeat;
+}
+</code></pre><p>生成<code>css</code>如下：</p>
+<pre><code>.icon {
+    width: 1.20313rem;
+    height: 1rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: -1.46875rem -1.40625rem;
+    background-size: 3.78125rem 4.21875rem;
+    background-repeat: no-repeat;
+}
+</code></pre><p>到这里，应该可以说是很完美了，但还有改进的空间。我们需要自定义很多类，如：</p>
+<pre><code>.icon1 {
+    width: px2rem(image-width(sprite-file($icons, card-icon)));
+    height: px2rem(image-height(sprite-file($icons, card-icon)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, card-icon));
+    background-size: px2rem(($bigWidth, $bigHeight));
+    background-repeat: no-repeat;
+}
+
+.icon2 {
+    width: px2rem(image-width(sprite-file($icons, watch-icon)));
+    height: px2rem(image-height(sprite-file($icons, watch-icon)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, watch-icon));
+    background-size: px2rem(($bigWidth, $bigHeight));
+    background-repeat: no-repeat;
+}
+
+......
+</code></pre><p>上面的每个类中的属性都是一样的，为什么不使用一个<code>mixin</code>，把相同的属性都放进这个<code>mixin</code>中，然后在每个类中引入就可以了。下面来定义一个<code>mixin</code>：</p>
+<pre><code>@mixin sprite-info ($icons, $name) {
+    width: px2rem(image-width(sprite-file($icons, $name)));
+    height: px2rem(image-height(sprite-file($icons, $name)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, $name));
+    background-size: px2rem(($bigWidth, $bigHeight));
+    background-repeat: no-repeat;
+}
+</code></pre><p>使用这个<code>mixin</code>：</p>
+<pre><code>.card {
+    @include sprite-info($icons, card-icon);    
+}
+
+.watch {
+    @include sprite-info($icons, watch-icon);    
+}
+</code></pre><p>生成css如下：</p>
+<pre><code>.card {
+    width: 1.20313rem;
+    height: 1rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: -1.46875rem -1.40625rem;
+    background-size: 3.78125rem 4.21875rem;
+    background-repeat: no-repeat;
+}
+
+.watch {
+    width: 1.3125rem;
+    height: 1.40625rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: 0 0;
+    background-size: 3.78125rem 4.21875rem;
+    background-repeat: no-repeat;
+}
+</code></pre><p>现在可以说是非常完美了。下面贴出<code>icons.scss</code>文件中最终的代码：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
+
+$bigWidth: 242px;
+$bigHeight: 270px;
+
+@function px2rem ($px) {
+    @if (type-of($px) == &quot;number&quot;) {
+        @return $px / 64px * 1rem;
+    }
+
+    @if (type-of($px) == &quot;list&quot;) {
+          @if (nth($px, 1) == 0 and nth($px, 2) != 0) {
+            @return 0 nth($px, 2) / 64px * 1rem;
+          } @else if (nth($px, 1) == 0 and nth($px, 2) == 0)  {
+            @return 0 0;
+          } @else if (nth($px, 1) != 0 and nth($px, 2) == 0) {
+            @return nth($px, 1) / 64px * 1rem 0;
+          } @else {
+            @return nth($px, 1) / 64px *1rem nth($px, 2) / 64px * 1rem;
+          }
+    }
+}
+
+@mixin sprite-info ($icons, $name) {
+    width: px2rem(image-width(sprite-file($icons, $name)));
+    height: px2rem(image-height(sprite-file($icons, $name)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, $name));
+    background-size: px2rem(($bigWidth, $bigHeight));
+    background-repeat: no-repeat;
+}
+
+.card {
+    @include sprite-info($icons, card-icon);
+}
+
+.watch {
+    @include sprite-info($icons, watch-icon);
+}
+</code></pre><p>生成的<code>icons.css</code>代码如下：</p>
+<pre><code>.card {
+    width: 1.20313rem;
+    height: 1rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: -1.46875rem -1.40625rem;
+    background-size: 3.78125rem 4.21875rem;
+    background-repeat: no-repeat;
+}
+
+.watch {
+    width: 1.3125rem;
+    height: 1.40625rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: 0 0;
+    background-size: 3.78125rem 4.21875rem;
+    background-repeat: no-repeat;
+}
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/13/元素rotate之后，宽度该怎么计算？/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          元素rotate之后，宽度该怎么计算？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/29/Sass与Compass合并雪碧图(一)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sass与Compass合并雪碧图(一)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Sass与Compass合并雪碧图(二)" data-title="Sass与Compass合并雪碧图(二)" data-url="http://yoursite.com/2015/08/30/Sass与Compass合并雪碧图(二)/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 zlw
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
