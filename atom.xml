@@ -1,0 +1,1551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[zlw's Blog]]></title>
+  <subtitle><![CDATA[zlw]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2015-12-25T14:04:05.231Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[zlw]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[babel无法编译？]]></title>
+    <link href="http://yoursite.com/2015/11/18/babel%E6%97%A0%E6%B3%95%E7%BC%96%E8%AF%91%EF%BC%9F/"/>
+    <id>http://yoursite.com/2015/11/18/babel无法编译？/</id>
+    <published>2015-11-18T00:00:00.000Z</published>
+    <updated>2015-12-25T14:04:05.231Z</updated>
+    <content type="html"><![CDATA[<p><code>ECMAScript 6(ES6)</code>的发展或者说普及之快可以说是难以想象的，对很多人来说<code>ECMAScript 5(ES5)</code>都还普及呢。现代浏览器对<code>ES6</code>新特新或多或少的有些支持，但支持度不高，所以要想在浏览器中直接使用<code>ES6</code>的新特性，还得等上一段时间。<br><a id="more"></a><br>对<code>ES6</code>的普及起到至关重要的就不得不说<code>babel</code>了。<code>babel</code>可以将<code>ES6</code>代码完美地转换为<code>ES5</code>代码，所以我们不用等到浏览器的支持就可以在项目中使用<code>ES6</code>的特性。</p>
+<p>对于刚开始使用<code>babel</code>的人，可能会碰到一些问题，因为网上对于<code>babel</code>的使用教程基本上是针对<code>babel 6</code>之前的版本，而<code>babel 6</code>对于之前版本有一些变化。</p>
+<ul>
+<li><p>因为之前版本只要安装一个<code>babel</code>就可以用了，所以之前的版本包含了一大堆的东西，这也导致了下载一堆不必要的东西。所以<code>babel 6</code>拆分成两个包：<code>babel-cli</code>和<code>babel-core</code>。如果你想要在CLI(终端或REPL)使用babel就下载<code>babel-cli</code>，如果想要在node中使用就下载<code>babel-core</code>。</p>
+</li>
+<li><p><code>babel 6</code>已结尽可能的模块化了，如果还用<code>babel 6</code>之前的方法转换<code>ES6</code>，它会原样输出，并不会转化，因为需要安装插件。如果你想使用箭头函数，那就得安装箭头函数插件<code>npm install babel-plugin-transform-es2015-arrow-functions</code>。</p>
+</li>
+</ul>
+<p>下面来实践下(命令行使用babel)。</p>
+<p>###安装babel:</p>
+<pre><code>npm install -g babel
+</code></pre><p>命令行转化js文件：</p>
+<pre><code>babel es6.js
+</code></pre><p>提示：</p>
+<pre><code>The CLI has been moved into the package `babel-cli`.
+npm install -g babel-cli    
+</code></pre><p>安装<code>babel-cli</code>：</p>
+<pre><code>npm install -g babel-cli
+</code></pre><p>再次转化： </p>
+<pre><code>babel es6.js
+</code></pre><p>命令行输出：</p>
+<pre><code>[1, 2, 3].map(x =&gt; x * x)
+</code></pre><p>可以看到并没有像期望的那样转化为<code>ES5</code>，因为没有安装插件。上面使用了箭头函数，所以要安装箭头函数插件。但是这样太麻烦，如果使用了<code>ES6</code>的其他特性，还要安装其他插件，可以只下载一个插件：</p>
+<pre><code>npm install babel-preset-es2015
+</code></pre><p>这个插件包含了其他插件。</p>
+<p>安装完插件后，运行：</p>
+<pre><code>babel es6.js --presets es2015
+</code></pre><p>输出：</p>
+<pre><code>[1, 2, 3].map(function (x) {
+    return x * x;
+})
+</code></pre><p>上面已经得到想要的结果了。</p>
+<p><code>babel</code>可以将ES6文件转换输出到另一个文件：</p>
+<pre><code>babel es6.js -o es5.js
+# 或者
+babel es6.js --out-file es5.js
+</code></pre><p>也可以用于转换整个目录：</p>
+<pre><code>babel -d lib/ src/
+</code></pre><p>运行<code>babel-node</code>命令可以直接在命令行运行ES6代码:</p>
+<pre><code>babel-node
+
+&gt; console.log([1,2,3].map(x =&gt; x * x))
+[ 1, 4, 9 ]
+</code></pre><p>也可以直接运行ES6文件。</p>
+<pre><code>babel es6.js
+
+&gt; [1, 2, 3].map(function (x) {
+    return x * x;
+})
+</code></pre><p>(完)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><code>ECMAScript 6(ES6)</code>的发展或者说普及之快可以说是难以想象的，对很多人来说<code>ECMAScript 5(ES5)</code>都还普及呢。现代浏览器对<code>ES6</code>新特新或多或少的有些支持，但支持度不高，所以要想在浏览器中直接使用<code>ES6</code>的新特性，还得等上一段时间。<br>]]>
+    
+    </summary>
+    
+      <category term=" babel" scheme="http://yoursite.com/tags/babel/"/>
+    
+      <category term="babel-cli" scheme="http://yoursite.com/tags/babel-cli/"/>
+    
+      <category term="babel-core" scheme="http://yoursite.com/tags/babel-core/"/>
+    
+      <category term="babel-node" scheme="http://yoursite.com/tags/babel-node/"/>
+    
+      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/categories/ES6/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[css3 transform属性多个值的顺序问题]]></title>
+    <link href="http://yoursite.com/2015/11/14/css3%20transform%E5%B1%9E%E6%80%A7%E5%A4%9A%E4%B8%AA%E5%80%BC%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2015/11/14/css3 transform属性多个值的顺序问题/</id>
+    <published>2015-11-14T00:00:00.000Z</published>
+    <updated>2015-12-25T14:03:54.049Z</updated>
+    <content type="html"><![CDATA[<p>对于<code>transform</code>属性的多值的顺序问题，我自己就被困扰过。后来知道了跟顺序有关，但是不知道为什么。我想应该很多人跟我以前一样，知其然不知其所以然。如果不知道的，也许这篇文章会对大家有所帮助。<br><a id="more"></a></p>
+<p>先来看一个例子。</p>
+<p><code>html</code>代码:</p>
+<pre><code>&lt;div id=&quot;red1&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;red2&quot;&gt;&lt;/div&gt;
+</code></pre><p><code>css</code>代码：</p>
+<pre><code>body {
+    margin: 0;
+}
+div {
+    width:100px;
+    height:100px;
+    background:red;
+}
+#red1 {
+    transform: rotate(45deg);
+}
+#red2 {
+    transform: rotate(45deg) translate(100px, 100px);
+}
+</code></pre><p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e6%88%aa%e5%9b%be20151115170222.png" alt=""></p>
+<p>红框一<code>transform</code>属性只有一个值<code>rotate(45deg)</code>，红框二多了一个值<code>translate(100px, 100px)</code>，水平和竖直都平移<code>100px</code>，但是从图中可以看到红框2只有竖直方向有位移。这是怎么回事？</p>
+<p>其实，当旋转<code>45</code>度后，元素的整个坐标系都旋转了<code>45</code>度，如下图：</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e6%88%aa%e5%9b%be20151115171530.png" alt=""></p>
+<p>图1就是正常的坐标系，图2就是旋转<code>45</code>度后的坐标系。所以红框二就按旋转后的坐标系进行平移。因为我设置的值比较特殊，所以只有在竖直方向有位移。通过计算红框二竖直向下平移了<code>100√2px</code>，也就是红框对角线的长度。</p>
+<p>我们再来看一个例子。</p>
+<p><code>html</code>代码:</p>
+<pre><code>&lt;div id=&quot;red&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;green&quot;&gt;&lt;/div&gt;
+</code></pre><p><code>css</code>代码：</p>
+<pre><code>body {
+    margin: 0;
+}
+div {
+    width:100px;
+    height:100px;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+#red {
+    background:red;
+    transform: rotate(45deg) translate(100px, 100px);
+}
+#green {
+    background:green;
+    transform: translate(100px, 100px) rotate(45deg);
+}
+</code></pre><p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e6%88%aa%e5%9b%be20151115173609.png" alt=""></p>
+<p>图中可以看到，值的顺序对元素位置的影响。通过上面的介绍知道，红框先旋转再平移，即先旋转坐标系再平移，而绿框先按正常的坐标系平移，再旋转，所以它们的位置就不同了。</p>
+<p>我们可以举一反三，比如<code>3d</code>旋转等都可以按上面的方法去分析。</p>
+<p>(完)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>对于<code>transform</code>属性的多值的顺序问题，我自己就被困扰过。后来知道了跟顺序有关，但是不知道为什么。我想应该很多人跟我以前一样，知其然不知其所以然。如果不知道的，也许这篇文章会对大家有所帮助。<br>]]>
+    
+    </summary>
+    
+      <category term=" transform" scheme="http://yoursite.com/tags/transform/"/>
+    
+      <category term="transform多值顺序" scheme="http://yoursite.com/tags/transform%E5%A4%9A%E5%80%BC%E9%A1%BA%E5%BA%8F/"/>
+    
+      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[元素rotate之后，宽度该怎么计算？]]></title>
+    <link href="http://yoursite.com/2015/11/13/%E5%85%83%E7%B4%A0rotate%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%AE%BD%E5%BA%A6%E8%AF%A5%E6%80%8E%E4%B9%88%E8%AE%A1%E7%AE%97%EF%BC%9F/"/>
+    <id>http://yoursite.com/2015/11/13/元素rotate之后，宽度该怎么计算？/</id>
+    <published>2015-11-13T00:00:00.000Z</published>
+    <updated>2015-12-25T14:05:40.965Z</updated>
+    <content type="html"><![CDATA[<p>通常，利用<code>transform: rotate()</code>元素之后，我们并不会去在意元素大小的变化，因为看上去并没有什么变化。虽然看上去没有变化，其实是有变化的。下面用一个例子来说明一下。<br><a id="more"></a></p>
+<p><code>html</code>：</p>
+<pre><code>&lt;div id=&quot;rect&quot;&gt;&lt;/div&gt;
+</code></pre><p><code>css</code>：</p>
+<pre><code>div {
+    width:100px;
+    height:100px;
+    margin: 100px auto;
+    background:red;
+    transform: rotate(45deg);
+}
+</code></pre><p>效果如下：</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e5%9b%be%e7%89%8720151113214149.png" alt=""></p>
+<p>图中四边形的宽高都是<code>100px</code>，然后旋转了<code>45</code>度，当用浏览器查看它的宽高时就变成了<code>141.421px</code>。浏览器是怎么计算的呢？简单画了一个草图。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e6%88%aa%e5%9b%be20151113215400.png" alt=""></p>
+<p>旋转之后，元素的大小其实就变成了红色框的大小，很容易可以计算得到红色框的宽高为<code>141.421px</code>。</p>
+<p><strong>注意：当你用js获取元素的宽度时，返回的还是<code>100px</code>，因为css设置的宽度是<code>100px</code>，js获取的是css的值。</strong></p>
+<p>旋转之后的元素，不仅大小变化了，元素的位置也变了：</p>
+<pre><code>$(&quot;#rect&quot;).offset()
+</code></pre><p>上面代码输出：</p>
+<pre><code>Object {top: 79.28932189941406, left: 404.289306640625}
+</code></pre><p>其实浏览器计算的是红色框相对于文档的位置。</p>
+<p><code>transform: rotate(45deg)</code>是2D旋转，由此也可以联想到3D旋转也可以按相同的套路去计算。</p>
+<p>(完)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>通常，利用<code>transform: rotate()</code>元素之后，我们并不会去在意元素大小的变化，因为看上去并没有什么变化。虽然看上去没有变化，其实是有变化的。下面用一个例子来说明一下。<br>]]>
+    
+    </summary>
+    
+      <category term="rotate" scheme="http://yoursite.com/tags/rotate/"/>
+    
+      <category term="transform" scheme="http://yoursite.com/tags/transform/"/>
+    
+      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Sass与Compass合并雪碧图(二)]]></title>
+    <link href="http://yoursite.com/2015/08/30/Sass%E4%B8%8ECompass%E5%90%88%E5%B9%B6%E9%9B%AA%E7%A2%A7%E5%9B%BE(%E4%BA%8C)/"/>
+    <id>http://yoursite.com/2015/08/30/Sass与Compass合并雪碧图(二)/</id>
+    <published>2015-08-30T00:00:00.000Z</published>
+    <updated>2015-12-25T14:05:25.724Z</updated>
+    <content type="html"><![CDATA[<p>上一篇文章介绍了怎样使用<code>compass</code>合并雪碧图，生成的<code>icons.css</code>文件中单位是<code>px</code>，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用<code>px</code>单位肯定是不行的。所以需要做一下单位转换的工作。<br><a id="more"></a><br>移动端使用<code>rem</code>作为单位是最合适不过了。并不是使用了<code>rem</code>就可以，还需要做一些准备工作。我们都知道<code>rem</code>是基于<code>html</code>标签的<code>font-size</code>的，所以需要使用js动态的计算<code>html</code>的<code>font-size</code>。这里我使用淘宝的<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external"><code>lib-flexible</code></a>。</p>
+<p>在上一篇文章中，有讲过雪碧地图（Sprite maps），如下面：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
+
+.icon {
+    width: image-width(sprite-file($icons, card-icon));
+    height: image-height(sprite-file($icons, card-icon));
+    background-image: sprite-url($icons);
+}
+</code></pre><p>生成css:</p>
+<pre><code>.icon {
+    width: 77px;
+    height: 64px;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+}
+</code></pre><p>现在，需要把<code>px</code>转换成<code>rem</code>。我们不可能在<code>icons.css</code>中转换，应该在<code>icons.scss</code>文件中转换。</p>
+<p>在<code>icons.scss</code>声明一个转换函数<code>px2rem</code>：</p>
+<pre><code>@function px2rem ($px) {
+    @return $px / 64px * 1rem;
+}
+</code></pre><p>这里的<code>64</code>是因为视觉稿是<code>640px</code>的，如果是<code>750px</code>的就是<code>75</code>。可以看一下<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external"><code>lib-flexible</code></a>的说明。</p>
+<p>加上转换函数的<code>icons.scss</code>文件是这样的：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
+
+@function px2rem ($px) {
+    @return $px / 64px * 1rem;
+}
+
+.icon {
+    width: px2rem(image-width(sprite-file($icons, card-icon)));
+    height: px2rem(image-height(sprite-file($icons, card-icon)));
+    background-image: sprite-url($icons);;
+}
+</code></pre><p>生成的<code>css</code>如下：</p>
+<pre><code>.icon {
+    width: 1.20313rem;
+    height: 1rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+}
+</code></pre><p>好了，第一步转换工作就完成了。我们都知道，使用雪碧图，肯定要使用<code>background-position</code>属性,它的单位也是<code>px</code>，也需要转换，所以需要在<code>icons.scss</code>加上：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
+
+@function px2rem ($px) {
+    @return $px / 64px * 1rem;
+}
+
+.icon {
+    width: px2rem(image-width(sprite-file($icons, card-icon)));
+    height: px2rem(image-height(sprite-file($icons, card-icon)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, car-icon));
+}
+</code></pre><p>但是，编译的时候出错了，错误如下：<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131155.png" alt="">    </p>
+<p>意思就是：<code>background-position</code>的值为<code>-250px 0</code>，并不能简单的使用<code>px2rem</code>函数，那该怎么办？我们先来判断一下传递给函数的参数的类型：</p>
+<pre><code>@function px2rem ($px) {
+    @warn type-of($px);
+    @return $px / 64px * 1rem;
+}
+</code></pre><p>再次编译(可以使用<code>compass watch</code>进行监听文件的修改)，命令行提示如下图:</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131942.png" alt=""></p>
+<p>从图中可以知道：<code>$width</code>、<code>$height</code>的类型是<code>number</code>,而<code>$pos</code>类型是<code>list</code>。知道了什么类型就可以对症下药了，修改函数如下：</p>
+<pre><code>@function px2rem ($px) {
+    @if (type-of($px) == &quot;number&quot;) {
+        @return $px / 64px * 1rem;
+    }
+
+    @if (type-of($px) == &quot;list&quot;) {
+        @return nth($px, 1) / 64px *1rem nth($px, 2) / 64px * 1rem;
+    }
+}
+</code></pre><p><code>nth</code>方法可以取出<code>list</code>中的每一项进行运算，输出css如下：</p>
+<pre><code>.icon {
+    width: 1.20313rem;
+    height: 1rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: -1.46875rem -1.40625rem;
+}
+</code></pre><p>这边又会有个问题：<code>background-position</code>的值优有可能是<code>0 0</code>、<code>0 100px</code>或者<code>100px 0</code>，而<code>0</code>是没有单位的，这样转换的时候会报错，继续对<code>px2rem</code>函数进行改造，如下：</p>
+<pre><code>@function px2rem ($px) {
+    @if (type-of($px) == &quot;number&quot;) {
+        @return $px / 64px * 1rem;
+    }
+
+    @if (type-of($px) == &quot;list&quot;) {
+          @if (nth($px, 1) == 0 and nth($px, 2) != 0) {
+            @return 0 nth($px, 2) / 64px * 1rem;
+          } @else if (nth($px, 1) == 0 and nth($px, 2) == 0) {
+            @return 0 0;
+          } @else if (nth($px, 1) != 0 and nth($px, 2) == 0) {
+            @return nth($px, 1) / 64px * 1rem 0;
+          } @else {
+            @return nth($px, 1) / 64px *1rem nth($px, 2) / 64px * 1rem;
+          }
+    }
+}
+</code></pre><p>上面对各种为<code>0</code>的情况进行了判断，避免了错误。</p>
+<p>下面还需要对<code>background-size</code>属性进行转换。在PC端如果图片不要缩放的话，其实不需要该属性，但在移动端一般是需要的。在移动端，可能很多人不知道该怎么用<code>background-size</code>属性，到底是设置整个雪碧图的大小，还是设置单个sprite的的大小呢？其实是设置整个雪碧图的大小。</p>
+<p>好像<code>compass</code>没有内置的方法获得雪碧图的大小，没关系，我们可以等到雪碧图生成的时候，再去查看雪碧图的大小。可以先用两个变量保存雪碧图的宽高，初始化为<code>0</code>：</p>
+<pre><code>$bigWidth: 0;
+$bigHeight: 0;
+</code></pre><p>等雪碧图生成后，查看图片大小，再修改，如：</p>
+<pre><code>$bigWidth: 242px;
+$bigHeight: 270px;
+</code></pre><p>这时<code>icons.scss</code>文件内容如下：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
+
+$bigWidth: 242px;
+$bigHeight: 270px;
+
+@function px2rem ($px) {
+    @if (type-of($px) == &quot;number&quot;) {
+        @return $px / 64px * 1rem;
+    }
+
+    @if (type-of($px) == &quot;list&quot;) {
+          @if (nth($px, 1) == 0 and nth($px, 2) != 0) {
+            @return 0 nth($px, 2) / 64px * 1rem;
+          } @else if (nth($px, 1) == 0 and nth($px, 2) == 0)  {
+            @return 0 0;
+          } @else if (nth($px, 1) != 0 and nth($px, 2) == 0) {
+            @return nth($px, 1) / 64px * 1rem 0;
+          } @else {
+            @return nth($px, 1) / 64px *1rem nth($px, 2) / 64px * 1rem;
+          }
+    }
+}
+
+.icon {
+    width: px2rem(image-width(sprite-file($icons, card-icon)));
+    height: px2rem(image-height(sprite-file($icons, card-icon)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, card-icon));
+    background-size: px2rem(($bigWidth, $bigHeight));
+    background-repeat: no-repeat;
+}
+</code></pre><p>生成<code>css</code>如下：</p>
+<pre><code>.icon {
+    width: 1.20313rem;
+    height: 1rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: -1.46875rem -1.40625rem;
+    background-size: 3.78125rem 4.21875rem;
+    background-repeat: no-repeat;
+}
+</code></pre><p>到这里，应该可以说是很完美了，但还有改进的空间。我们需要自定义很多类，如：</p>
+<pre><code>.icon1 {
+    width: px2rem(image-width(sprite-file($icons, card-icon)));
+    height: px2rem(image-height(sprite-file($icons, card-icon)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, card-icon));
+    background-size: px2rem(($bigWidth, $bigHeight));
+    background-repeat: no-repeat;
+}
+
+.icon2 {
+    width: px2rem(image-width(sprite-file($icons, watch-icon)));
+    height: px2rem(image-height(sprite-file($icons, watch-icon)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, watch-icon));
+    background-size: px2rem(($bigWidth, $bigHeight));
+    background-repeat: no-repeat;
+}
+
+......
+</code></pre><p>上面的每个类中的属性都是一样的，为什么不使用一个<code>mixin</code>，把相同的属性都放进这个<code>mixin</code>中，然后在每个类中引入就可以了。下面来定义一个<code>mixin</code>：</p>
+<pre><code>@mixin sprite-info ($icons, $name) {
+    width: px2rem(image-width(sprite-file($icons, $name)));
+    height: px2rem(image-height(sprite-file($icons, $name)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, $name));
+    background-size: px2rem(($bigWidth, $bigHeight));
+    background-repeat: no-repeat;
+}
+</code></pre><p>使用这个<code>mixin</code>：</p>
+<pre><code>.card {
+    @include sprite-info($icons, card-icon);    
+}
+
+.watch {
+    @include sprite-info($icons, watch-icon);    
+}
+</code></pre><p>生成css如下：</p>
+<pre><code>.card {
+    width: 1.20313rem;
+    height: 1rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: -1.46875rem -1.40625rem;
+    background-size: 3.78125rem 4.21875rem;
+    background-repeat: no-repeat;
+}
+
+.watch {
+    width: 1.3125rem;
+    height: 1.40625rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: 0 0;
+    background-size: 3.78125rem 4.21875rem;
+    background-repeat: no-repeat;
+}
+</code></pre><p>现在可以说是非常完美了。下面贴出<code>icons.scss</code>文件中最终的代码：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
+
+$bigWidth: 242px;
+$bigHeight: 270px;
+
+@function px2rem ($px) {
+    @if (type-of($px) == &quot;number&quot;) {
+        @return $px / 64px * 1rem;
+    }
+
+    @if (type-of($px) == &quot;list&quot;) {
+          @if (nth($px, 1) == 0 and nth($px, 2) != 0) {
+            @return 0 nth($px, 2) / 64px * 1rem;
+          } @else if (nth($px, 1) == 0 and nth($px, 2) == 0)  {
+            @return 0 0;
+          } @else if (nth($px, 1) != 0 and nth($px, 2) == 0) {
+            @return nth($px, 1) / 64px * 1rem 0;
+          } @else {
+            @return nth($px, 1) / 64px *1rem nth($px, 2) / 64px * 1rem;
+          }
+    }
+}
+
+@mixin sprite-info ($icons, $name) {
+    width: px2rem(image-width(sprite-file($icons, $name)));
+    height: px2rem(image-height(sprite-file($icons, $name)));
+    background-image: sprite-url($icons);
+    background-position: px2rem(sprite-position($icons, $name));
+    background-size: px2rem(($bigWidth, $bigHeight));
+    background-repeat: no-repeat;
+}
+
+.card {
+    @include sprite-info($icons, card-icon);
+}
+
+.watch {
+    @include sprite-info($icons, watch-icon);
+}
+</code></pre><p>生成的<code>icons.css</code>代码如下：</p>
+<pre><code>.card {
+    width: 1.20313rem;
+    height: 1rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: -1.46875rem -1.40625rem;
+    background-size: 3.78125rem 4.21875rem;
+    background-repeat: no-repeat;
+}
+
+.watch {
+    width: 1.3125rem;
+    height: 1.40625rem;
+    background-image: url(&apos;/images/icons-s37f950be3b.png&apos;);
+    background-position: 0 0;
+    background-size: 3.78125rem 4.21875rem;
+    background-repeat: no-repeat;
+}
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>上一篇文章介绍了怎样使用<code>compass</code>合并雪碧图，生成的<code>icons.css</code>文件中单位是<code>px</code>，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用<code>px</code>单位肯定是不行的。所以需要做一下单位转换的工作。<br>]]>
+    
+    </summary>
+    
+      <category term="compass" scheme="http://yoursite.com/tags/compass/"/>
+    
+      <category term="sass" scheme="http://yoursite.com/tags/sass/"/>
+    
+      <category term="sprite" scheme="http://yoursite.com/tags/sprite/"/>
+    
+      <category term="sprites" scheme="http://yoursite.com/tags/sprites/"/>
+    
+      <category term="合并图片" scheme="http://yoursite.com/tags/%E5%90%88%E5%B9%B6%E5%9B%BE%E7%89%87/"/>
+    
+      <category term="雪碧图" scheme="http://yoursite.com/tags/%E9%9B%AA%E7%A2%A7%E5%9B%BE/"/>
+    
+      <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
+    
+      <category term="SASS" scheme="http://yoursite.com/categories/CSS/SASS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Sass与Compass合并雪碧图(一)]]></title>
+    <link href="http://yoursite.com/2015/08/29/Sass%E4%B8%8ECompass%E5%90%88%E5%B9%B6%E9%9B%AA%E7%A2%A7%E5%9B%BE(%E4%B8%80)/"/>
+    <id>http://yoursite.com/2015/08/29/Sass与Compass合并雪碧图(一)/</id>
+    <published>2015-08-29T00:00:00.000Z</published>
+    <updated>2015-12-25T14:05:16.910Z</updated>
+    <content type="html"><![CDATA[<p>雪碧图就是很多张小图片合并成一张大图片，以减少HTTP请求，从而提升加载速度。有很多软件可以合并雪碧图，但通常不太容易维护，使用compass生成雪碧图应该算是非常方便的方法了，可以轻松的生成雪碧图，而且易维护。<br><a id="more"></a></p>
+<h2 id="u5B89_u88C5sass_u4E0Ecompass"><a href="#u5B89_u88C5sass_u4E0Ecompass" class="headerlink" title="安装sass与compass"></a>安装sass与compass</h2><p>安装sass可以参考<a href="http://www.w3cplus.com/sassguide/install.html" target="_blank" rel="external">这里</a>。</p>
+<p>安装完sass以后，使用下面命令安装compass:</p>
+<pre><code>&gt; gem install compass
+</code></pre><h2 id="u914D_u7F6E_u73AF_u5883"><a href="#u914D_u7F6E_u73AF_u5883" class="headerlink" title="配置环境"></a>配置环境</h2><p>进入项目目录，使用下面命令初始化项目：</p>
+<pre><code>&gt; compass init
+</code></pre><p>该命令会在当前目录中生成一些文件：</p>
+<pre><code>- sass
+  |-- ie.scss
+  |-- print.scss
+  |-- screen.scss
+
+- stylesheets
+  |-- ie.sss
+  |-- print.sss
+  |-- screen.sss
+
+  config.rb
+</code></pre><p>其中sass与stylesheets文件夹中的文件基本上没什么用。config.rb配置文件中的内容一般不需要改动，也可以根据需要修改。</p>
+<h2 id="u5408_u5E76_u56FE_u7247"><a href="#u5408_u5E76_u56FE_u7247" class="headerlink" title="合并图片"></a>合并图片</h2><p>在当前目录下创建一个<code>images</code>的文件夹放置所有图片，然后在<code>images</code>文件夹中创建一个<code>icons</code>文件夹放置需要合并的图片。在sass文件夹中创建一个<code>icons.scss</code>文件，在文件中写入：</p>
+<pre><code>@import &quot;icons/*.png&quot;;
+@include all-icons-sprites;
+</code></pre><p>然后，命令行执行<code>compass compile</code>命令，合并图片工作就已完成。<code>images</code>文件夹中多了一张<code>icons-*******.png</code>的图片。在<code>stylesheets</code>文件夹中会生成一个<code>icons.css</code>的文件：</p>
+<pre><code>.icons-sprite, .icons-car-icon, .icons-card-icon, .icons-hand-icon, .icons-light, .icons-pan, .icons-title, .icons-watch-icon, .icons-wheel, .icons-wheel1 {
+    background-image: url(&apos;/images/icons-sd6ae4306cd.png&apos;);
+    background-repeat: no-repeat;
+}
+
+.icons-car-icon {
+    background-position: 0 0;
+}
+
+.icons-card-icon {
+    background-position: 0 -124px;
+}
+
+.....
+</code></pre><h2 id="u81EA_u5B9A_u4E49_u7C7B_u540D"><a href="#u81EA_u5B9A_u4E49_u7C7B_u540D" class="headerlink" title="自定义类名"></a>自定义类名</h2><p>可以看到上面生成的css文件中的类名都是自动生成的，在实际应用中通常并不会使用上面的默认类名，这时需要自定义类名：</p>
+<pre><code>@import &quot;icons/*.png&quot;;
+.car-icon {
+    @include icons-sprite(car-icon);    
+}
+</code></pre><p>注意：<code>@include icons-sprite(car-icon)</code>不要写成<code>@include icons-sprites(car-icon)</code>，否则会有意想不到的结果。<code>@include all-icons-sprites</code>这句可以去掉，就不会生成默认的类名了。上面输出的结果为：</p>
+<pre><code>.icons-sprite, .car-icon {
+    background-image: url(&apos;/images/icons-sd6ae4306cd.png&apos;);
+    background-repeat: no-repeat;
+}
+
+.car-icon {
+    background-position: 0 0;
+}
+</code></pre><h2 id="u96EA_u78A7_u5730_u56FE_28Sprite_maps_29"><a href="#u96EA_u78A7_u5730_u56FE_28Sprite_maps_29" class="headerlink" title="雪碧地图(Sprite maps)"></a>雪碧地图(Sprite maps)</h2><p>可以使用雪碧地图取代上面的<code>@import</code>，如下：</p>
+<pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: horizontal);
+.car-icon {
+    background-image: sprite-url($icons);
+    width: image-width(sprite-file($icons, car-icon));
+    height: image-height(sprite-file($icons, car-icon));
+    background-position: sprite-position($icons, car-icon);
+    background-repeat: no-repeat;
+}
+</code></pre><p>结果：</p>
+<pre><code>.car-icon {
+    background-image: url(&apos;/images/icons-s6844bf5750.png&apos;);
+    width: 242px;
+    height: 116px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+</code></pre><p>上面使用了很多compass内置的方法：</p>
+<pre><code>sprite-url($icons); //获取合并后雪碧图的url；
+sprite-file($icons, $name); //获取目标icon；
+image-width(); //获取图片宽度；
+image-height(); //获取图片高度；
+sprite-position($icons, $name); //获取图片坐标  
+</code></pre><h2 id="u8BBE_u7F6E_u56FE_u7247_u5C3A_u5BF8"><a href="#u8BBE_u7F6E_u56FE_u7247_u5C3A_u5BF8" class="headerlink" title="设置图片尺寸"></a>设置图片尺寸</h2><p>之前生成的css文件中并没有设置图片的尺寸，一般情况下是需要设置的。可以通过下面的设置设置图片尺寸：</p>
+<pre><code>$icons-sprite-dimensions: true;
+</code></pre><p>输出结果：</p>
+<pre><code>.car-icon {
+    background-position: 0 0;
+    height: 116px;
+    width: 242px;
+}
+</code></pre><p>上面的设置会为每张图图片添加尺寸，也可以指定为某张图片添加尺寸：</p>
+<pre><code>.car-icon {
+    @include icons-sprite(car-icon);
+    width: icons-sprite-width(car-icon);
+    height: icons-sprite-height(car-icon);
+}
+</code></pre><h2 id="u5E03_u5C40_u65B9_u5F0F"><a href="#u5E03_u5C40_u65B9_u5F0F" class="headerlink" title="布局方式"></a>布局方式</h2><p>布局方式就是生成的雪碧图中小图片的排列方式。compass提供了四中排列方法：vertical、horizontal、diagonal和smart。默认排列方式是vertical。</p>
+<p>使用方法就是在<code>icons.scss</code>文件中加上：</p>
+<pre><code>$icons-layout: &quot;vertical&quot;;
+</code></pre><p>其他方式用法一样。</p>
+<p>下面是四种布局生成的图片：</p>
+<div style="text-align:center"><br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_icons-s22b9e851cd.png"><br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_icons-s37f950be3b.png"><br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_icons-s4d555ef71f.png"><br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_icons-sdd4c0db747.png"><br></div>
+
+
+<h2 id="u8BBE_u7F6E_u95F4_u8DDD"><a href="#u8BBE_u7F6E_u95F4_u8DDD" class="headerlink" title="设置间距"></a>设置间距</h2><p>通常，我们会在图片与图片之间设置一定的间距，添加一下代码：</p>
+<pre><code>$icons-spacing: 8px;
+</code></pre><p>上面为图片之间设置了<code>8px</code>的间距。</p>
+<h2 id="u603B_u7ED3_uFF1A"><a href="#u603B_u7ED3_uFF1A" class="headerlink" title="总结："></a>总结：</h2><p>上面简单介绍了使用compass制作雪碧图。在使用生成的css文件时会有一个问题：在PC端我们可以直接使用生成的css文件，但在移动端并不能直接使用，因为移动端需要缩放图片以适应不同分辨率的屏幕。然而生成的css文件的宽高都是使用绝对单位<code>px</code>的，这样在移动端并不适用。由于篇幅原因，我会在下一篇介绍在移动端怎样使用compass生成的雪碧图。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>雪碧图就是很多张小图片合并成一张大图片，以减少HTTP请求，从而提升加载速度。有很多软件可以合并雪碧图，但通常不太容易维护，使用compass生成雪碧图应该算是非常方便的方法了，可以轻松的生成雪碧图，而且易维护。<br>]]>
+    
+    </summary>
+    
+      <category term="compass" scheme="http://yoursite.com/tags/compass/"/>
+    
+      <category term="sass" scheme="http://yoursite.com/tags/sass/"/>
+    
+      <category term="sprite" scheme="http://yoursite.com/tags/sprite/"/>
+    
+      <category term="sprites" scheme="http://yoursite.com/tags/sprites/"/>
+    
+      <category term="合并图片" scheme="http://yoursite.com/tags/%E5%90%88%E5%B9%B6%E5%9B%BE%E7%89%87/"/>
+    
+      <category term="雪碧图" scheme="http://yoursite.com/tags/%E9%9B%AA%E7%A2%A7%E5%9B%BE/"/>
+    
+      <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
+    
+      <category term="SASS" scheme="http://yoursite.com/categories/CSS/SASS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Flexbox + js实现滑动拼图游戏]]></title>
+    <link href="http://yoursite.com/2015/08/23/Flexbox%20+%20js%E5%AE%9E%E7%8E%B0%E6%BB%91%E5%8A%A8%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/"/>
+    <id>http://yoursite.com/2015/08/23/Flexbox + js实现滑动拼图游戏/</id>
+    <published>2015-08-23T00:00:00.000Z</published>
+    <updated>2015-12-25T14:04:58.693Z</updated>
+    <content type="html"><![CDATA[<p>滑动拼图就是把一张图片分成几等份，打乱顺序（下图），然后通过滑动拼凑成一张完整的图片。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_pintu.png" alt=""><br><a id="more"></a><br>要实现一个拼图游戏，需要考虑怎样随机的打乱顺序，怎样交换两张图片的位置，等等。但是，使用了Flexbox布局以后，这都不需要你去考虑，浏览器会帮你做，Flexbox就是这么的强大。关于Flexbox的介绍可以点击<a href="http://www.w3cplus.com/css3/a-guide-to-flexbox-new.html" target="_blank" rel="external">这里</a>。</p>
+<p>这个游戏中要用的是Flexbox布局的<code>order</code>属性，<code>order</code>属性可以用来控制Flex项目的顺序。</p>
+<p>这里我用九个<code>canvas</code>元素来把图片分成九等分，也可以用其他方法，比如背景图片定位：</p>
+<pre><code>&lt;div class=&quot;wrap&quot;&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+</code></pre><p>如果不仅限于九宫格，还要十六宫格等，上面的元素完全可以动态生成。</p>
+<p>下面是生成打乱顺序的九张图代码：</p>
+<pre><code>var drawImage = function (url) {
+    return new Promise(function (resolve, reject) {
+        var img = new Image();
+        img.onload = function () {
+            resolve(img);
+        };
+        img.src = url;
+    })
+};
+
+drawImage(&quot;2.jpg&quot;).then(function (img) {
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var random = arr.sort(function() {return Math.random() &gt; 0.5});
+    [].forEach.call(document.querySelectorAll(&quot;canvas&quot;), function (item, i) {
+        item.width = $(&quot;.wrap&quot;).clientWidth / 3;
+        item.height = $(&quot;.wrap&quot;).clientHeight / 3;
+        item.style.order = random[i];
+        var ctx = item.getContext(&quot;2d&quot;);
+        ctx.drawImage(img, img.width * (i % 3) / 3, img.height * Math.floor(i / 3) / 3, img.width / 3, img.height / 3, 0, 0, item.width, item.height);
+    });
+});
+</code></pre><p>上面的关键代码是：</p>
+<pre><code>item.style.order = random[i];
+</code></pre><p>通过将数字打乱顺序，随机赋值给每个<code>canvas</code>元素的<code>order</code>属性，这样浏览器就自动帮你排序了。</p>
+<p>关于代码的其他细节就不讲了，这里说一下怎样交换两张图片的位置，真是出乎意料的简单：</p>
+<pre><code>var order1 = item.style.order;
+var order2 = target.style.order;
+</code></pre><p>只需要交换双方的<code>order</code>属性值就可以了。</p>
+<p>完整代码可以在<a href="https://github.com/lwzhang/pages/blob/gh-pages/puzzle/slide.html" target="_blank" rel="external">这里</a>查看。</p>
+<p>DEMO可以点击<a href="https://lwzhang.github.io/pages/puzzle/slide.html" target="_blank" rel="external">这里</a>，最好用谷歌模拟器或者手机打开，因为只支持移动端触摸事件。</p>
+<p>代码中只实现了基本功能，并没有实现完整功能。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>滑动拼图就是把一张图片分成几等份，打乱顺序（下图），然后通过滑动拼凑成一张完整的图片。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_pintu.png" alt=""><br>]]>
+    
+    </summary>
+    
+      <category term="flex" scheme="http://yoursite.com/tags/flex/"/>
+    
+      <category term="滑动拼图" scheme="http://yoursite.com/tags/%E6%BB%91%E5%8A%A8%E6%8B%BC%E5%9B%BE/"/>
+    
+      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+    
+      <category term="HTML5" scheme="http://yoursite.com/categories/CSS3/HTML5/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/categories/CSS3/HTML5/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[利用box-shadow制作loading图]]></title>
+    <link href="http://yoursite.com/2015/08/02/%E5%88%A9%E7%94%A8box-shadow%E5%88%B6%E4%BD%9Cloading%E5%9B%BE/"/>
+    <id>http://yoursite.com/2015/08/02/利用box-shadow制作loading图/</id>
+    <published>2015-08-02T00:00:00.000Z</published>
+    <updated>2015-12-25T14:05:46.948Z</updated>
+    <content type="html"><![CDATA[<p>我们见过很多利用css3做的loading图，像下面这种应该是很常见的。通常制作这种loading，我们会一个标签对应一个圆，八个圆就要八个标签。但是这种做法很浪费资源。我们可以只用一个标签，然后利用<code>box—shadow</code>来制作一个loading图。<br><a id="more"></a><br>首先，需要一个标签：</p>
+<pre><code>&lt;div class=&quot;loading&quot;&gt;&lt;/div&gt;
+</code></pre><p>然后是css：</p>
+<pre><code>$fontSize: 30px;
+$radius: 2em;
+.loading {
+  font-size: $fontSize;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 100px auto;
+  box-shadow: 0 -2em rgba(255, 0, 0, 1), 1.414em -1.414em rgba(255, 0, 0, 0.875), 2em 0 rgba(255, 0, 0, 0.75), 1.414em 1.414em rgba(255, 0, 0, 0.625), 0 2em rgba(255, 0, 0, 0.5), -1.414em 1.414em rgba(255, 0, 0, 0.375), -2em 0 rgba(255, 0, 0, 0.25), -1.414em -1.414em rgba(255, 0, 0, 0.125);
+}
+</code></pre><p>单位用的是<code>em</code>，这样如果要修改圆的大小，就只需要修改<code>font-size</code>就可以了，如果用<code>px</code>的话，一旦需要修改大小，那么涉及单位的就都要修改了。</p>
+<p>关键css就是：</p>
+<pre><code>box-shadow: 0 -2em rgba(255, 0, 0, 1), 1.414em -1.414em rgba(255, 0, 0, 0.875), 2em 0 rgba(255, 0, 0, 0.75), 1.414em 1.414em rgba(255, 0, 0, 0.625), 0 2em rgba(255, 0, 0, 0.5), -1.414em 1.414em rgba(255, 0, 0, 0.375), -2em 0 rgba(255, 0, 0, 0.25), -1.414em -1.414em rgba(255, 0, 0, 0.125);
+</code></pre><p>需要用到多重阴影，每一个阴影就是一个圆了。设置它们的坐标需要用到三角函数。先要设定一个半径(如2em)，然后360度平均分成8份，每份是45度，利用三角函数就可以计算阴影的偏移位置了。还有就是圆的颜色渐变，就是设置它们的不同透明度。</p>
+<p>上面做出来的是静态的，还需要让它动起来：</p>
+<pre><code>$fontSize: 30px;
+$radius: 2em;
+
+.loading {
+  font-size: $fontSize;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 100px auto;
+  box-shadow: 0 -2em rgba(255, 0, 0, 1), 1.414em -1.414em rgba(255, 0, 0, 0.875), 2em 0 rgba(255, 0, 0, 0.75), 1.414em 1.414em rgba(255, 0, 0, 0.625), 0 2em rgba(255, 0, 0, 0.5), -1.414em 1.414em rgba(255, 0, 0, 0.375), -2em 0 rgba(255, 0, 0, 0.25), -1.414em -1.414em rgba(255, 0, 0, 0.125);
+
+  animation: rotate 1s infinite forwards steps(8, end);
+}
+
+@keyframes rotate {
+   100% {
+       transform: rotate(360deg);
+   }
+}
+</code></pre><p><code>steps()</code>这个函数可以让动画分步进行，而不是连贯性的。</p>
+<p>好了，上面就是全部的代码了，很少。上面的<code>box-shadow</code>其实我是手算的，本来我想利用sass的<code>for</code>循环计算的，结果没有成功。希望高手能指点一下。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>我们见过很多利用css3做的loading图，像下面这种应该是很常见的。通常制作这种loading，我们会一个标签对应一个圆，八个圆就要八个标签。但是这种做法很浪费资源。我们可以只用一个标签，然后利用<code>box—shadow</code>来制作一个loading图。<br>]]>
+    
+    </summary>
+    
+      <category term="css3" scheme="http://yoursite.com/tags/css3/"/>
+    
+      <category term="loading" scheme="http://yoursite.com/tags/loading/"/>
+    
+      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[适用于移动端的地址选择器]]></title>
+    <link href="http://yoursite.com/2015/07/15/%E9%80%82%E7%94%A8%E4%BA%8E%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E5%9C%B0%E5%9D%80%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+    <id>http://yoursite.com/2015/07/15/适用于移动端的地址选择器/</id>
+    <published>2015-07-15T00:00:00.000Z</published>
+    <updated>2015-12-25T14:05:52.197Z</updated>
+    <content type="html"><![CDATA[<p>最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e5%9b%be%e7%89%8720150715210812.png" alt=""><br><a id="more"></a><br>直接上代码吧：</p>
+<pre><code>var provinces = {
+    &quot;A&quot;: {
+        &quot;安徽&quot;:[&quot;合肥市&quot;,&quot;芜湖市&quot;,&quot;蚌埠市&quot;,&quot;淮南市&quot;,&quot;马鞍山市&quot;,&quot;淮北市&quot;,&quot;铜陵市&quot;,&quot;安庆市&quot;,&quot;黄山市&quot;,&quot;滁州市&quot;,&quot;阜阳市&quot;,&quot;宿州市&quot;,&quot;巢湖市&quot;,&quot;六安市&quot;,&quot;亳州市&quot;,&quot;池州市&quot;,&quot;宣城市&quot;]
+    },
+    &quot;B&quot;: {
+        &quot;北京&quot;: [&quot;北京市&quot;]
+    },
+    &quot;C&quot;: {
+        &quot;重庆&quot;:[&quot;重庆市&quot;]
+    },
+    &quot;F&quot;: {
+        &quot;福建&quot;:[&quot;福州市&quot;,&quot;厦门市&quot;,&quot;莆田市&quot;,&quot;三明市&quot;,&quot;泉州市&quot;,&quot;漳州市&quot;,&quot;南平市&quot;,&quot;龙岩市&quot;,&quot;宁德市&quot;]
+    },
+    &quot;G&quot;: {
+        &quot;甘肃&quot;:[&quot;兰州市&quot;,&quot;嘉峪关市&quot;,&quot;金昌市&quot;,&quot;白银市&quot;,&quot;天水市&quot;,&quot;武威市&quot;,&quot;张掖市&quot;,&quot;平凉市&quot;,&quot;酒泉市&quot;,&quot;庆阳市&quot;,&quot;定西市&quot;,&quot;陇南市&quot;,&quot;临夏回族自治州&quot;,&quot;甘南藏族自治州&quot;],
+        &quot;广东&quot;:[&quot;广州市&quot;,&quot;深圳市&quot;,&quot;珠海市&quot;,&quot;汕头市&quot;,&quot;韶关市&quot;,&quot;佛山市&quot;,&quot;江门市&quot;,&quot;湛江市&quot;,&quot;茂名市&quot;,&quot;肇庆市&quot;,&quot;惠州市&quot;,&quot;梅州市&quot;,&quot;汕尾市&quot;,&quot;河源市&quot;,&quot;阳江市&quot;,&quot;清远市&quot;,&quot;东莞市&quot;,&quot;中山市&quot;,&quot;潮州市&quot;,&quot;揭阳市&quot;,&quot;云浮市&quot;],
+        &quot;广西&quot;:[&quot;南宁市&quot;,&quot;柳州市&quot;,&quot;桂林市&quot;,&quot;梧州市&quot;,&quot;北海市&quot;,&quot;防城港市&quot;,&quot;钦州市&quot;,&quot;贵港市&quot;,&quot;玉林市&quot;,&quot;百色市&quot;,&quot;贺州市&quot;,&quot;河池市&quot;,&quot;来宾市&quot;,&quot;崇左市&quot;],
+        &quot;贵州&quot;:[&quot;贵阳市&quot;,&quot;六盘水市&quot;,&quot;遵义市&quot;,&quot;安顺市&quot;,&quot;铜仁地区&quot;,&quot;黔西南布依族苗族自治州&quot;,&quot;毕节地区&quot;,&quot;黔东南苗族侗族自治州&quot;,&quot;黔南布依族苗族自治州&quot;]
+    },
+    &quot;H&quot;: {
+        &quot;海南&quot;:[&quot;海口市&quot;,&quot;三亚市&quot;],
+        &quot;河北&quot;:[&quot;石家庄市&quot;,&quot;唐山市&quot;,&quot;秦皇岛市&quot;,&quot;邯郸市&quot;,&quot;邢台市&quot;,&quot;保定市&quot;,&quot;张家口市&quot;,&quot;承德市&quot;,&quot;沧州市&quot;,&quot;廊坊市&quot;,&quot;衡水市&quot;],
+        &quot;河南&quot;:[&quot;郑州市&quot;,&quot;开封市&quot;,&quot;洛阳市&quot;,&quot;平顶山市&quot;,&quot;安阳市&quot;,&quot;鹤壁市&quot;,&quot;新乡市&quot;,&quot;焦作市&quot;,&quot;濮阳市&quot;,&quot;许昌市&quot;,&quot;漯河市&quot;,&quot;三门峡市&quot;,&quot;南阳市&quot;,&quot;商丘市&quot;,&quot;信阳市&quot;,&quot;周口市&quot;,&quot;驻马店市&quot;],
+        &quot;黑龙江&quot;:[&quot;哈尔滨市&quot;,&quot;齐齐哈尔市&quot;,&quot;鸡西市&quot;,&quot;鹤岗市&quot;,&quot;双鸭山市&quot;,&quot;大庆市&quot;,&quot;伊春市&quot;,&quot;佳木斯市&quot;,&quot;七台河市&quot;,&quot;牡丹江市&quot;,&quot;黑河市&quot;,&quot;绥化市&quot;,&quot;大兴安岭地区&quot;],
+        &quot;湖北&quot;:[&quot;武汉市&quot;,&quot;黄石市&quot;,&quot;十堰市&quot;,&quot;宜昌市&quot;,&quot;襄樊市&quot;,&quot;鄂州市&quot;,&quot;荆门市&quot;,&quot;孝感市&quot;,&quot;荆州市&quot;,&quot;黄冈市&quot;,&quot;咸宁市&quot;,&quot;随州市&quot;,&quot;恩施土家族苗族自治州&quot;,&quot;神农架&quot;],
+        &quot;湖南&quot;:[&quot;长沙市&quot;,&quot;株洲市&quot;,&quot;湘潭市&quot;,&quot;衡阳市&quot;,&quot;邵阳市&quot;,&quot;岳阳市&quot;,&quot;常德市&quot;,&quot;张家界市&quot;,&quot;益阳市&quot;,&quot;郴州市&quot;,&quot;永州市&quot;,&quot;怀化市&quot;,&quot;娄底市&quot;,&quot;湘西土家族苗族自治州&quot;]
+    },
+    &quot;J&quot;: {
+        &quot;吉林&quot;:[&quot;长春市&quot;,&quot;吉林市&quot;,&quot;四平市&quot;,&quot;辽源市&quot;,&quot;通化市&quot;,&quot;白山市&quot;,&quot;松原市&quot;,&quot;白城市&quot;,&quot;延边朝鲜族自治州&quot;],
+        &quot;江苏&quot;:[&quot;南京市&quot;,&quot;无锡市&quot;,&quot;徐州市&quot;,&quot;常州市&quot;,&quot;苏州市&quot;,&quot;南通市&quot;,&quot;连云港市&quot;,&quot;淮安市&quot;,&quot;盐城市&quot;,&quot;扬州市&quot;,&quot;镇江市&quot;,&quot;泰州市&quot;,&quot;宿迁市&quot;],
+        &quot;江西&quot;:[&quot;南昌市&quot;,&quot;景德镇市&quot;,&quot;萍乡市&quot;,&quot;九江市&quot;,&quot;新余市&quot;,&quot;鹰潭市&quot;,&quot;赣州市&quot;,&quot;吉安市&quot;,&quot;宜春市&quot;,&quot;抚州市&quot;,&quot;上饶市&quot;]
+    },
+    &quot;L&quot;: {
+        &quot;辽宁&quot;:[&quot;沈阳市&quot;,&quot;大连市&quot;,&quot;鞍山市&quot;,&quot;抚顺市&quot;,&quot;本溪市&quot;,&quot;丹东市&quot;,&quot;锦州市&quot;,&quot;营口市&quot;,&quot;阜新市&quot;,&quot;辽阳市&quot;,&quot;盘锦市&quot;,&quot;铁岭市&quot;,&quot;朝阳市&quot;,&quot;葫芦岛市&quot;]
+    },
+    &quot;N&quot;: {
+        &quot;内蒙古&quot;:[&quot;呼和浩特市&quot;,&quot;包头市&quot;,&quot;乌海市&quot;,&quot;赤峰市&quot;,&quot;通辽市&quot;,&quot;鄂尔多斯市&quot;,&quot;呼伦贝尔市&quot;,&quot;巴彦淖尔市&quot;,&quot;乌兰察布市&quot;,&quot;兴安盟&quot;,&quot;锡林郭勒盟&quot;,&quot;阿拉善盟&quot;],
+        &quot;宁夏&quot;:[&quot;银川市&quot;,&quot;石嘴山市&quot;,&quot;吴忠市&quot;,&quot;固原市&quot;,&quot;中卫市&quot;]
+    },
+    &quot;Q&quot;: {
+        &quot;青海&quot;:[&quot;西宁市&quot;,&quot;海东地区&quot;,&quot;海北藏族自治州&quot;,&quot;黄南藏族自治州&quot;,&quot;海南藏族自治州&quot;,&quot;果洛藏族自治州&quot;,&quot;玉树藏族自治州&quot;,&quot;海西蒙古族藏族自治州&quot;]
+    },
+    &quot;S&quot;: {
+        &quot;山东&quot;:[&quot;济南市&quot;,&quot;青岛市&quot;,&quot;淄博市&quot;,&quot;枣庄市&quot;,&quot;东营市&quot;,&quot;烟台市&quot;,&quot;潍坊市&quot;,&quot;济宁市&quot;,&quot;泰安市&quot;,&quot;威海市&quot;,&quot;日照市&quot;,&quot;莱芜市&quot;,&quot;临沂市&quot;,&quot;德州市&quot;,&quot;聊城市&quot;,&quot;滨州市&quot;,&quot;菏泽市&quot;],
+        &quot;山西&quot;:[&quot;太原市&quot;,&quot;大同市&quot;,&quot;阳泉市&quot;,&quot;长治市&quot;,&quot;晋城市&quot;,&quot;朔州市&quot;,&quot;晋中市&quot;,&quot;运城市&quot;,&quot;忻州市&quot;,&quot;临汾市&quot;,&quot;吕梁市&quot;],
+        &quot;陕西&quot;:[&quot;西安市&quot;,&quot;铜川市&quot;,&quot;宝鸡市&quot;,&quot;咸阳市&quot;,&quot;渭南市&quot;,&quot;延安市&quot;,&quot;汉中市&quot;,&quot;榆林市&quot;,&quot;安康市&quot;,&quot;商洛市&quot;],
+        &quot;上海&quot;:[&quot;上海市&quot;],
+        &quot;四川&quot;:[&quot;成都市&quot;,&quot;自贡市&quot;,&quot;攀枝花市&quot;,&quot;泸州市&quot;,&quot;德阳市&quot;,&quot;绵阳市&quot;,&quot;广元市&quot;,&quot;遂宁市&quot;,&quot;内江市&quot;,&quot;乐山市&quot;,&quot;南充市&quot;,&quot;眉山市&quot;,&quot;宜宾市&quot;,&quot;广安市&quot;,&quot;达州市&quot;,&quot;雅安市&quot;,&quot;巴中市&quot;,&quot;资阳市&quot;,&quot;阿坝藏族羌族自治州&quot;,&quot;甘孜藏族自治州&quot;,&quot;凉山彝族自治州&quot;]
+    },
+    &quot;T&quot;: {
+        &quot;天津&quot;: [&quot;天津市&quot;]
+    },
+    &quot;X&quot;: {
+        &quot;西藏&quot;:[&quot;拉萨市&quot;,&quot;昌都地区&quot;,&quot;山南地区&quot;,&quot;日喀则地区&quot;,&quot;那曲地区&quot;,&quot;阿里地区&quot;,&quot;林芝地区&quot;],
+        &quot;新疆&quot;:[&quot;乌鲁木齐市&quot;,&quot;克拉玛依市&quot;,&quot;吐鲁番地区&quot;,&quot;哈密地区&quot;,&quot;昌吉回族自治州&quot;,&quot;博尔塔拉蒙古自治州&quot;,&quot;巴音郭楞蒙古自治州&quot;,&quot;阿克苏地区&quot;,&quot;克孜勒苏柯尔克孜自治州&quot;,&quot;喀什地区&quot;,&quot;和田地区&quot;,&quot;伊犁哈萨克自治州&quot;,&quot;塔城地区&quot;,&quot;阿勒泰地区&quot;,&quot;石河子市&quot;,&quot;阿拉尔市&quot;,&quot;图木舒克市&quot;,&quot;五家渠市&quot;]
+    },
+    &quot;Y&quot;: {
+        &quot;云南&quot;:[&quot;昆明市&quot;,&quot;曲靖市&quot;,&quot;玉溪市&quot;,&quot;保山市&quot;,&quot;昭通市&quot;,&quot;丽江市&quot;,&quot;思茅市&quot;,&quot;临沧市&quot;,&quot;楚雄彝族自治州&quot;,&quot;红河哈尼族彝族自治州&quot;,&quot;文山壮族苗族自治州&quot;,&quot;西双版纳傣族自治州&quot;,&quot;大理白族自治州&quot;,&quot;德宏傣族景颇族自治州&quot;,&quot;怒江傈僳族自治州&quot;,&quot;迪庆藏族自治州&quot;]
+    },
+    &quot;Z&quot;: {
+        &quot;浙江&quot;:[&quot;杭州市&quot;,&quot;宁波市&quot;,&quot;温州市&quot;,&quot;嘉兴市&quot;,&quot;湖州市&quot;,&quot;绍兴市&quot;,&quot;金华市&quot;,&quot;衢州市&quot;,&quot;舟山市&quot;,&quot;台州市&quot;,&quot;丽水市&quot;]
+    }
+};
+
+(function ($, win, doc) {
+    var CityPicker = function (el, options) {
+        this.el = $(el);
+        this.options = options;
+        this.provinces = provinces;
+        this.pro = null;
+        this.city = null;
+        this.elType = this.el.is(&apos;input&apos;);
+
+        this.init();
+    };
+
+    var p = CityPicker.prototype;
+
+    p.init = function () {
+        this.initEvent();
+        this.preventPopKeyboard();
+
+    };
+
+    p.preventPopKeyboard = function () {
+        if (this.elType) {
+            this.el.prop(&quot;readonly&quot;, true);
+        }
+    };
+
+    p.initEvent = function () {
+        this.el.on(&quot;focus&quot;, function (e) {
+            var pickerBox = $(&quot;.picker-box&quot;);
+            if (pickerBox[0]) {
+                pickerBox.show();
+            } else {
+                this.create();
+            }
+        }.bind(this));
+    };
+
+    p.create = function () {
+        this.createCityPickerBox();
+        this.createProList();
+        this.proClick();
+        this.createNavBar();
+        this.navEvent();
+    };
+
+    p.createCityPickerBox = function () {
+        var proBox = &quot;&lt;div class=&apos;picker-box&apos;&gt;&lt;/div&gt;&quot;;
+        $(&quot;body&quot;).append(proBox);
+    };
+
+    p.createProList = function () {
+        var provinces = this.provinces;
+        var proBox;
+        var dl = &quot;&quot;;
+        for (var letterKey in provinces) {
+            var val = provinces[letterKey];
+            if (provinces.hasOwnProperty(letterKey)) {
+                var dt = &quot;&lt;dt id=&apos;&quot; + letterKey + &quot;&apos;&gt;&quot; + letterKey + &quot;&lt;/dt&gt;&quot;;
+                var dd = &quot;&quot;;
+                for (var proKey in val) {
+                    if (val.hasOwnProperty(proKey)) {
+                        dd += &quot;&lt;dd data-letter=&quot; + letterKey + &quot;&gt;&quot; + proKey + &quot;&lt;/dd&gt;&quot;;
+                    }
+                }
+                dl += &quot;&lt;dl&gt;&quot; + dt + dd + &quot;&lt;/dl&gt;&quot;;
+            }
+        }
+
+        proBox = &quot;&lt;section class=&apos;pro-picker&apos;&gt;&quot; + dl + &quot;&lt;/section&gt;&quot;;
+
+        $(&quot;.picker-box&quot;).append(proBox);
+    };
+
+    p.createCityList = function (letter, pro) {
+        var cities = this.provinces[letter][pro];
+        var ul, li = &quot;&quot;;
+        cities.forEach(function (city, i) {
+            li += &quot;&lt;li&gt;&quot; + city + &quot;&lt;/li&gt;&quot;;
+        });
+
+        ul = &quot;&lt;ul class=&apos;city-picker&apos;&gt;&quot; + li + &quot;&lt;/ul&gt;&quot;;
+        $(&quot;.picker-box&quot;).find(&quot;.city-picker&quot;).remove().end().append(ul);
+
+        this.cityClick();
+    };
+
+    p.proClick = function () {
+        var that = this;
+        $(&quot;.pro-picker&quot;).on(&quot;click&quot;, function (e) {
+            var target = e.target;
+            if ($(target).is(&quot;dd&quot;)) {
+                that.pro = $(target).html();
+                var letter = $(target).data(&quot;letter&quot;);
+                that.createCityList(letter, that.pro);
+
+                $(this).hide();
+            }
+        });
+    };
+
+    p.cityClick = function () {
+        var that = this;
+        $(&quot;.city-picker&quot;).on(&quot;click&quot;, function (e) {
+            var target = e.target;
+            if ($(target).is(&quot;li&quot;)) {
+                that.city = $(target).html();
+                if (that.elType) {
+                    that.el.val(that.pro + &quot;-&quot; + that.city);
+                } else {
+                    that.el.html(that.pro + &quot;-&quot; + that.city);
+                }
+
+                $(&quot;.picker-box&quot;).hide();
+                $(&quot;.pro-picker&quot;).show();
+                $(this).hide();
+            }
+        });
+    };
+
+    p.createNavBar = function () {
+        var str = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+        var arr = str.split(&quot;&quot;);
+        var a = &quot;&quot;;
+        arr.forEach(function (item, i) {
+            a += &apos;&lt;a href=&quot;#&apos; + item + &apos;&quot;&gt;&apos; + item + &apos;&lt;/a&gt;&apos;;
+        });
+
+        var div = &apos;&lt;div class=&quot;navbar&quot;&gt;&apos; + a + &apos;&lt;/div&gt;&apos;;
+
+        $(&quot;.picker-box&quot;).append(div);
+    };
+
+    p.navEvent = function () {
+        var that = this;
+        var navBar = $(&quot;.navbar&quot;);
+        var width = navBar.find(&quot;a&quot;).width();
+        var height = navBar.find(&quot;a&quot;).height();
+        navBar.on(&quot;touchstart&quot;, function (e) {
+            $(this).addClass(&quot;active&quot;);
+            that.createLetterPrompt($(e.target).html());
+        });
+
+        navBar.on(&quot;touchmove&quot;, function (e) {
+            e.preventDefault();
+            var touch = e.originalEvent.touches[0];
+            var pos = {&quot;x&quot;: touch.pageX, &quot;y&quot;: touch.pageY};
+            var x = pos.x, y = pos.y;
+            $(this).find(&quot;a&quot;).each(function (i, item) {
+                var offset = $(item).offset();
+                var left = offset.left, top = offset.top;
+                if (x &gt; left &amp;&amp; x &lt; (left + width) &amp;&amp; y &gt; top &amp;&amp; y &lt; (top + height)) {
+                    location.href = item.href;
+                    that.changeLetter($(item).html());
+                }
+            });
+        });
+
+        navBar.on(&quot;touchend&quot;, function () {
+            $(this).removeClass(&quot;active&quot;);
+            $(&quot;.prompt&quot;).hide();
+        })
+    };
+
+    p.createLetterPrompt = function (letter) {
+        var prompt = $(&quot;.prompt&quot;);
+        if (prompt[0]) {
+            prompt.show();
+        } else {
+            var span = &quot;&lt;span class=&apos;prompt&apos;&gt;&quot; + letter + &quot;&lt;/span&gt;&quot;;
+            $(&quot;.picker-box&quot;).append(span);
+        }
+    };
+
+
+    p.changeLetter = function (letter) {
+        var prompt = $(&quot;.prompt&quot;);
+        prompt.html(letter);
+    };
+
+    $.fn.CityPicker = function (options) {
+        return new CityPicker(this, options);
+    }
+}(window.jQuery, window, document));
+</code></pre><p>代码很简单。这边需要提到的一段代码是：</p>
+<pre><code>navBar.on(&quot;touchmove&quot;, function (e) {
+    e.preventDefault();
+    var touch = e.originalEvent.touches[0];
+    var pos = {&quot;x&quot;: touch.pageX, &quot;y&quot;: touch.pageY};
+    var x = pos.x, y = pos.y;
+    $(this).find(&quot;a&quot;).each(function (i, item) {
+        var offset = $(item).offset();
+        var left = offset.left, top = offset.top;
+        if (x &gt; left &amp;&amp; x &lt; (left + width) &amp;&amp; y &gt; top &amp;&amp; y &lt; (top + height)) {
+            location.href = item.href;
+            that.changeLetter($(item).html());
+        }
+    });
+});
+</code></pre><p>这段是通过字母导航省份的代码。当手指在字母上滑动时，<code>touchmove</code>事件并不能确定当前的字母是哪个，因为<code>e.target</code>永远是<code>touchstart</code>时的那个字母。所以我不得不通过坐标来判断手指位于哪个字母上，这样就导致一个问题，每次滑动都必须遍历26个字母的坐标，这样效率是非常低的，但是目前我也没有好的办法。</p>
+<p>该插件的使用方法非常简单：</p>
+<pre><code>// html代码
+&lt;input type=&quot;text&quot; class=&quot;city&quot; /&gt;
+
+// js代码
+
+$(&quot;.city&quot;).CityPicker();
+</code></pre><p>demo：<a href="https://rawgit.com/lwzhang/cityPicker/master/test.html#H" target="_blank" rel="external">https://rawgit.com/lwzhang/cityPicker/master/test.html</a>。最好用手机浏览器或者chrome模拟器打开。</p>
+<p>如果有需要的朋友，可以从这里<a href="https://github.com/lwzhang/cityPicker" target="_blank" rel="external">https://github.com/lwzhang/cityPicker</a>下载。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e5%9b%be%e7%89%8720150715210812.png" alt=""><br>]]>
+    
+    </summary>
+    
+      <category term="地址选择器" scheme="http://yoursite.com/tags/%E5%9C%B0%E5%9D%80%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+    
+      <category term="城市选择器" scheme="http://yoursite.com/tags/%E5%9F%8E%E5%B8%82%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[css中常用的重置代码]]></title>
+    <link href="http://yoursite.com/2015/07/14/css%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E9%87%8D%E7%BD%AE%E4%BB%A3%E7%A0%81/"/>
+    <id>http://yoursite.com/2015/07/14/css中常用的重置代码/</id>
+    <published>2015-07-14T00:00:00.000Z</published>
+    <updated>2015-12-25T14:04:27.790Z</updated>
+    <content type="html"><![CDATA[<p>在制作页面时，经常会遇到需要自定义一些标签的默认行为(如：input的占位符等)，但这些默认的设置的css一般比较难记住,所以有必要自己做一下记录。下面是我经常用到的一些重设默认行为的css。<br><a id="more"></a></p>
+<h3 id="1_u3001_u5360_u4F4D_u7B26"><a href="#1_u3001_u5360_u4F4D_u7B26" class="headerlink" title="1、占位符"></a>1、占位符</h3><p>在<code>&lt;input&gt;</code>标签中设置<code>placeholder</code>属性时，有时候因为需求，要修改占位符的默认颜色或者字体大小，这是就可以用下面的css:</p>
+<pre><code>// firefox    
+input::-moz-placeholder {
+        color: red;
+        font-size: 18px;
+    }
+
+// IE
+input:-ms-input-placeholder {
+    color: red;
+    font-size: 18px;
+}
+
+// chrome
+input::-webkit-input-placeholder {
+    color: red;
+    font-size: 18px;
+}
+</code></pre><p>需要注意的是不同浏览器写法不同：</p>
+<ol>
+<li>都要加上各自浏览器的前缀(如<code>-webkit-</code>)；</li>
+<li>firefox的<code>placeholder</code>的前面没有<code>input-</code>；</li>
+<li>firefox与chrome都是<code>::</code>两个冒号，而IE则是一个<code>:</code>;</li>
+<li>低版本的浏览器与新版本浏览器可能写法不同；</li>
+</ol>
+<p>###2、下拉框的小三角###</p>
+<p><code>select</code>标签会出现小三角,通常这个小三角我都会去掉，或者用背景图片的方式替换为符合要求的样子。去掉小三角的css：</p>
+<pre><code>-webkit-appearance: none;
+-moz-appearance: none;
+</code></pre><p>在IE浏览器中目前还没找到可以去掉小三角的方法。</p>
+<p>###3、input[type=number]右边的spinners###</p>
+<p><code>nput[type=number]</code>通常用在移动端设备上，浏览器会识别number输入类型，然后改变数字键盘来适应它。但是它会出现spinners，一般不需要它。去掉spinners的css如下：</p>
+<pre><code>// firefox
+input[type=&apos;number&apos;] {
+    -moz-appearance:textfield;
+}
+
+// chrome
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+</code></pre><p>###4、-webkit-tap-highlight-color###</p>
+<p>在移动端浏览器上(如是微信、QQ内置浏览器)，当你点击一个链接或者通过Javascript定义的可点击元素的时候，会出现蓝色边框，我是很讨厌这个边框的，所以一般我会去除：</p>
+<pre><code>-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+</code></pre><p>将高亮色设为透明，这样就看不到蓝色边框了。</p>
+<p>###5、滚动条###</p>
+<p>webkit现在支持拥有overflow属性的区域，列表框，下拉菜单，textarea的滚动条自定义样式。有时候需要把滚动条去掉，特别是页面中出现几条滚动条的时候：</p>
+<pre><code>::-webkit-scrollbar {
+    width: 0;
+}
+</code></pre><p>设置滚动条的宽度为0就可以去除滚动条了。如果需要自定义滚动条样式可以点击<a href="http://www.xuanfengge.com/css3-webkit-scrollbar.html" target="_blank" rel="external">http://www.xuanfengge.com/css3-webkit-scrollbar.html</a>，里面介绍了如何自定义滚动条样式。</p>
+<p>上面记录了我在项目中常用的比较不容易记忆的css代码。如果朋友们也有比较常用的不太容易记住的css代码，欢迎帮忙补充。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在制作页面时，经常会遇到需要自定义一些标签的默认行为(如：input的占位符等)，但这些默认的设置的css一般比较难记住,所以有必要自己做一下记录。下面是我经常用到的一些重设默认行为的css。<br>]]>
+    
+    </summary>
+    
+      <category term="placeholder" scheme="http://yoursite.com/tags/placeholder/"/>
+    
+      <category term="spinners" scheme="http://yoursite.com/tags/spinners/"/>
+    
+      <category term="小三角" scheme="http://yoursite.com/tags/%E5%B0%8F%E4%B8%89%E8%A7%92/"/>
+    
+      <category term="滚动条" scheme="http://yoursite.com/tags/%E6%BB%9A%E5%8A%A8%E6%9D%A1/"/>
+    
+      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JavaScript之函数科里化]]></title>
+    <link href="http://yoursite.com/2015/04/04/JavaScript%E4%B9%8B%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/"/>
+    <id>http://yoursite.com/2015/04/04/JavaScript之函数柯里化/</id>
+    <published>2015-04-04T00:00:00.000Z</published>
+    <updated>2015-12-25T14:05:07.574Z</updated>
+    <content type="html"><![CDATA[<h3 id="u4EC0_u4E48_u662F_u67EF_u91CC_u5316_28currying_29_uFF1F"><a href="#u4EC0_u4E48_u662F_u67EF_u91CC_u5316_28currying_29_uFF1F" class="headerlink" title="什么是柯里化(currying)？"></a>什么是柯里化(currying)？</h3><p>维基百科中的解释是：柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。意思就是当函数被调用时，返回的函数还需要设置一些传入的参数。<br><a id="more"></a><br>首先来看一个简单的例子，有下面一个函数：</p>
+<pre><code>function add(num1, num2) {
+  return num1 + num2;
+}
+</code></pre><p>我们把它改写成下面这样：</p>
+<pre><code>var fn = function(a) {
+  return function (b) {
+    return a + b;
+  }
+}
+</code></pre><p>可以这样调用函数：fn(2)(3)。上面使用了匿名函数来实现多参数函数的方法，虽然这并不是柯里化的函数，但可以帮助我们理解柯里化的含义。</p>
+<p>###实现通用柯里化函数###<br>我们可以在内置构造函数Function()的原型上来添加一个柯里化函数，这样所有的函数都可以调用。下面是通用柯里化函数的实现：</p>
+<pre><code>Function.prototype.currying = function () {
+  var that = this;
+  var args = [].slice.call(arguments);
+  return function () {
+    return that.apply(null, args.concat([].slice.call(arguments)));
+  }
+}
+</code></pre><p>现在用柯里化函数将上面的<code>add</code>函数柯里化：</p>
+<pre><code>var curriedAdd = add.currying(2);
+curriedAdd(3); // 5
+</code></pre><p>也可以一次性传入两个参数：</p>
+<pre><code>var curriedAdd = add.currying(2， 3);
+curriedAdd(); // 5
+</code></pre><p>我们知道在原生对象的原型上扩展方法是不太好的，因为可能会导致命名冲突。所以最好不要把currying函数扩展在Function的原型上，下面是改写的currying函数：</p>
+<pre><code>function currying(fn) {
+  var args = [].slice.call(arguments, 1);
+  return function () {
+    return that.apply(null, args.concat([].slice.call(arguments)));
+  }
+}
+</code></pre><p>改写之后<code>currying</code>函数的第一个参数是要被柯里化的函数，可以这样调用：</p>
+<pre><code>var curriedAdd = currying(add, 2);
+curriedAdd(3); // 5
+或
+var curriedAdd = currying(add, 2， 3);
+curriedAdd(); // 5
+</code></pre><p>上面的<code>add</code>函数只是两个数字的相加，如果我们需要n个数字相加，上面的currying函数已经不能满足要求了，下面是修改后的currying函数：</p>
+<pre><code>function currying(fn) {
+  var argsArr = [];
+  return function () {
+    if (arguments.length === 0) {
+      return fn.apply(null, argsArr);
+    } else {
+      [].push.apply(argsArr, arguments);
+    }
+  }
+}
+</code></pre><p>多个数字相加：</p>
+<pre><code>var add = function () {
+  var num = 0;
+  [].forEach.call(arguments, function (item, i) {
+    num += item;
+  })
+  return num;    
+}
+
+var curriedAdd = currying(add);
+curriedAdd(2);
+curriedAdd(3);
+curriedAdd(4);
+curriedAdd(5);
+curriedAdd();
+</code></pre><p>这样做有什么好处呢？假如说我们只想知道这个月花了多少钱，而中间的某一天之前花了多少我们并不想知道，我们只在乎结果，不在乎过程，上面的currying函数很好地解决了这个问题。有的人说这样做可以节省性能，我倒觉得这和性能没多大关系，或者说这样做的目的并不是为了性能，因为每次计算结果和最后一起计算结果是一样的，都是要计算一样的次数。还有一个好处就是可以复用currying函数，比如我们要多个数字相乘或者其他操作，都可以用currying函数，处理数字只需修改<code>fn</code>参数就可以。</p>
+<p>说到柯里化就不得不说<code>Function.prototype.bind</code>这个方法了，它也实现了函数的柯里化。我们可以自己来实现一个<code>bind</code>函数：</p>
+<pre><code>function bind（fn, context） {
+  var args = [].slice.call(arguments, 2);
+  return function () {
+    return fn.apply(context, args.concat([].slice.call(arguments)));
+  }
+}
+</code></pre><p>假如我们需要改变fn中的this上下文，就可以用bind函数，否则可以用currying函数。    </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="u4EC0_u4E48_u662F_u67EF_u91CC_u5316_28currying_29_uFF1F"><a href="#u4EC0_u4E48_u662F_u67EF_u91CC_u5316_28currying_29_uFF1F" class="headerlink" title="什么是柯里化(currying)？"></a>什么是柯里化(currying)？</h3><p>维基百科中的解释是：柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。意思就是当函数被调用时，返回的函数还需要设置一些传入的参数。<br>]]>
+    
+    </summary>
+    
+      <category term="curry" scheme="http://yoursite.com/tags/curry/"/>
+    
+      <category term="currying" scheme="http://yoursite.com/tags/currying/"/>
+    
+      <category term="科里化" scheme="http://yoursite.com/tags/%E7%A7%91%E9%87%8C%E5%8C%96/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CSS3实现图片渐入效果]]></title>
+    <link href="http://yoursite.com/2015/03/07/CSS3%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%B8%90%E5%85%A5%E6%95%88%E6%9E%9C/"/>
+    <id>http://yoursite.com/2015/03/07/CSS3实现图片渐入效果/</id>
+    <published>2015-03-07T00:00:00.000Z</published>
+    <updated>2015-12-25T14:04:17.307Z</updated>
+    <content type="html"><![CDATA[<p>很多网站都有那种图片渐入的效果，如：<a href="http://www.mi.com/minote/" target="_blank" rel="external">http://www.mi.com/minote/</a>，这种效果用css3和一些js实现起来特别简单。<br><a id="more"></a><br>拿我之前做的页面来说一下怎么利用css3来实现图片渐入效果。</p>
+<p>下面是页面中的一段html：</p>
+<pre><code>&lt;div class=&quot;features&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;inner feature&quot;&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;h2 class=&quot;title&quot;&gt;&lt;img src=&quot;./imgs/title1.png&quot; alt=&quot;&quot;/&gt;&lt;/h2&gt;
+                &lt;p class=&quot;text&quot;&gt;256位SSL加密安全连接，手机短信验证、谷歌两步验证、资金密码、邮箱验证四重验证保障安全，钱包分布式离线冷存储&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;img class=&quot;icon&quot; src=&quot;./imgs/feature-icon1.png&quot; alt=&quot;&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;container middle&quot;&gt;
+        &lt;div class=&quot;inner feature&quot;&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;h2 class=&quot;title&quot;&gt;&lt;img src=&quot;./imgs/title1.png&quot; alt=&quot;&quot;/&gt;&lt;/h2&gt;
+                &lt;p class=&quot;text&quot;&gt;256位SSL加密安全连接，手机短信验证、谷歌两步验证、资金密码、邮箱验证四重验证保障安全，钱包分布式离线冷存储&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;img class=&quot;icon&quot; src=&quot;./imgs/feature-icon2.png&quot; alt=&quot;&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;inner feature&quot;&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;h2 class=&quot;title&quot;&gt;&lt;img src=&quot;./imgs/title1.png&quot; alt=&quot;&quot;/&gt;&lt;/h2&gt;
+                &lt;p class=&quot;text&quot;&gt;256位SSL加密安全连接，手机短信验证、谷歌两步验证、资金密码、邮箱验证四重验证保障安全，钱包分布式离线冷存储&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;img class=&quot;icon&quot; src=&quot;./imgs/feature-icon3.png&quot; alt=&quot;&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>首先，需要先定位图片，把图片定位在渐入后最终停留的位置：</p>
+<pre><code>.feature .icon {
+    position: absolute;
+    top: 100px;
+}
+</code></pre><p>接着，利用css3的transform属性和translate()方法实现图片的偏移，还有就是将图片透明度设为0(即完全透明)：</p>
+<pre><code>.feature .icon {
+    position: absolute;
+    top: 100px;
+    transform: translate3d(0, 0, 150px);
+    -ms-transform: translate3d(0, 150px, 0);
+    -webkit-transform: translate3d(0, 150px, 0);
+    -o-transform: translate3d(0, 150px, 0);
+    -moz-transform: translate3d(0, 150px, 0);
+    opacity: 0;
+}
+</code></pre><p>这边需要加上各浏览器的前缀来兼容一些低版本浏览器。这些属性和方法的具体用法这边就细讲了。</p>
+<p>然后，要用到的是css3的transition属性：</p>
+<pre><code>.feature .icon {
+    position: absolute;
+    top: 100px;
+    transform: translate3d(0, 0, 150px);
+    -ms-transform: translate3d(0, 150px, 0);
+    -webkit-transform: translate3d(0, 150px, 0);
+    -o-transform: translate3d(0, 150px, 0);
+    -moz-transform: translate3d(0, 150px, 0);
+    opacity: 0;
+    transition: transform 1s ease 0s, opacity 1s ease 0s;
+    -moz-transition: -moz-transform 1s ease 0s, opacity 1s ease 0s;
+    -webkit-transition: -webkit-transform 1s ease 0s, opacity 1s ease 0s;
+    -o-transition: -o-transform 1s ease 0s, opacity 1s ease 0s;
+    -ms-transition: -ms-transform 1s ease 0s, opacity 1s ease 0s;
+}
+</code></pre><p>transition属性是一个过渡属性，当元素从一种样式变换为另一种样式时为元素添加效果。</p>
+<p>到这还没有效果。我们要达到的效果是：当网页往下滚动，图片出现或将要出现在视窗时，我们来触发这个过渡效果，就像大家看到的下面这张图片一样。这个做法就像图片的惰性加载，图片还没出现在视窗中时，先不加载，出现时再去加载图片，这样的效果就是用户访问页面的速度提升了。</p>
+<div style="width: 400px; height: 400px; position: relative"><br>   <img class="transImg" style="width: 400px; height: 400px; position: absolute; top: 0; transform: translate3d(0, 150px, 0);-ms-transform: translate3d(0, 150px, 0); -webkit-transform: translate3d(0, 150px, 0); -o-transform: translate3d(0, 150px, 0); -moz-transform: translate3d(0, 150px, 0); opacity: 0; transition: transform 1s ease 0s, opacity 1s ease 0s; -moz-transition: -moz-transform 1s ease 0s, opacity 1s ease 0s; -webkit-transition: -webkit-transform 1s ease 0s, opacity 1s ease 0s; -o-transition: -o-transform 1s ease 0s, opacity 1s ease 0s; -ms-transition: -ms-transform 1s ease 0s, opacity 1s ease 0s;" src="http://images.cnblogs.com/cnblogs_com/xljzlw/574255/o_300001295750131174054755371_950.jpg"><br>    <script><br>        (function (win) {<br>            $(function(){<br>                $(win).scroll(function() {<br>                    var windowPageYOffset = window.pageYOffset,<br>                    windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;<br><br>                    var imgOffsetTop = $(“.transImg”).offset().top;<br>                    if (imgOffsetTop &gt;= windowPageYOffset &amp;&amp; imgOffsetTop &lt; windowPageYOffsetAddHeight) {<br>                        $(“.transImg”).css({<br>                            “transform”: “translate3d(0, 0, 0)”,<br>                            “-ms-transform”: “translate3d(0, 0, 0)”,<br>                            “-o-transform”: “translate3d(0, 0, 0)”,<br>                            “-webkit-transform”: “translate3d(0, 0, 0)”,<br>                            “-moz-transform”: “translate3d(0, 0, 0)”,<br>                            “opacity”: 1<br>                        });<br>                    }<br>                })<br>            })<br>        }(window))<br>    </script><br></div>
+
+<p>当页面往下滚动时，用js判断图片在什么时候触发动画：</p>
+<pre><code>(function (win) {
+    $(function(){
+        $(win).scroll(function() {
+            // 浏览器窗口的高度 
+            var windowPageYOffset = win.pageYOffset;
+            // 浏览器窗口的高度 + 页面滚动的距离    
+            var windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;
+            // 该值越小，越早触发效果，自己随便设置
+            var sensitivity = 0;
+
+            var imgOffsetTop = $(&quot;.transImg&quot;).offset().top;
+            if (imgOffsetTop &gt;= windowPageYOffset &amp;&amp; imgOffsetTop &lt; windowPageYOffsetAddHeight + sensitivity) {
+                // 达到一定位置，触发效果，透明度变为1
+                $(&quot;.transImg&quot;).css({
+                    &quot;transform&quot;: &quot;translate3d(0, 0, 0)&quot;,
+                    &quot;-ms-transform&quot;: &quot;translate3d(0, 0, 0)&quot;,
+                    &quot;-o-transform&quot;: &quot;translate3d(0, 0, 0)&quot;,
+                    &quot;-webkit-transform&quot;: &quot;translate3d(0, 0, 0)&quot;,
+                    &quot;-moz-transform&quot;: &quot;translate3d(0, 0, 0)&quot;,
+                    &quot;opacity&quot;: 1
+                });
+            }
+        })
+    })
+}(window))
+</code></pre><p>完整代码可以查看：<a href="https://github.com/lwzhang/practice/tree/gh-pages/biteduo" target="_blank" rel="external">https://github.com/lwzhang/practice/tree/gh-pages/biteduo</a></p>
+<p>DEMO：<a href="https://lwzhang.github.io/practice/biteduo/index.html" target="_blank" rel="external">https://lwzhang.github.io/practice/biteduo/index.html</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>很多网站都有那种图片渐入的效果，如：<a href="http://www.mi.com/minote/">http://www.mi.com/minote/</a>，这种效果用css3和一些js实现起来特别简单。<br>]]>
+    
+    </summary>
+    
+      <category term="transform" scheme="http://yoursite.com/tags/transform/"/>
+    
+      <category term="transition" scheme="http://yoursite.com/tags/transition/"/>
+    
+      <category term="图片渐入效果" scheme="http://yoursite.com/tags/%E5%9B%BE%E7%89%87%E6%B8%90%E5%85%A5%E6%95%88%E6%9E%9C/"/>
+    
+      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[《数据结构与算法JavaScript描述》中的一处错误]]></title>
+    <link href="http://yoursite.com/2015/03/04/%E3%80%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95JavaScript%E6%8F%8F%E8%BF%B0%E3%80%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E5%A4%84%E9%94%99%E8%AF%AF/"/>
+    <id>http://yoursite.com/2015/03/04/《数据结构与算法JavaScript描述》中的一处错误/</id>
+    <published>2015-03-04T00:00:00.000Z</published>
+    <updated>2015-12-25T14:05:32.026Z</updated>
+    <content type="html"><![CDATA[<p>最近在看《数据结构与算法JavaScript描述》这本书，看到选择排序这部分时，发现一个比较大的错误。<br><a id="more"></a><br>原书的选择排序算法是这样的：</p>
+<pre><code>function selectionSort() {
+    var min, temp;
+    for (var outer = 0; outer &lt;= this.dataStore.length - 2; ++outer) {
+        min = outer;
+        for (var inner = outer + 1; inner &lt;= this.dataStore.length - 1; ++inner) {
+            if (this.dataStore[inner] &lt; this.dataStore[min]) {
+                min = inner;
+            }
+            swap(this.dataStore, outer, min);
+        }    
+    }
+}
+</code></pre><p>错误在于，它把swap函数放在了内循环里面了，其实swap函数应该放在内循环外面，原理就不多说了，书上都有：</p>
+<pre><code>function selectionSort() {
+    var min, temp;
+    for (var outer = 0; outer &lt;= this.dataStore.length - 2; ++outer) {
+        min = outer;
+        for (var inner = outer + 1; inner &lt;= this.dataStore.length - 1; ++inner) {
+            if (this.dataStore[inner] &lt; this.dataStore[min]) {
+                min = inner;
+            }
+        }    
+        swap(this.dataStore, outer, min);
+    }
+}
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近在看《数据结构与算法JavaScript描述》这本书，看到选择排序这部分时，发现一个比较大的错误。<br>]]>
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HTML5实现刮奖效果]]></title>
+    <link href="http://yoursite.com/2015/01/21/HTML5%E5%AE%9E%E7%8E%B0%E5%88%AE%E5%A5%96%E6%95%88%E6%9E%9C/"/>
+    <id>http://yoursite.com/2015/01/21/HTML5实现刮奖效果/</id>
+    <published>2015-01-21T00:00:00.000Z</published>
+    <updated>2015-12-25T14:01:41.671Z</updated>
+    <content type="html"><![CDATA[<p>要实现刮奖效果，最重要的是要找到一种方法：当刮开上层的涂层是就能看到下层的结果。而HTML5的canvas API中有一个属性globalCompositeOperation，这个属性有多个值，而实现刮奖效果要用到的值就是destination-out。意思就是：在已有内容和新图形不重叠的地方，已有内容保留，所有其他内容成为透明。这样可能不好理解，后面实现的时候会解释。有了globalCompositeOperation这个属性，实现过程就很简单了。<br><a id="more"></a><br>我们需要有两个层，上面一层肯定是一个canvas元素，因为要能刮开就要用到画布。下面一层其实用什么元素都可以，既然上层用的是canvas元素，下层我们也用canvas元素，下面是html内容：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;刮刮乐&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;canvas id=&quot;underCanvas&quot; width=300 height=300 style=&quot;position: absolute; left: 0;top: 0;&quot;&gt;&lt;/canvas&gt;
+    &lt;canvas id=&quot;upCanvas&quot; width=300 height=300 style=&quot;position: absolute; left: 0; top: 0;&quot;&gt;&lt;/canvas&gt;
+    &lt;script src=&quot;./scratch.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // 可能变化的值放在options中，方便修改
+        var options = {
+            text: {
+                fontWeight: &quot;bold&quot;,
+                fontSize: 30,
+                fontFamily: &quot;Arial&quot;,
+                align: &quot;center&quot;,
+                color: &apos;#F60&apos;
+            },
+            maskColor: &quot;red&quot;,
+            radius: 30,
+            awards: [&quot;一等奖&quot;, &quot;二等奖&quot;, &quot;三等奖&quot;, &quot;谢谢！&quot;]
+        };
+
+        new Scratch(options).init();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>先实现一个构造函数：</p>
+<pre><code>var Scratch = function (options) {
+    // 下层画布元素
+    this.underCanvas = doc.getElementById(&quot;underCanvas&quot;);
+    // 上层画布元素
+    this.upCanvas = doc.getElementById(&quot;upCanvas&quot;);
+    // 获取下层画布绘图上下文
+    this.underCtx = this.underCanvas.getContext(&quot;2d&quot;);
+    // 获取上层画布绘图上下文
+    this.upCtx = this.upCanvas.getContext(&quot;2d&quot;);
+       // 画布宽度
+    this.width = this.upCanvas.width;
+    // 画布高度
+    this.height = this.upCanvas.height;
+    // 自定义选项
+    this.options = options;
+    this.award = null;
+};
+</code></pre><p>在下层画布上画上刮奖的内容：</p>
+<pre><code>drawText: function () {
+    var ctx = this.underCtx;
+    var text = this.options.text;
+    ctx.font = text.fontWeight + &quot; &quot; + text.fontSize + &apos;px &apos; + text.fontFamily;
+    ctx.textAlign = text.align;
+    ctx.fillStyle = text.color;
+    this.award = this.options.awards[(Math.random() * this.options.awards.length) | 0]; //随机抽奖
+    ctx.fillText(this.award, this.width / 2, this.height / 2 + text.fontSize / 2);
+}
+</code></pre><p>这边奖的内容是随机出现的，因为奖肯定有很多种，可以用一个数组来存放奖的内容，然后随机显示：</p>
+<pre><code>this.award = this.options.awards[(Math.random() * this.options.awards.length) | 0];
+</code></pre><p>如果不知道上面的位运算是什么意思，可以参考我写的上一篇文章<a href="http://www.cnblogs.com/xljzlw/p/4231354.html" target="_blank" rel="external">“js中位运算的运用”</a>。</p>
+<p>然后在上层画布中画一层涂层：</p>
+<pre><code>drawMask: function () {
+    var ctx = this.upCtx;
+    ctx.fillStyle = this.options.maskColor;
+    ctx.fillRect(0, 0, this.width, this.height);
+    ctx.globalCompositeOperation = &apos;destination-out&apos;;
+}
+</code></pre><p>在上层画布中用了globalCompositeOperation这个属性，当再在画布上画东西时，那么后面画的内容和涂层重合的部分将变透明，而其余涂层部分不变。就是利用了这个原理实现了刮奖效果。</p>
+<p>需要刮开上层的涂层，就需要在上层画布上绑定事件：</p>
+<pre><code>addEvent: function () {
+    var that = this;
+    var upCanvas = this.upCanvas;
+    var callback1, callback2, callback3;
+    upCanvas.addEventListener(&quot;mousedown&quot;, callback1 = function (evt) {
+        upCanvas.addEventListener(&quot;mousemove&quot;, callback2 = function (evt) {
+            var x = evt.clientX - upCanvas.offsetLeft;
+            var y = evt.clientY - upCanvas.offsetTop;
+            var ctx = that.upCtx;
+            var options = that.options;
+            ctx.beginPath();
+            var gradient = ctx.createRadialGradient(x, y, 0, x, y, options.radius);
+            // 其实这边的颜色值是可以随便写的，因为都会变成透明，重要的是透明度
+            gradient.addColorStop(0, &quot;rgba(255, 255, 255, 0.5)&quot;);
+            gradient.addColorStop(1, &quot;rgba(255, 255, 255, 0)&quot;);
+            // 也可以不用渐变，直接用一种颜色，但渐变效果更好
+            ctx.fillStyle = gradient;
+            ctx.arc(x, y, options.radius, 0, Math.PI * 2, true);
+            ctx.fill();
+            ctx.closePath();
+            // 当刮开部分&gt;80%的时候提醒刮奖结果，这个可以自己设置
+            if (that.result() &gt; 0.8) {
+                alert(that.award);
+                upCanvas.removeEventListener(&quot;mousemove&quot;, callback2);
+            }
+        }, false);
+        doc.addEventListener(&quot;mouseup&quot;, callback3 = function () {
+            upCanvas.removeEventListener(&quot;mousemove&quot;, callback2);
+            doc.removeEventListener(&quot;mouseup&quot;, callback3);
+        }, false);
+    }, false);
+}
+</code></pre><p>我们需要在刮到一定程度时提醒刮奖的结果：</p>
+<pre><code>result: function () {
+    // 获取文字部分的宽、高
+    var textWidth = this.options.text.fontSize * this.award.length;
+    var textHeight = this.options.text.fontSize;
+    // 获取文字部分的像素，这样可以根据刮开文字的部分占全部文字部分的百分比来提示结果，比如说在刮开80%的时候提示刮奖结果
+    var imgData = this.upCtx.getImageData(this.width / 2 - textWidth / 2, this.height / 2 - textHeight / 2, textWidth, textHeight);
+    var pixelsArr = imgData.data;
+    var transPixelsArr = [];
+    for (var i = 0, j = pixelsArr.length; i &lt; j; i += 4) {
+        // a代表透明度
+        var a = pixelsArr[i + 3];
+        // 渐变的透明度＜=0.5，其实透明度的值是介于0~255之间的，0.5 * 255 = 127.5就是a的值
+        if (a &lt; 128) {
+            transPixelsArr.push(a);
+        }
+    }
+    // 小于128的透明度的值的个数占总透明度的的个数的百分比
+    return transPixelsArr.length / (pixelsArr.length / 4);
+}
+</code></pre><p>上面用到了getImageData()方法，这个方法返回像素数据。重要的是我们只是获取了下层文字部分的像素数据，因为我们只需要知道刮开的文字部分占全部文字部分的百分比。</p>
+<p>调用构造函数时，把可能改变的东西放在一个对象options中传递给构造函数：</p>
+<pre><code>// 可能变化的值放在options中，方便修改
+var options = {
+    // 文字部分的样式
+    text: {
+        fontWeight: &quot;bold&quot;,
+        fontSize: 30,
+        fontFamily: &quot;Arial&quot;,
+        align: &quot;center&quot;,
+        color: &apos;#F60&apos;
+    },
+    // 图层颜色
+    maskColor: &quot;red&quot;,
+    // 画逼半径
+    radius: 20,
+    // 奖项
+    awards: [&quot;一等奖&quot;, &quot;二等奖&quot;, &quot;三等奖&quot;, &quot;谢谢！&quot;]
+};
+
+new Scratch(options).init();
+</code></pre><p>完整代码可以查看Github：<a href="https://github.com/lwzhang/scratch" target="_blank" rel="external">https://github.com/lwzhang/scratch</a></p>
+<p>DEMO：<a href="http://lwzhang.github.io/scratch/scratch.html" target="_blank" rel="external">http://lwzhang.github.io/scratch/scratch.html</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>要实现刮奖效果，最重要的是要找到一种方法：当刮开上层的涂层是就能看到下层的结果。而HTML5的canvas API中有一个属性globalCompositeOperation，这个属性有多个值，而实现刮奖效果要用到的值就是destination-out。意思就是：在已有内容和新图形不重叠的地方，已有内容保留，所有其他内容成为透明。这样可能不好理解，后面实现的时候会解释。有了globalCompositeOperation这个属性，实现过程就很简单了。<br>]]>
+    
+    </summary>
+    
+      <category term="HTML5" scheme="http://yoursite.com/tags/HTML5/"/>
+    
+      <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
+    
+      <category term="刮奖效果" scheme="http://yoursite.com/tags/%E5%88%AE%E5%A5%96%E6%95%88%E6%9E%9C/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+    
+  </entry>
+  
+</feed>
