@@ -12,9 +12,9 @@
 <meta property="og:url" content="http://yoursite.com/2015/08/30/Sass与Compass合并雪碧图(二)/index.html">
 <meta property="og:site_name" content="zlw's Blog">
 <meta property="og:description" content="上一篇文章介绍了怎样使用compass合并雪碧图，生成的icons.css文件中单位是px，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用px单位肯定是不行的。所以需要做一下单位转换的工作。">
-<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131155.png">
-<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131942.png">
-<meta property="og:updated_time" content="2015-12-27T06:26:28.101Z">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/o_20150830131155.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/o_20150830131942.png">
+<meta property="og:updated_time" content="2015-12-27T09:42:41.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sass与Compass合并雪碧图(二)">
 <meta name="twitter:description" content="上一篇文章介绍了怎样使用compass合并雪碧图，生成的icons.css文件中单位是px，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用px单位肯定是不行的。所以需要做一下单位转换的工作。">
@@ -292,14 +292,14 @@
     background-image: sprite-url($icons);
     background-position: px2rem(sprite-position($icons, car-icon));
 }
-</code></pre><p>但是，编译的时候出错了，错误如下：<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131155.png" alt="">    </p>
+</code></pre><p>但是，编译的时候出错了，错误如下：<br><img src="/assets/blogImg/o_20150830131155.png" alt=""></p>
 <p>意思就是：<code>background-position</code>的值为<code>-250px 0</code>，并不能简单的使用<code>px2rem</code>函数，那该怎么办？我们先来判断一下传递给函数的参数的类型：</p>
 <pre><code>@function px2rem ($px) {
     @warn type-of($px);
     @return $px / 64px * 1rem;
 }
 </code></pre><p>再次编译(可以使用<code>compass watch</code>进行监听文件的修改)，命令行提示如下图:</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131942.png" alt=""></p>
+<p><img src="/assets/blogImg/o_20150830131942.png" alt=""></p>
 <p>从图中可以知道：<code>$width</code>、<code>$height</code>的类型是<code>number</code>,而<code>$pos</code>类型是<code>list</code>。知道了什么类型就可以对症下药了，修改函数如下：</p>
 <pre><code>@function px2rem ($px) {
     @if (type-of($px) == &quot;number&quot;) {

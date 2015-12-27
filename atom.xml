@@ -92,7 +92,7 @@ babel es6.js --out-file es5.js
     <link href="http://yoursite.com/2015/11/14/css3%20transform%E5%B1%9E%E6%80%A7%E5%A4%9A%E4%B8%AA%E5%80%BC%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2015/11/14/css3 transform属性多个值的顺序问题/</id>
     <published>2015-11-14T00:00:00.000Z</published>
-    <updated>2015-12-27T06:25:15.690Z</updated>
+    <updated>2015-12-27T09:43:33.659Z</updated>
     <content type="html"><![CDATA[<p>对于<code>transform</code>属性的多值的顺序问题，我自己就被困扰过。后来知道了跟顺序有关，但是不知道为什么。我想应该很多人跟我以前一样，知其然不知其所以然。如果不知道的，也许这篇文章会对大家有所帮助。<br><a id="more"></a></p>
 <p>先来看一个例子。</p>
 <p><code>html</code>代码:</p>
@@ -113,10 +113,10 @@ div {
 #red2 {
     transform: rotate(45deg) translate(100px, 100px);
 }
-</code></pre><p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e6%88%aa%e5%9b%be20151115170222.png" alt=""></p>
+</code></pre><p><img src="/assets/blogImg/o_QQ%e6%88%aa%e5%9b%be20151115170222.png" alt=""></p>
 <p>红框一<code>transform</code>属性只有一个值<code>rotate(45deg)</code>，红框二多了一个值<code>translate(100px, 100px)</code>，水平和竖直都平移<code>100px</code>，但是从图中可以看到红框2只有竖直方向有位移。这是怎么回事？</p>
 <p>其实，当旋转<code>45</code>度后，元素的整个坐标系都旋转了<code>45</code>度，如下图：</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e6%88%aa%e5%9b%be20151115171530.png" alt=""></p>
+<p><img src="/assets/blogImg/o_QQ%e6%88%aa%e5%9b%be20151115171530.png" alt=""></p>
 <p>图1就是正常的坐标系，图2就是旋转<code>45</code>度后的坐标系。所以红框二就按旋转后的坐标系进行平移。因为我设置的值比较特殊，所以只有在竖直方向有位移。通过计算红框二竖直向下平移了<code>100√2px</code>，也就是红框对角线的长度。</p>
 <p>我们再来看一个例子。</p>
 <p><code>html</code>代码:</p>
@@ -141,7 +141,7 @@ div {
     background:green;
     transform: translate(100px, 100px) rotate(45deg);
 }
-</code></pre><p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e6%88%aa%e5%9b%be20151115173609.png" alt=""></p>
+</code></pre><p><img src="/assets/blogImg/o_QQ%e6%88%aa%e5%9b%be20151115173609.png" alt=""></p>
 <p>图中可以看到，值的顺序对元素位置的影响。通过上面的介绍知道，红框先旋转再平移，即先旋转坐标系再平移，而绿框先按正常的坐标系平移，再旋转，所以它们的位置就不同了。</p>
 <p>我们可以举一反三，比如<code>3d</code>旋转等都可以按上面的方法去分析。</p>
 <p>(完)</p>
@@ -164,7 +164,7 @@ div {
     <link href="http://yoursite.com/2015/11/13/%E5%85%83%E7%B4%A0rotate%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%AE%BD%E5%BA%A6%E8%AF%A5%E6%80%8E%E4%B9%88%E8%AE%A1%E7%AE%97%EF%BC%9F/"/>
     <id>http://yoursite.com/2015/11/13/元素rotate之后，宽度该怎么计算？/</id>
     <published>2015-11-13T00:00:00.000Z</published>
-    <updated>2015-12-27T06:26:44.791Z</updated>
+    <updated>2015-12-27T09:42:21.789Z</updated>
     <content type="html"><![CDATA[<p>通常，利用<code>transform: rotate()</code>元素之后，我们并不会去在意元素大小的变化，因为看上去并没有什么变化。虽然看上去没有变化，其实是有变化的。下面用一个例子来说明一下。<br><a id="more"></a></p>
 <p><code>html</code>：</p>
 <pre><code>&lt;div id=&quot;rect&quot;&gt;&lt;/div&gt;
@@ -177,8 +177,8 @@ div {
     transform: rotate(45deg);
 }
 </code></pre><p>效果如下：</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e5%9b%be%e7%89%8720151113214149.png" alt=""></p>
-<p>图中四边形的宽高都是<code>100px</code>，然后旋转了<code>45</code>度，当用浏览器查看它的宽高时就变成了<code>141.421px</code>。浏览器是怎么计算的呢？简单画了一个草图。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e6%88%aa%e5%9b%be20151113215400.png" alt=""></p>
+<p><img src="/assets/blogImg/o_QQ%e5%9b%be%e7%89%8720151113214149.png" alt=""></p>
+<p>图中四边形的宽高都是<code>100px</code>，然后旋转了<code>45</code>度，当用浏览器查看它的宽高时就变成了<code>141.421px</code>。浏览器是怎么计算的呢？简单画了一个草图。<br><img src="/assets/blogImg/o_QQ%e6%88%aa%e5%9b%be20151113215400.png" alt=""></p>
 <p>旋转之后，元素的大小其实就变成了红色框的大小，很容易可以计算得到红色框的宽高为<code>141.421px</code>。</p>
 <p><strong>注意：当你用js获取元素的宽度时，返回的还是<code>100px</code>，因为css设置的宽度是<code>100px</code>，js获取的是css的值。</strong></p>
 <p>旋转之后的元素，不仅大小变化了，元素的位置也变了：</p>
@@ -207,7 +207,7 @@ div {
     <link href="http://yoursite.com/2015/08/30/Sass%E4%B8%8ECompass%E5%90%88%E5%B9%B6%E9%9B%AA%E7%A2%A7%E5%9B%BE(%E4%BA%8C)/"/>
     <id>http://yoursite.com/2015/08/30/Sass与Compass合并雪碧图(二)/</id>
     <published>2015-08-30T00:00:00.000Z</published>
-    <updated>2015-12-27T06:26:28.101Z</updated>
+    <updated>2015-12-27T09:42:41.759Z</updated>
     <content type="html"><![CDATA[<p>上一篇文章介绍了怎样使用<code>compass</code>合并雪碧图，生成的<code>icons.css</code>文件中单位是<code>px</code>，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用<code>px</code>单位肯定是不行的。所以需要做一下单位转换的工作。<br><a id="more"></a><br>移动端使用<code>rem</code>作为单位是最合适不过了。并不是使用了<code>rem</code>就可以，还需要做一些准备工作。我们都知道<code>rem</code>是基于<code>html</code>标签的<code>font-size</code>的，所以需要使用js动态的计算<code>html</code>的<code>font-size</code>。这里我使用淘宝的<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external"><code>lib-flexible</code></a>。</p>
 <p>在上一篇文章中，有讲过雪碧地图（Sprite maps），如下面：</p>
 <pre><code>$icons: sprite-map(&quot;icons/*.png&quot;, $spacing: 8px, $layout: smart);
@@ -260,14 +260,14 @@ div {
     background-image: sprite-url($icons);
     background-position: px2rem(sprite-position($icons, car-icon));
 }
-</code></pre><p>但是，编译的时候出错了，错误如下：<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131155.png" alt="">    </p>
+</code></pre><p>但是，编译的时候出错了，错误如下：<br><img src="/assets/blogImg/o_20150830131155.png" alt=""></p>
 <p>意思就是：<code>background-position</code>的值为<code>-250px 0</code>，并不能简单的使用<code>px2rem</code>函数，那该怎么办？我们先来判断一下传递给函数的参数的类型：</p>
 <pre><code>@function px2rem ($px) {
     @warn type-of($px);
     @return $px / 64px * 1rem;
 }
 </code></pre><p>再次编译(可以使用<code>compass watch</code>进行监听文件的修改)，命令行提示如下图:</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_20150830131942.png" alt=""></p>
+<p><img src="/assets/blogImg/o_20150830131942.png" alt=""></p>
 <p>从图中可以知道：<code>$width</code>、<code>$height</code>的类型是<code>number</code>,而<code>$pos</code>类型是<code>list</code>。知道了什么类型就可以对症下药了，修改函数如下：</p>
 <pre><code>@function px2rem ($px) {
     @if (type-of($px) == &quot;number&quot;) {
@@ -492,7 +492,7 @@ $bigHeight: 270px;
     <link href="http://yoursite.com/2015/08/29/Sass%E4%B8%8ECompass%E5%90%88%E5%B9%B6%E9%9B%AA%E7%A2%A7%E5%9B%BE(%E4%B8%80)/"/>
     <id>http://yoursite.com/2015/08/29/Sass与Compass合并雪碧图(一)/</id>
     <published>2015-08-29T00:00:00.000Z</published>
-    <updated>2015-12-27T06:26:18.133Z</updated>
+    <updated>2015-12-27T09:46:10.964Z</updated>
     <content type="html"><![CDATA[<p>雪碧图就是很多张小图片合并成一张大图片，以减少HTTP请求，从而提升加载速度。有很多软件可以合并雪碧图，但通常不太容易维护，使用compass生成雪碧图应该算是非常方便的方法了，可以轻松的生成雪碧图，而且易维护。<br><a id="more"></a></p>
 <h2 id="u5B89_u88C5sass_u4E0Ecompass"><a href="#u5B89_u88C5sass_u4E0Ecompass" class="headerlink" title="安装sass与compass"></a>安装sass与compass</h2><p>安装sass可以参考<a href="http://www.w3cplus.com/sassguide/install.html" target="_blank" rel="external">这里</a>。</p>
 <p>安装完sass以后，使用下面命令安装compass:</p>
@@ -586,7 +586,7 @@ sprite-position($icons, $name); //获取图片坐标
 <pre><code>$icons-layout: &quot;vertical&quot;;
 </code></pre><p>其他方式用法一样。</p>
 <p>下面是四种布局生成的图片：</p>
-<div style="text-align:center"><br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_icons-s22b9e851cd.png"><br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_icons-s37f950be3b.png"><br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_icons-s4d555ef71f.png"><br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_icons-sdd4c0db747.png"><br></div>
+<div style="text-align:center"><br><img src="/assets/blogImg/o_icons-s22b9e851cd.png"><br><img src="/assets/blogImg/o_icons-s37f950be3b.png"><br><img src="/assets/blogImg/o_icons-s4d555ef71f.png"><br><img src="/assets/blogImg/o_icons-sdd4c0db747.png"><br></div>
 
 
 <h2 id="u8BBE_u7F6E_u95F4_u8DDD"><a href="#u8BBE_u7F6E_u95F4_u8DDD" class="headerlink" title="设置间距"></a>设置间距</h2><p>通常，我们会在图片与图片之间设置一定的间距，添加一下代码：</p>
@@ -620,8 +620,8 @@ sprite-position($icons, $name); //获取图片坐标
     <link href="http://yoursite.com/2015/08/23/Flexbox%20+%20js%E5%AE%9E%E7%8E%B0%E6%BB%91%E5%8A%A8%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/"/>
     <id>http://yoursite.com/2015/08/23/Flexbox + js实现滑动拼图游戏/</id>
     <published>2015-08-23T00:00:00.000Z</published>
-    <updated>2015-12-27T06:25:51.401Z</updated>
-    <content type="html"><![CDATA[<p>滑动拼图就是把一张图片分成几等份，打乱顺序（下图），然后通过滑动拼凑成一张完整的图片。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_pintu.png" alt=""><br><a id="more"></a><br>要实现一个拼图游戏，需要考虑怎样随机的打乱顺序，怎样交换两张图片的位置，等等。但是，使用了Flexbox布局以后，这都不需要你去考虑，浏览器会帮你做，Flexbox就是这么的强大。关于Flexbox的介绍可以点击<a href="http://www.w3cplus.com/css3/a-guide-to-flexbox-new.html" target="_blank" rel="external">这里</a>。</p>
+    <updated>2015-12-27T09:42:52.491Z</updated>
+    <content type="html"><![CDATA[<p>滑动拼图就是把一张图片分成几等份，打乱顺序（下图），然后通过滑动拼凑成一张完整的图片。<br><img src="/assets/blogImg/o_pintu.png" alt=""><br><a id="more"></a><br>要实现一个拼图游戏，需要考虑怎样随机的打乱顺序，怎样交换两张图片的位置，等等。但是，使用了Flexbox布局以后，这都不需要你去考虑，浏览器会帮你做，Flexbox就是这么的强大。关于Flexbox的介绍可以点击<a href="http://www.w3cplus.com/css3/a-guide-to-flexbox-new.html" target="_blank" rel="external">这里</a>。</p>
 <p>这个游戏中要用的是Flexbox布局的<code>order</code>属性，<code>order</code>属性可以用来控制Flex项目的顺序。</p>
 <p>这里我用九个<code>canvas</code>元素来把图片分成九等分，也可以用其他方法，比如背景图片定位：</p>
 <pre><code>&lt;div class=&quot;wrap&quot;&gt;
@@ -670,7 +670,7 @@ var order2 = target.style.order;
 <p>代码中只实现了基本功能，并没有实现完整功能。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>滑动拼图就是把一张图片分成几等份，打乱顺序（下图），然后通过滑动拼凑成一张完整的图片。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_pintu.png" alt=""><br>]]>
+    <![CDATA[<p>滑动拼图就是把一张图片分成几等份，打乱顺序（下图），然后通过滑动拼凑成一张完整的图片。<br><img src="/assets/blogImg/o_pintu.png" alt=""><br>]]>
     
     </summary>
     
@@ -687,8 +687,13 @@ var order2 = target.style.order;
     <link href="http://yoursite.com/2015/08/02/%E5%88%A9%E7%94%A8box-shadow%E5%88%B6%E4%BD%9Cloading%E5%9B%BE/"/>
     <id>http://yoursite.com/2015/08/02/利用box-shadow制作loading图/</id>
     <published>2015-08-02T00:00:00.000Z</published>
-    <updated>2015-12-27T06:26:54.467Z</updated>
-    <content type="html"><![CDATA[<p>我们见过很多利用css3做的loading图，像下面这种应该是很常见的。通常制作这种loading，我们会一个标签对应一个圆，八个圆就要八个标签。但是这种做法很浪费资源。我们可以只用一个标签，然后利用<code>box—shadow</code>来制作一个loading图。<br><a id="more"></a><br>首先，需要一个标签：</p>
+    <updated>2015-12-27T09:49:20.357Z</updated>
+    <content type="html"><![CDATA[<p>我们见过很多利用css3做的loading图，像下面这种应该是很常见的。通常制作这种loading，我们会一个标签对应一个圆，八个圆就要八个标签。但是这种做法很浪费资源。我们可以只用一个标签，然后利用<code>box—shadow</code>来制作一个loading图。<br><a id="more"></a></p>
+<p><style type="text/css"><br>.loading {<br>  font-size: 30px;<br>  width: 1em;<br>  height: 1em;<br>  border-radius: 50%;<br>  margin: 100px auto;<br>  box-shadow: 0 -2em rgba(255, 0, 0, 1), 1.414em -1.414em rgba(255, 0, 0, 0.875), 2em 0 rgba(255, 0, 0, 0.75), 1.414em 1.414em rgba(255, 0, 0, 0.625), 0 2em rgba(255, 0, 0, 0.5), -1.414em 1.414em rgba(255, 0, 0, 0.375), -2em 0 rgba(255, 0, 0, 0.25), -1.414em -1.414em rgba(255, 0, 0, 0.125);<br>   animation: rotate 1s infinite forwards steps(8, end);<br>}</p>
+<p>@keyframes rotate {<br>   100% {<br>   -moz-transform: rotate(360deg);<br>   }<br>}<br></style></p>
+<div class="loading"></div>
+
+<p>首先，需要一个标签：</p>
 <pre><code>&lt;div class=&quot;loading&quot;&gt;&lt;/div&gt;
 </code></pre><p>然后是css：</p>
 <pre><code>$fontSize: 30px;
@@ -746,8 +751,8 @@ $radius: 2em;
     <link href="http://yoursite.com/2015/07/15/%E9%80%82%E7%94%A8%E4%BA%8E%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E5%9C%B0%E5%9D%80%E9%80%89%E6%8B%A9%E5%99%A8/"/>
     <id>http://yoursite.com/2015/07/15/适用于移动端的地址选择器/</id>
     <published>2015-07-15T00:00:00.000Z</published>
-    <updated>2015-12-27T06:27:01.293Z</updated>
-    <content type="html"><![CDATA[<p>最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e5%9b%be%e7%89%8720150715210812.png" alt=""><br><a id="more"></a><br>直接上代码吧：</p>
+    <updated>2015-12-27T09:41:57.569Z</updated>
+    <content type="html"><![CDATA[<p>最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。<br><img src="/assets/blogImg/o_QQ%e5%9b%be%e7%89%8720150715210812.png" alt=""><br><a id="more"></a><br>直接上代码吧：</p>
 <pre><code>var provinces = {
     &quot;A&quot;: {
         &quot;安徽&quot;:[&quot;合肥市&quot;,&quot;芜湖市&quot;,&quot;蚌埠市&quot;,&quot;淮南市&quot;,&quot;马鞍山市&quot;,&quot;淮北市&quot;,&quot;铜陵市&quot;,&quot;安庆市&quot;,&quot;黄山市&quot;,&quot;滁州市&quot;,&quot;阜阳市&quot;,&quot;宿州市&quot;,&quot;巢湖市&quot;,&quot;六安市&quot;,&quot;亳州市&quot;,&quot;池州市&quot;,&quot;宣城市&quot;]
@@ -1022,7 +1027,7 @@ $(&quot;.city&quot;).CityPicker();
 <p>如果有需要的朋友，可以从这里<a href="https://github.com/lwzhang/cityPicker" target="_blank" rel="external">https://github.com/lwzhang/cityPicker</a>下载。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。<br><img src="http://images.cnblogs.com/cnblogs_com/xljzlw/676183/o_QQ%e5%9b%be%e7%89%8720150715210812.png" alt=""><br>]]>
+    <![CDATA[<p>最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。<br><img src="/assets/blogImg/o_QQ%e5%9b%be%e7%89%8720150715210812.png" alt=""><br>]]>
     
     </summary>
     
@@ -1213,7 +1218,7 @@ curriedAdd();
     <link href="http://yoursite.com/2015/03/07/CSS3%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%B8%90%E5%85%A5%E6%95%88%E6%9E%9C/"/>
     <id>http://yoursite.com/2015/03/07/CSS3实现图片渐入效果/</id>
     <published>2015-03-07T00:00:00.000Z</published>
-    <updated>2015-12-27T06:25:08.204Z</updated>
+    <updated>2015-12-27T10:10:45.147Z</updated>
     <content type="html"><![CDATA[<p>很多网站都有那种图片渐入的效果，如：<a href="http://www.mi.com/minote/" target="_blank" rel="external">http://www.mi.com/minote/</a>，这种效果用css3和一些js实现起来特别简单。<br><a id="more"></a><br>拿我之前做的页面来说一下怎么利用css3来实现图片渐入效果。</p>
 <p>下面是页面中的一段html：</p>
 <pre><code>&lt;div class=&quot;features&quot;&gt;
@@ -1280,7 +1285,7 @@ curriedAdd();
 }
 </code></pre><p>transition属性是一个过渡属性，当元素从一种样式变换为另一种样式时为元素添加效果。</p>
 <p>到这还没有效果。我们要达到的效果是：当网页往下滚动，图片出现或将要出现在视窗时，我们来触发这个过渡效果，就像大家看到的下面这张图片一样。这个做法就像图片的惰性加载，图片还没出现在视窗中时，先不加载，出现时再去加载图片，这样的效果就是用户访问页面的速度提升了。</p>
-<div style="width: 400px; height: 400px; position: relative"><br>   <img class="transImg" style="width: 400px; height: 400px; position: absolute; top: 0; transform: translate3d(0, 150px, 0);-ms-transform: translate3d(0, 150px, 0); -webkit-transform: translate3d(0, 150px, 0); -o-transform: translate3d(0, 150px, 0); -moz-transform: translate3d(0, 150px, 0); opacity: 0; transition: transform 1s ease 0s, opacity 1s ease 0s; -moz-transition: -moz-transform 1s ease 0s, opacity 1s ease 0s; -webkit-transition: -webkit-transform 1s ease 0s, opacity 1s ease 0s; -o-transition: -o-transform 1s ease 0s, opacity 1s ease 0s; -ms-transition: -ms-transform 1s ease 0s, opacity 1s ease 0s;" src="http://images.cnblogs.com/cnblogs_com/xljzlw/574255/o_300001295750131174054755371_950.jpg"><br>    <script><br>        (function (win) {<br>            $(function(){<br>                $(win).scroll(function() {<br>                    var windowPageYOffset = window.pageYOffset,<br>                    windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;<br><br>                    var imgOffsetTop = $(“.transImg”).offset().top;<br>                    if (imgOffsetTop &gt;= windowPageYOffset &amp;&amp; imgOffsetTop &lt; windowPageYOffsetAddHeight) {<br>                        $(“.transImg”).css({<br>                            “transform”: “translate3d(0, 0, 0)”,<br>                            “-ms-transform”: “translate3d(0, 0, 0)”,<br>                            “-o-transform”: “translate3d(0, 0, 0)”,<br>                            “-webkit-transform”: “translate3d(0, 0, 0)”,<br>                            “-moz-transform”: “translate3d(0, 0, 0)”,<br>                            “opacity”: 1<br>                        });<br>                    }<br>                })<br>            })<br>        }(window))<br>    </script><br></div>
+<div style="width: 400px; height: 400px; position: relative"><br>   <img class="transImg" style="width: 400px; height: 400px; position: absolute; top: 0; transform: translate3d(0, 150px, 0);-ms-transform: translate3d(0, 150px, 0); -webkit-transform: translate3d(0, 150px, 0); -o-transform: translate3d(0, 150px, 0); -moz-transform: translate3d(0, 150px, 0); opacity: 0; transition: transform 1s ease 0s, opacity 1s ease 0s; -moz-transition: -moz-transform 1s ease 0s, opacity 1s ease 0s; -webkit-transition: -webkit-transform 1s ease 0s, opacity 1s ease 0s; -o-transition: -o-transform 1s ease 0s, opacity 1s ease 0s; -ms-transition: -ms-transform 1s ease 0s, opacity 1s ease 0s;" src="/assets/blogImg/o_300001295750131174054755371_950.jpg"><br><script>(function (win) {$(function(){$(win).scroll(function() {var windowPageYOffset = window.pageYOffset,windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;var imgOffsetTop = $(\”.transImg\”).offset().top;if (imgOffsetTop &gt;= windowPageYOffset &amp;&amp; imgOffsetTop &lt; windowPageYOffsetAddHeight) {$(“.transImg”).css({“transform”: “translate3d(0, 0, 0)”,”-ms-transform”: “translate3d(0, 0, 0)”,”-o-transform”: “translate3d(0, 0, 0)”,”-webkit-transform”: “translate3d(0, 0, 0)”,”-moz-transform”: “translate3d(0, 0, 0)”,”opacity”: 1});}})})}(window))</script></div>
 
 <p>当页面往下滚动时，用js判断图片在什么时候触发动画：</p>
 <pre><code>(function (win) {
