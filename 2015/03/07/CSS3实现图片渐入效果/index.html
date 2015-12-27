@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>CSS3实现图片渐入效果 | zlw&#39;s Blog</title>
+  <title>CSS3实现图片渐入效果 | 那时候的我</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="很多网站都有那种图片渐入的效果，如：http://www.mi.com/minote/，这种效果用css3和一些js实现起来特别简单。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS3实现图片渐入效果">
 <meta property="og:url" content="http://yoursite.com/2015/03/07/CSS3实现图片渐入效果/index.html">
-<meta property="og:site_name" content="zlw's Blog">
+<meta property="og:site_name" content="那时候的我">
 <meta property="og:description" content="很多网站都有那种图片渐入的效果，如：http://www.mi.com/minote/，这种效果用css3和一些js实现起来特别简单。">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/o_300001295750131174054755371_950.jpg">
-<meta property="og:updated_time" content="2015-12-27T10:10:45.147Z">
+<meta property="og:updated_time" content="2015-12-27T10:11:48.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3实现图片渐入效果">
 <meta name="twitter:description" content="很多网站都有那种图片渐入的效果，如：http://www.mi.com/minote/，这种效果用css3和一些js实现起来特别简单。">
   
-    <link rel="alternative" href="/atom.xml" title="zlw&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="那时候的我" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.jpg">
@@ -39,7 +39,7 @@
 		</a>
 
 		<hgroup>
-		  <h1 class="header-author"><a href="/">zlw</a></h1>
+		  <h1 class="header-author"><a href="/">那时候的我</a></h1>
 		</hgroup>
 
 		
@@ -154,7 +154,7 @@
       <nav id="mobile-nav">
   	<div class="overlay">
   		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">zlw</h1>
+  		<h1 class="header-author js-mobile-header hide">那时候的我</h1>
   	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
@@ -164,7 +164,7 @@
 			
 			</div>
 			<hgroup>
-			  <h1 class="header-author">zlw</h1>
+			  <h1 class="header-author">那时候的我</h1>
 			</hgroup>
 			
 			<p class="header-subtitle">啦啦啦，啦啦啦，我是卖报的小行家</p>
@@ -305,7 +305,7 @@
 }
 </code></pre><p>transition属性是一个过渡属性，当元素从一种样式变换为另一种样式时为元素添加效果。</p>
 <p>到这还没有效果。我们要达到的效果是：当网页往下滚动，图片出现或将要出现在视窗时，我们来触发这个过渡效果，就像大家看到的下面这张图片一样。这个做法就像图片的惰性加载，图片还没出现在视窗中时，先不加载，出现时再去加载图片，这样的效果就是用户访问页面的速度提升了。</p>
-<div style="width: 400px; height: 400px; position: relative"><br>   <img class="transImg" style="width: 400px; height: 400px; position: absolute; top: 0; transform: translate3d(0, 150px, 0);-ms-transform: translate3d(0, 150px, 0); -webkit-transform: translate3d(0, 150px, 0); -o-transform: translate3d(0, 150px, 0); -moz-transform: translate3d(0, 150px, 0); opacity: 0; transition: transform 1s ease 0s, opacity 1s ease 0s; -moz-transition: -moz-transform 1s ease 0s, opacity 1s ease 0s; -webkit-transition: -webkit-transform 1s ease 0s, opacity 1s ease 0s; -o-transition: -o-transform 1s ease 0s, opacity 1s ease 0s; -ms-transition: -ms-transform 1s ease 0s, opacity 1s ease 0s;" src="/assets/blogImg/o_300001295750131174054755371_950.jpg"><br><script>(function (win) {$(function(){$(win).scroll(function() {var windowPageYOffset = window.pageYOffset,windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;var imgOffsetTop = $(\”.transImg\”).offset().top;if (imgOffsetTop &gt;= windowPageYOffset &amp;&amp; imgOffsetTop &lt; windowPageYOffsetAddHeight) {$(“.transImg”).css({“transform”: “translate3d(0, 0, 0)”,”-ms-transform”: “translate3d(0, 0, 0)”,”-o-transform”: “translate3d(0, 0, 0)”,”-webkit-transform”: “translate3d(0, 0, 0)”,”-moz-transform”: “translate3d(0, 0, 0)”,”opacity”: 1});}})})}(window))</script></div>
+<div style="width: 400px; height: 400px; position: relative"><br>   <img class="transImg" style="width: 400px; height: 400px; position: absolute; top: 0; transform: translate3d(0, 150px, 0);-ms-transform: translate3d(0, 150px, 0); -webkit-transform: translate3d(0, 150px, 0); -o-transform: translate3d(0, 150px, 0); -moz-transform: translate3d(0, 150px, 0); opacity: 0; transition: transform 1s ease 0s, opacity 1s ease 0s; -moz-transition: -moz-transform 1s ease 0s, opacity 1s ease 0s; -webkit-transition: -webkit-transform 1s ease 0s, opacity 1s ease 0s; -o-transition: -o-transform 1s ease 0s, opacity 1s ease 0s; -ms-transition: -ms-transform 1s ease 0s, opacity 1s ease 0s;" src="/assets/blogImg/o_300001295750131174054755371_950.jpg"><br>    <script><br>        (function (win) {<br>            $(function(){<br>                $(win).scroll(function() {<br>                    var windowPageYOffset = window.pageYOffset,<br>                    windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;<br><br>                    var imgOffsetTop = $(“.transImg”).offset().top;<br>                    if (imgOffsetTop &gt;= windowPageYOffset &amp;&amp; imgOffsetTop &lt; windowPageYOffsetAddHeight) {<br>                        $(“.transImg”).css({<br>                            “transform”: “translate3d(0, 0, 0)”,<br>                            “-ms-transform”: “translate3d(0, 0, 0)”,<br>                            “-o-transform”: “translate3d(0, 0, 0)”,<br>                            “-webkit-transform”: “translate3d(0, 0, 0)”,<br>                            “-moz-transform”: “translate3d(0, 0, 0)”,<br>                            “opacity”: 1<br>                        });<br>                    }<br>                })<br>            })<br>        }(window))<br>    </script><br></div>
 
 <p>当页面往下滚动时，用js判断图片在什么时候触发动画：</p>
 <pre><code>(function (win) {
@@ -412,7 +412,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 zlw
+    		&copy; 2015 那时候的我
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

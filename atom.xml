@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[zlw's Blog]]></title>
+  <title><![CDATA[那时候的我]]></title>
   <subtitle><![CDATA[啦啦啦，啦啦啦，我是卖报的小行家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
@@ -8,7 +8,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name><![CDATA[zlw]]></name>
+    <name><![CDATA[那时候的我]]></name>
     
   </author>
   
@@ -1218,7 +1218,7 @@ curriedAdd();
     <link href="http://yoursite.com/2015/03/07/CSS3%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%B8%90%E5%85%A5%E6%95%88%E6%9E%9C/"/>
     <id>http://yoursite.com/2015/03/07/CSS3实现图片渐入效果/</id>
     <published>2015-03-07T00:00:00.000Z</published>
-    <updated>2015-12-27T10:10:45.147Z</updated>
+    <updated>2015-12-27T10:11:48.839Z</updated>
     <content type="html"><![CDATA[<p>很多网站都有那种图片渐入的效果，如：<a href="http://www.mi.com/minote/" target="_blank" rel="external">http://www.mi.com/minote/</a>，这种效果用css3和一些js实现起来特别简单。<br><a id="more"></a><br>拿我之前做的页面来说一下怎么利用css3来实现图片渐入效果。</p>
 <p>下面是页面中的一段html：</p>
 <pre><code>&lt;div class=&quot;features&quot;&gt;
@@ -1285,7 +1285,7 @@ curriedAdd();
 }
 </code></pre><p>transition属性是一个过渡属性，当元素从一种样式变换为另一种样式时为元素添加效果。</p>
 <p>到这还没有效果。我们要达到的效果是：当网页往下滚动，图片出现或将要出现在视窗时，我们来触发这个过渡效果，就像大家看到的下面这张图片一样。这个做法就像图片的惰性加载，图片还没出现在视窗中时，先不加载，出现时再去加载图片，这样的效果就是用户访问页面的速度提升了。</p>
-<div style="width: 400px; height: 400px; position: relative"><br>   <img class="transImg" style="width: 400px; height: 400px; position: absolute; top: 0; transform: translate3d(0, 150px, 0);-ms-transform: translate3d(0, 150px, 0); -webkit-transform: translate3d(0, 150px, 0); -o-transform: translate3d(0, 150px, 0); -moz-transform: translate3d(0, 150px, 0); opacity: 0; transition: transform 1s ease 0s, opacity 1s ease 0s; -moz-transition: -moz-transform 1s ease 0s, opacity 1s ease 0s; -webkit-transition: -webkit-transform 1s ease 0s, opacity 1s ease 0s; -o-transition: -o-transform 1s ease 0s, opacity 1s ease 0s; -ms-transition: -ms-transform 1s ease 0s, opacity 1s ease 0s;" src="/assets/blogImg/o_300001295750131174054755371_950.jpg"><br><script>(function (win) {$(function(){$(win).scroll(function() {var windowPageYOffset = window.pageYOffset,windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;var imgOffsetTop = $(\”.transImg\”).offset().top;if (imgOffsetTop &gt;= windowPageYOffset &amp;&amp; imgOffsetTop &lt; windowPageYOffsetAddHeight) {$(“.transImg”).css({“transform”: “translate3d(0, 0, 0)”,”-ms-transform”: “translate3d(0, 0, 0)”,”-o-transform”: “translate3d(0, 0, 0)”,”-webkit-transform”: “translate3d(0, 0, 0)”,”-moz-transform”: “translate3d(0, 0, 0)”,”opacity”: 1});}})})}(window))</script></div>
+<div style="width: 400px; height: 400px; position: relative"><br>   <img class="transImg" style="width: 400px; height: 400px; position: absolute; top: 0; transform: translate3d(0, 150px, 0);-ms-transform: translate3d(0, 150px, 0); -webkit-transform: translate3d(0, 150px, 0); -o-transform: translate3d(0, 150px, 0); -moz-transform: translate3d(0, 150px, 0); opacity: 0; transition: transform 1s ease 0s, opacity 1s ease 0s; -moz-transition: -moz-transform 1s ease 0s, opacity 1s ease 0s; -webkit-transition: -webkit-transform 1s ease 0s, opacity 1s ease 0s; -o-transition: -o-transform 1s ease 0s, opacity 1s ease 0s; -ms-transition: -ms-transform 1s ease 0s, opacity 1s ease 0s;" src="/assets/blogImg/o_300001295750131174054755371_950.jpg"><br>    <script><br>        (function (win) {<br>            $(function(){<br>                $(win).scroll(function() {<br>                    var windowPageYOffset = window.pageYOffset,<br>                    windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;<br><br>                    var imgOffsetTop = $(“.transImg”).offset().top;<br>                    if (imgOffsetTop &gt;= windowPageYOffset &amp;&amp; imgOffsetTop &lt; windowPageYOffsetAddHeight) {<br>                        $(“.transImg”).css({<br>                            “transform”: “translate3d(0, 0, 0)”,<br>                            “-ms-transform”: “translate3d(0, 0, 0)”,<br>                            “-o-transform”: “translate3d(0, 0, 0)”,<br>                            “-webkit-transform”: “translate3d(0, 0, 0)”,<br>                            “-moz-transform”: “translate3d(0, 0, 0)”,<br>                            “opacity”: 1<br>                        });<br>                    }<br>                })<br>            })<br>        }(window))<br>    </script><br></div>
 
 <p>当页面往下滚动时，用js判断图片在什么时候触发动画：</p>
 <pre><code>(function (win) {
