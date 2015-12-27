@@ -4,7 +4,7 @@
   <subtitle><![CDATA[啦啦啦，啦啦啦，我是卖报的小行家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-27T06:24:57.944Z</updated>
+  <updated>2015-12-27T08:41:32.010Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/11/18/babel%E6%97%A0%E6%B3%95%E7%BC%96%E8%AF%91%EF%BC%9F/"/>
     <id>http://yoursite.com/2015/11/18/babel无法编译？/</id>
     <published>2015-11-18T00:00:00.000Z</published>
-    <updated>2015-12-27T06:24:57.944Z</updated>
+    <updated>2015-12-27T08:41:32.010Z</updated>
     <content type="html"><![CDATA[<p><code>ECMAScript 6(ES6)</code>的发展或者说普及之快可以说是难以想象的，对很多人来说<code>ECMAScript 5(ES5)</code>都还普及呢。现代浏览器对<code>ES6</code>新特新或多或少的有些支持，但支持度不高，所以要想在浏览器中直接使用<code>ES6</code>的新特性，还得等上一段时间。<br><a id="more"></a><br>对<code>ES6</code>的普及起到至关重要的就不得不说<code>babel</code>了。<code>babel</code>可以将<code>ES6</code>代码完美地转换为<code>ES5</code>代码，所以我们不用等到浏览器的支持就可以在项目中使用<code>ES6</code>的特性。</p>
 <p>对于刚开始使用<code>babel</code>的人，可能会碰到一些问题，因为网上对于<code>babel</code>的使用教程基本上是针对<code>babel 6</code>之前的版本，而<code>babel 6</code>对于之前版本有一些变化。</p>
 <ul>
@@ -29,8 +29,7 @@
 </li>
 </ul>
 <p>下面来实践下(命令行使用babel)。</p>
-<p>###安装babel:</p>
-<pre><code>npm install -g babel
+<h3 id="u5B89_u88C5babel_3A"><a href="#u5B89_u88C5babel_3A" class="headerlink" title="安装babel:"></a>安装babel:</h3><pre><code>npm install -g babel
 </code></pre><p>命令行转化js文件：</p>
 <pre><code>babel es6.js
 </code></pre><p>提示：</p>
