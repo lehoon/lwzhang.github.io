@@ -3,9 +3,9 @@
   <title><![CDATA[那时候的我]]></title>
   <subtitle><![CDATA[啦啦啦，啦啦啦，我是卖报的小行家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
+  <link href="http://lwzhang.github.io/"/>
   <updated>2015-12-27T08:41:32.010Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://lwzhang.github.io/</id>
   
   <author>
     <name><![CDATA[那时候的我]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[babel无法编译？]]></title>
-    <link href="http://yoursite.com/2015/11/18/babel%E6%97%A0%E6%B3%95%E7%BC%96%E8%AF%91%EF%BC%9F/"/>
-    <id>http://yoursite.com/2015/11/18/babel无法编译？/</id>
+    <link href="http://lwzhang.github.io/2015/11/18/babel%E6%97%A0%E6%B3%95%E7%BC%96%E8%AF%91%EF%BC%9F/"/>
+    <id>http://lwzhang.github.io/2015/11/18/babel无法编译？/</id>
     <published>2015-11-18T00:00:00.000Z</published>
     <updated>2015-12-27T08:41:32.010Z</updated>
     <content type="html"><![CDATA[<p><code>ECMAScript 6(ES6)</code>的发展或者说普及之快可以说是难以想象的，对很多人来说<code>ECMAScript 5(ES5)</code>都还普及呢。现代浏览器对<code>ES6</code>新特新或多或少的有些支持，但支持度不高，所以要想在浏览器中直接使用<code>ES6</code>的新特性，还得等上一段时间。<br><a id="more"></a><br>对<code>ES6</code>的普及起到至关重要的就不得不说<code>babel</code>了。<code>babel</code>可以将<code>ES6</code>代码完美地转换为<code>ES5</code>代码，所以我们不用等到浏览器的支持就可以在项目中使用<code>ES6</code>的特性。</p>
@@ -75,22 +75,22 @@ babel es6.js --out-file es5.js
     
     </summary>
     
-      <category term=" babel" scheme="http://yoursite.com/tags/babel/"/>
+      <category term=" babel" scheme="http://lwzhang.github.io/tags/babel/"/>
     
-      <category term="babel-cli" scheme="http://yoursite.com/tags/babel-cli/"/>
+      <category term="babel-cli" scheme="http://lwzhang.github.io/tags/babel-cli/"/>
     
-      <category term="babel-core" scheme="http://yoursite.com/tags/babel-core/"/>
+      <category term="babel-core" scheme="http://lwzhang.github.io/tags/babel-core/"/>
     
-      <category term="babel-node" scheme="http://yoursite.com/tags/babel-node/"/>
+      <category term="babel-node" scheme="http://lwzhang.github.io/tags/babel-node/"/>
     
-      <category term="ES6" scheme="http://yoursite.com/categories/ES6/"/>
+      <category term="ES6" scheme="http://lwzhang.github.io/categories/ES6/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[css3 transform属性多个值的顺序问题]]></title>
-    <link href="http://yoursite.com/2015/11/14/css3%20transform%E5%B1%9E%E6%80%A7%E5%A4%9A%E4%B8%AA%E5%80%BC%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2015/11/14/css3 transform属性多个值的顺序问题/</id>
+    <link href="http://lwzhang.github.io/2015/11/14/css3%20transform%E5%B1%9E%E6%80%A7%E5%A4%9A%E4%B8%AA%E5%80%BC%E7%9A%84%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98/"/>
+    <id>http://lwzhang.github.io/2015/11/14/css3 transform属性多个值的顺序问题/</id>
     <published>2015-11-14T00:00:00.000Z</published>
     <updated>2015-12-27T09:43:33.659Z</updated>
     <content type="html"><![CDATA[<p>对于<code>transform</code>属性的多值的顺序问题，我自己就被困扰过。后来知道了跟顺序有关，但是不知道为什么。我想应该很多人跟我以前一样，知其然不知其所以然。如果不知道的，也许这篇文章会对大家有所帮助。<br><a id="more"></a></p>
@@ -151,18 +151,18 @@ div {
     
     </summary>
     
-      <category term=" transform" scheme="http://yoursite.com/tags/transform/"/>
+      <category term=" transform" scheme="http://lwzhang.github.io/tags/transform/"/>
     
-      <category term="transform多值顺序" scheme="http://yoursite.com/tags/transform%E5%A4%9A%E5%80%BC%E9%A1%BA%E5%BA%8F/"/>
+      <category term="transform多值顺序" scheme="http://lwzhang.github.io/tags/transform%E5%A4%9A%E5%80%BC%E9%A1%BA%E5%BA%8F/"/>
     
-      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+      <category term="CSS3" scheme="http://lwzhang.github.io/categories/CSS3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[元素rotate之后，宽度该怎么计算？]]></title>
-    <link href="http://yoursite.com/2015/11/13/%E5%85%83%E7%B4%A0rotate%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%AE%BD%E5%BA%A6%E8%AF%A5%E6%80%8E%E4%B9%88%E8%AE%A1%E7%AE%97%EF%BC%9F/"/>
-    <id>http://yoursite.com/2015/11/13/元素rotate之后，宽度该怎么计算？/</id>
+    <link href="http://lwzhang.github.io/2015/11/13/%E5%85%83%E7%B4%A0rotate%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%AE%BD%E5%BA%A6%E8%AF%A5%E6%80%8E%E4%B9%88%E8%AE%A1%E7%AE%97%EF%BC%9F/"/>
+    <id>http://lwzhang.github.io/2015/11/13/元素rotate之后，宽度该怎么计算？/</id>
     <published>2015-11-13T00:00:00.000Z</published>
     <updated>2015-12-27T09:42:21.789Z</updated>
     <content type="html"><![CDATA[<p>通常，利用<code>transform: rotate()</code>元素之后，我们并不会去在意元素大小的变化，因为看上去并没有什么变化。虽然看上去没有变化，其实是有变化的。下面用一个例子来说明一下。<br><a id="more"></a></p>
@@ -194,18 +194,18 @@ div {
     
     </summary>
     
-      <category term="rotate" scheme="http://yoursite.com/tags/rotate/"/>
+      <category term="rotate" scheme="http://lwzhang.github.io/tags/rotate/"/>
     
-      <category term="transform" scheme="http://yoursite.com/tags/transform/"/>
+      <category term="transform" scheme="http://lwzhang.github.io/tags/transform/"/>
     
-      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+      <category term="CSS3" scheme="http://lwzhang.github.io/categories/CSS3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Sass与Compass合并雪碧图(二)]]></title>
-    <link href="http://yoursite.com/2015/08/30/Sass%E4%B8%8ECompass%E5%90%88%E5%B9%B6%E9%9B%AA%E7%A2%A7%E5%9B%BE(%E4%BA%8C)/"/>
-    <id>http://yoursite.com/2015/08/30/Sass与Compass合并雪碧图(二)/</id>
+    <link href="http://lwzhang.github.io/2015/08/30/Sass%E4%B8%8ECompass%E5%90%88%E5%B9%B6%E9%9B%AA%E7%A2%A7%E5%9B%BE(%E4%BA%8C)/"/>
+    <id>http://lwzhang.github.io/2015/08/30/Sass与Compass合并雪碧图(二)/</id>
     <published>2015-08-30T00:00:00.000Z</published>
     <updated>2015-12-27T09:42:41.759Z</updated>
     <content type="html"><![CDATA[<p>上一篇文章介绍了怎样使用<code>compass</code>合并雪碧图，生成的<code>icons.css</code>文件中单位是<code>px</code>，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用<code>px</code>单位肯定是不行的。所以需要做一下单位转换的工作。<br><a id="more"></a><br>移动端使用<code>rem</code>作为单位是最合适不过了。并不是使用了<code>rem</code>就可以，还需要做一些准备工作。我们都知道<code>rem</code>是基于<code>html</code>标签的<code>font-size</code>的，所以需要使用js动态的计算<code>html</code>的<code>font-size</code>。这里我使用淘宝的<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external"><code>lib-flexible</code></a>。</p>
@@ -471,26 +471,26 @@ $bigHeight: 270px;
     
     </summary>
     
-      <category term="compass" scheme="http://yoursite.com/tags/compass/"/>
+      <category term="compass" scheme="http://lwzhang.github.io/tags/compass/"/>
     
-      <category term="sass" scheme="http://yoursite.com/tags/sass/"/>
+      <category term="sass" scheme="http://lwzhang.github.io/tags/sass/"/>
     
-      <category term="sprite" scheme="http://yoursite.com/tags/sprite/"/>
+      <category term="sprite" scheme="http://lwzhang.github.io/tags/sprite/"/>
     
-      <category term="sprites" scheme="http://yoursite.com/tags/sprites/"/>
+      <category term="sprites" scheme="http://lwzhang.github.io/tags/sprites/"/>
     
-      <category term="合并图片" scheme="http://yoursite.com/tags/%E5%90%88%E5%B9%B6%E5%9B%BE%E7%89%87/"/>
+      <category term="合并图片" scheme="http://lwzhang.github.io/tags/%E5%90%88%E5%B9%B6%E5%9B%BE%E7%89%87/"/>
     
-      <category term="雪碧图" scheme="http://yoursite.com/tags/%E9%9B%AA%E7%A2%A7%E5%9B%BE/"/>
+      <category term="雪碧图" scheme="http://lwzhang.github.io/tags/%E9%9B%AA%E7%A2%A7%E5%9B%BE/"/>
     
-      <category term="SASS" scheme="http://yoursite.com/categories/SASS/"/>
+      <category term="SASS" scheme="http://lwzhang.github.io/categories/SASS/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Sass与Compass合并雪碧图(一)]]></title>
-    <link href="http://yoursite.com/2015/08/29/Sass%E4%B8%8ECompass%E5%90%88%E5%B9%B6%E9%9B%AA%E7%A2%A7%E5%9B%BE(%E4%B8%80)/"/>
-    <id>http://yoursite.com/2015/08/29/Sass与Compass合并雪碧图(一)/</id>
+    <link href="http://lwzhang.github.io/2015/08/29/Sass%E4%B8%8ECompass%E5%90%88%E5%B9%B6%E9%9B%AA%E7%A2%A7%E5%9B%BE(%E4%B8%80)/"/>
+    <id>http://lwzhang.github.io/2015/08/29/Sass与Compass合并雪碧图(一)/</id>
     <published>2015-08-29T00:00:00.000Z</published>
     <updated>2015-12-27T09:46:10.964Z</updated>
     <content type="html"><![CDATA[<p>雪碧图就是很多张小图片合并成一张大图片，以减少HTTP请求，从而提升加载速度。有很多软件可以合并雪碧图，但通常不太容易维护，使用compass生成雪碧图应该算是非常方便的方法了，可以轻松的生成雪碧图，而且易维护。<br><a id="more"></a></p>
@@ -599,26 +599,26 @@ sprite-position($icons, $name); //获取图片坐标
     
     </summary>
     
-      <category term="compass" scheme="http://yoursite.com/tags/compass/"/>
+      <category term="compass" scheme="http://lwzhang.github.io/tags/compass/"/>
     
-      <category term="sass" scheme="http://yoursite.com/tags/sass/"/>
+      <category term="sass" scheme="http://lwzhang.github.io/tags/sass/"/>
     
-      <category term="sprite" scheme="http://yoursite.com/tags/sprite/"/>
+      <category term="sprite" scheme="http://lwzhang.github.io/tags/sprite/"/>
     
-      <category term="sprites" scheme="http://yoursite.com/tags/sprites/"/>
+      <category term="sprites" scheme="http://lwzhang.github.io/tags/sprites/"/>
     
-      <category term="合并图片" scheme="http://yoursite.com/tags/%E5%90%88%E5%B9%B6%E5%9B%BE%E7%89%87/"/>
+      <category term="合并图片" scheme="http://lwzhang.github.io/tags/%E5%90%88%E5%B9%B6%E5%9B%BE%E7%89%87/"/>
     
-      <category term="雪碧图" scheme="http://yoursite.com/tags/%E9%9B%AA%E7%A2%A7%E5%9B%BE/"/>
+      <category term="雪碧图" scheme="http://lwzhang.github.io/tags/%E9%9B%AA%E7%A2%A7%E5%9B%BE/"/>
     
-      <category term="SASS" scheme="http://yoursite.com/categories/SASS/"/>
+      <category term="SASS" scheme="http://lwzhang.github.io/categories/SASS/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Flexbox + js实现滑动拼图游戏]]></title>
-    <link href="http://yoursite.com/2015/08/23/Flexbox%20+%20js%E5%AE%9E%E7%8E%B0%E6%BB%91%E5%8A%A8%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/"/>
-    <id>http://yoursite.com/2015/08/23/Flexbox + js实现滑动拼图游戏/</id>
+    <link href="http://lwzhang.github.io/2015/08/23/Flexbox%20+%20js%E5%AE%9E%E7%8E%B0%E6%BB%91%E5%8A%A8%E6%8B%BC%E5%9B%BE%E6%B8%B8%E6%88%8F/"/>
+    <id>http://lwzhang.github.io/2015/08/23/Flexbox + js实现滑动拼图游戏/</id>
     <published>2015-08-23T00:00:00.000Z</published>
     <updated>2015-12-27T09:42:52.491Z</updated>
     <content type="html"><![CDATA[<p>滑动拼图就是把一张图片分成几等份，打乱顺序（下图），然后通过滑动拼凑成一张完整的图片。<br><img src="/assets/blogImg/o_pintu.png" alt=""><br><a id="more"></a><br>要实现一个拼图游戏，需要考虑怎样随机的打乱顺序，怎样交换两张图片的位置，等等。但是，使用了Flexbox布局以后，这都不需要你去考虑，浏览器会帮你做，Flexbox就是这么的强大。关于Flexbox的介绍可以点击<a href="http://www.w3cplus.com/css3/a-guide-to-flexbox-new.html" target="_blank" rel="external">这里</a>。</p>
@@ -666,7 +666,7 @@ drawImage(&quot;2.jpg&quot;).then(function (img) {
 var order2 = target.style.order;
 </code></pre><p>只需要交换双方的<code>order</code>属性值就可以了。</p>
 <p>完整代码可以在<a href="https://github.com/lwzhang/pages/blob/gh-pages/puzzle/slide.html" target="_blank" rel="external">这里</a>查看。</p>
-<p>DEMO可以点击<a href="https://lwzhang.github.io/pages/puzzle/slide.html" target="_blank" rel="external">这里</a>，最好用谷歌模拟器或者手机打开，因为只支持移动端触摸事件。</p>
+<p>DEMO可以点击<a href="https://lwzhang.github.io/pages/puzzle/slide.html">这里</a>，最好用谷歌模拟器或者手机打开，因为只支持移动端触摸事件。</p>
 <p>代码中只实现了基本功能，并没有实现完整功能。</p>
 ]]></content>
     <summary type="html">
@@ -674,18 +674,18 @@ var order2 = target.style.order;
     
     </summary>
     
-      <category term="flex" scheme="http://yoursite.com/tags/flex/"/>
+      <category term="flex" scheme="http://lwzhang.github.io/tags/flex/"/>
     
-      <category term="滑动拼图" scheme="http://yoursite.com/tags/%E6%BB%91%E5%8A%A8%E6%8B%BC%E5%9B%BE/"/>
+      <category term="滑动拼图" scheme="http://lwzhang.github.io/tags/%E6%BB%91%E5%8A%A8%E6%8B%BC%E5%9B%BE/"/>
     
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://lwzhang.github.io/categories/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[利用box-shadow制作loading图]]></title>
-    <link href="http://yoursite.com/2015/08/02/%E5%88%A9%E7%94%A8box-shadow%E5%88%B6%E4%BD%9Cloading%E5%9B%BE/"/>
-    <id>http://yoursite.com/2015/08/02/利用box-shadow制作loading图/</id>
+    <link href="http://lwzhang.github.io/2015/08/02/%E5%88%A9%E7%94%A8box-shadow%E5%88%B6%E4%BD%9Cloading%E5%9B%BE/"/>
+    <id>http://lwzhang.github.io/2015/08/02/利用box-shadow制作loading图/</id>
     <published>2015-08-02T00:00:00.000Z</published>
     <updated>2015-12-27T09:49:20.357Z</updated>
     <content type="html"><![CDATA[<p>我们见过很多利用css3做的loading图，像下面这种应该是很常见的。通常制作这种loading，我们会一个标签对应一个圆，八个圆就要八个标签。但是这种做法很浪费资源。我们可以只用一个标签，然后利用<code>box—shadow</code>来制作一个loading图。<br><a id="more"></a></p>
@@ -738,18 +738,18 @@ $radius: 2em;
     
     </summary>
     
-      <category term="css3" scheme="http://yoursite.com/tags/css3/"/>
+      <category term="css3" scheme="http://lwzhang.github.io/tags/css3/"/>
     
-      <category term="loading" scheme="http://yoursite.com/tags/loading/"/>
+      <category term="loading" scheme="http://lwzhang.github.io/tags/loading/"/>
     
-      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+      <category term="CSS3" scheme="http://lwzhang.github.io/categories/CSS3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[适用于移动端的地址选择器]]></title>
-    <link href="http://yoursite.com/2015/07/15/%E9%80%82%E7%94%A8%E4%BA%8E%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E5%9C%B0%E5%9D%80%E9%80%89%E6%8B%A9%E5%99%A8/"/>
-    <id>http://yoursite.com/2015/07/15/适用于移动端的地址选择器/</id>
+    <link href="http://lwzhang.github.io/2015/07/15/%E9%80%82%E7%94%A8%E4%BA%8E%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E5%9C%B0%E5%9D%80%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+    <id>http://lwzhang.github.io/2015/07/15/适用于移动端的地址选择器/</id>
     <published>2015-07-15T00:00:00.000Z</published>
     <updated>2015-12-27T09:41:57.569Z</updated>
     <content type="html"><![CDATA[<p>最近在工作中需要用到地址选择器，像下面这样的，本想在网上找一个，可是没找到，于是自己写了个jquery插件。<br><img src="/assets/blogImg/o_QQ%e5%9b%be%e7%89%8720150715210812.png" alt=""><br><a id="more"></a><br>直接上代码吧：</p>
@@ -1031,18 +1031,18 @@ $(&quot;.city&quot;).CityPicker();
     
     </summary>
     
-      <category term="地址选择器" scheme="http://yoursite.com/tags/%E5%9C%B0%E5%9D%80%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+      <category term="地址选择器" scheme="http://lwzhang.github.io/tags/%E5%9C%B0%E5%9D%80%E9%80%89%E6%8B%A9%E5%99%A8/"/>
     
-      <category term="城市选择器" scheme="http://yoursite.com/tags/%E5%9F%8E%E5%B8%82%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+      <category term="城市选择器" scheme="http://lwzhang.github.io/tags/%E5%9F%8E%E5%B8%82%E9%80%89%E6%8B%A9%E5%99%A8/"/>
     
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://lwzhang.github.io/categories/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[css中常用的重置代码]]></title>
-    <link href="http://yoursite.com/2015/07/14/css%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E9%87%8D%E7%BD%AE%E4%BB%A3%E7%A0%81/"/>
-    <id>http://yoursite.com/2015/07/14/css中常用的重置代码/</id>
+    <link href="http://lwzhang.github.io/2015/07/14/css%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E9%87%8D%E7%BD%AE%E4%BB%A3%E7%A0%81/"/>
+    <id>http://lwzhang.github.io/2015/07/14/css中常用的重置代码/</id>
     <published>2015-07-14T00:00:00.000Z</published>
     <updated>2015-12-27T06:25:42.219Z</updated>
     <content type="html"><![CDATA[<p>在制作页面时，经常会遇到需要自定义一些标签的默认行为(如：input的占位符等)，但这些默认的设置的css一般比较难记住,所以有必要自己做一下记录。下面是我经常用到的一些重设默认行为的css。<br><a id="more"></a></p>
@@ -1106,22 +1106,22 @@ input[type=number]::-webkit-outer-spin-button {
     
     </summary>
     
-      <category term="placeholder" scheme="http://yoursite.com/tags/placeholder/"/>
+      <category term="placeholder" scheme="http://lwzhang.github.io/tags/placeholder/"/>
     
-      <category term="spinners" scheme="http://yoursite.com/tags/spinners/"/>
+      <category term="spinners" scheme="http://lwzhang.github.io/tags/spinners/"/>
     
-      <category term="小三角" scheme="http://yoursite.com/tags/%E5%B0%8F%E4%B8%89%E8%A7%92/"/>
+      <category term="小三角" scheme="http://lwzhang.github.io/tags/%E5%B0%8F%E4%B8%89%E8%A7%92/"/>
     
-      <category term="滚动条" scheme="http://yoursite.com/tags/%E6%BB%9A%E5%8A%A8%E6%9D%A1/"/>
+      <category term="滚动条" scheme="http://lwzhang.github.io/tags/%E6%BB%9A%E5%8A%A8%E6%9D%A1/"/>
     
-      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+      <category term="CSS3" scheme="http://lwzhang.github.io/categories/CSS3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[JavaScript之函数科里化]]></title>
-    <link href="http://yoursite.com/2015/04/04/JavaScript%E4%B9%8B%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/"/>
-    <id>http://yoursite.com/2015/04/04/JavaScript之函数柯里化/</id>
+    <link href="http://lwzhang.github.io/2015/04/04/JavaScript%E4%B9%8B%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/"/>
+    <id>http://lwzhang.github.io/2015/04/04/JavaScript之函数柯里化/</id>
     <published>2015-04-04T00:00:00.000Z</published>
     <updated>2015-12-27T06:26:07.657Z</updated>
     <content type="html"><![CDATA[<h3 id="u4EC0_u4E48_u662F_u67EF_u91CC_u5316_28currying_29_uFF1F"><a href="#u4EC0_u4E48_u662F_u67EF_u91CC_u5316_28currying_29_uFF1F" class="headerlink" title="什么是柯里化(currying)？"></a>什么是柯里化(currying)？</h3><p>维基百科中的解释是：柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。意思就是当函数被调用时，返回的函数还需要设置一些传入的参数。<br><a id="more"></a><br>首先来看一个简单的例子，有下面一个函数：</p>
@@ -1203,20 +1203,20 @@ curriedAdd();
     
     </summary>
     
-      <category term="curry" scheme="http://yoursite.com/tags/curry/"/>
+      <category term="curry" scheme="http://lwzhang.github.io/tags/curry/"/>
     
-      <category term="currying" scheme="http://yoursite.com/tags/currying/"/>
+      <category term="currying" scheme="http://lwzhang.github.io/tags/currying/"/>
     
-      <category term="科里化" scheme="http://yoursite.com/tags/%E7%A7%91%E9%87%8C%E5%8C%96/"/>
+      <category term="科里化" scheme="http://lwzhang.github.io/tags/%E7%A7%91%E9%87%8C%E5%8C%96/"/>
     
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://lwzhang.github.io/categories/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[CSS3实现图片渐入效果]]></title>
-    <link href="http://yoursite.com/2015/03/07/CSS3%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%B8%90%E5%85%A5%E6%95%88%E6%9E%9C/"/>
-    <id>http://yoursite.com/2015/03/07/CSS3实现图片渐入效果/</id>
+    <link href="http://lwzhang.github.io/2015/03/07/CSS3%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%B8%90%E5%85%A5%E6%95%88%E6%9E%9C/"/>
+    <id>http://lwzhang.github.io/2015/03/07/CSS3实现图片渐入效果/</id>
     <published>2015-03-07T00:00:00.000Z</published>
     <updated>2015-12-27T10:11:48.839Z</updated>
     <content type="html"><![CDATA[<p>很多网站都有那种图片渐入的效果，如：<a href="http://www.mi.com/minote/" target="_blank" rel="external">http://www.mi.com/minote/</a>，这种效果用css3和一些js实现起来特别简单。<br><a id="more"></a><br>拿我之前做的页面来说一下怎么利用css3来实现图片渐入效果。</p>
@@ -1314,27 +1314,27 @@ curriedAdd();
     })
 }(window))
 </code></pre><p>完整代码可以查看：<a href="https://github.com/lwzhang/practice/tree/gh-pages/biteduo" target="_blank" rel="external">https://github.com/lwzhang/practice/tree/gh-pages/biteduo</a></p>
-<p>DEMO：<a href="https://lwzhang.github.io/practice/biteduo/index.html" target="_blank" rel="external">https://lwzhang.github.io/practice/biteduo/index.html</a></p>
+<p>DEMO：<a href="https://lwzhang.github.io/practice/biteduo/index.html">https://lwzhang.github.io/practice/biteduo/index.html</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>很多网站都有那种图片渐入的效果，如：<a href="http://www.mi.com/minote/">http://www.mi.com/minote/</a>，这种效果用css3和一些js实现起来特别简单。<br>]]>
     
     </summary>
     
-      <category term="transform" scheme="http://yoursite.com/tags/transform/"/>
+      <category term="transform" scheme="http://lwzhang.github.io/tags/transform/"/>
     
-      <category term="transition" scheme="http://yoursite.com/tags/transition/"/>
+      <category term="transition" scheme="http://lwzhang.github.io/tags/transition/"/>
     
-      <category term="图片渐入效果" scheme="http://yoursite.com/tags/%E5%9B%BE%E7%89%87%E6%B8%90%E5%85%A5%E6%95%88%E6%9E%9C/"/>
+      <category term="图片渐入效果" scheme="http://lwzhang.github.io/tags/%E5%9B%BE%E7%89%87%E6%B8%90%E5%85%A5%E6%95%88%E6%9E%9C/"/>
     
-      <category term="CSS3" scheme="http://yoursite.com/categories/CSS3/"/>
+      <category term="CSS3" scheme="http://lwzhang.github.io/categories/CSS3/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[《数据结构与算法JavaScript描述》中的一处错误]]></title>
-    <link href="http://yoursite.com/2015/03/04/%E3%80%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95JavaScript%E6%8F%8F%E8%BF%B0%E3%80%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E5%A4%84%E9%94%99%E8%AF%AF/"/>
-    <id>http://yoursite.com/2015/03/04/《数据结构与算法JavaScript描述》中的一处错误/</id>
+    <link href="http://lwzhang.github.io/2015/03/04/%E3%80%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95JavaScript%E6%8F%8F%E8%BF%B0%E3%80%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E5%A4%84%E9%94%99%E8%AF%AF/"/>
+    <id>http://lwzhang.github.io/2015/03/04/《数据结构与算法JavaScript描述》中的一处错误/</id>
     <published>2015-03-04T00:00:00.000Z</published>
     <updated>2015-12-27T06:26:38.531Z</updated>
     <content type="html"><![CDATA[<p>最近在看《数据结构与算法JavaScript描述》这本书，看到选择排序这部分时，发现一个比较大的错误。<br><a id="more"></a><br>原书的选择排序算法是这样的：</p>
@@ -1369,16 +1369,16 @@ curriedAdd();
     
     </summary>
     
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="http://lwzhang.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://lwzhang.github.io/categories/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[HTML5实现刮奖效果]]></title>
-    <link href="http://yoursite.com/2015/01/21/HTML5%E5%AE%9E%E7%8E%B0%E5%88%AE%E5%A5%96%E6%95%88%E6%9E%9C/"/>
-    <id>http://yoursite.com/2015/01/21/HTML5实现刮奖效果/</id>
+    <link href="http://lwzhang.github.io/2015/01/21/HTML5%E5%AE%9E%E7%8E%B0%E5%88%AE%E5%A5%96%E6%95%88%E6%9E%9C/"/>
+    <id>http://lwzhang.github.io/2015/01/21/HTML5实现刮奖效果/</id>
     <published>2015-01-21T00:00:00.000Z</published>
     <updated>2015-12-27T06:25:59.441Z</updated>
     <content type="html"><![CDATA[<p>要实现刮奖效果，最重要的是要找到一种方法：当刮开上层的涂层是就能看到下层的结果。而HTML5的canvas API中有一个属性globalCompositeOperation，这个属性有多个值，而实现刮奖效果要用到的值就是destination-out。意思就是：在已有内容和新图形不重叠的地方，已有内容保留，所有其他内容成为透明。这样可能不好理解，后面实现的时候会解释。有了globalCompositeOperation这个属性，实现过程就很简单了。<br><a id="more"></a><br>我们需要有两个层，上面一层肯定是一个canvas元素，因为要能刮开就要用到画布。下面一层其实用什么元素都可以，既然上层用的是canvas元素，下层我们也用canvas元素，下面是html内容：</p>
@@ -1525,20 +1525,20 @@ var options = {
 
 new Scratch(options).init();
 </code></pre><p>完整代码可以查看Github：<a href="https://github.com/lwzhang/scratch" target="_blank" rel="external">https://github.com/lwzhang/scratch</a></p>
-<p>DEMO：<a href="http://lwzhang.github.io/scratch/scratch.html" target="_blank" rel="external">http://lwzhang.github.io/scratch/scratch.html</a></p>
+<p>DEMO：<a href="http://lwzhang.github.io/scratch/scratch.html">http://lwzhang.github.io/scratch/scratch.html</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>要实现刮奖效果，最重要的是要找到一种方法：当刮开上层的涂层是就能看到下层的结果。而HTML5的canvas API中有一个属性globalCompositeOperation，这个属性有多个值，而实现刮奖效果要用到的值就是destination-out。意思就是：在已有内容和新图形不重叠的地方，已有内容保留，所有其他内容成为透明。这样可能不好理解，后面实现的时候会解释。有了globalCompositeOperation这个属性，实现过程就很简单了。<br>]]>
     
     </summary>
     
-      <category term="HTML5" scheme="http://yoursite.com/tags/HTML5/"/>
+      <category term="HTML5" scheme="http://lwzhang.github.io/tags/HTML5/"/>
     
-      <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
+      <category term="canvas" scheme="http://lwzhang.github.io/tags/canvas/"/>
     
-      <category term="刮奖效果" scheme="http://yoursite.com/tags/%E5%88%AE%E5%A5%96%E6%95%88%E6%9E%9C/"/>
+      <category term="刮奖效果" scheme="http://lwzhang.github.io/tags/%E5%88%AE%E5%A5%96%E6%95%88%E6%9E%9C/"/>
     
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://lwzhang.github.io/categories/JavaScript/"/>
     
   </entry>
   
