@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>hexo主题中添加相册功能 | 那时候的我</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基本上所有的hexo主题默认都没有实现相册功能，一方面相册功能的需求较少，毕竟hexo主要是写博客用的；另一方面实现相册功能比较麻烦，比如说：
+
+图片放哪里，放在source文件夹中，需要解析成静态文件，图片一旦多的话就会解析的非常慢
+
+怎么批量获取图片url(文件名)，图片那么多，不可能一个一个的手动输入图片url
+
+等等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo主题中添加相册功能">
+<meta property="og:url" content="http://lwzhang.github.io/2016/01/02/hexo主题中添加相册功能/index.html">
+<meta property="og:site_name" content="那时候的我">
+<meta property="og:description" content="基本上所有的hexo主题默认都没有实现相册功能，一方面相册功能的需求较少，毕竟hexo主要是写博客用的；另一方面实现相册功能比较麻烦，比如说：
+
+图片放哪里，放在source文件夹中，需要解析成静态文件，图片一旦多的话就会解析的非常慢
+
+怎么批量获取图片url(文件名)，图片那么多，不可能一个一个的手动输入图片url
+
+等等">
+<meta property="og:image" content="http://lwzhang.github.io/assets/blogImg/20150108_68360c07b3d015595d520b6131a3ec97.png.jpg">
+<meta property="og:updated_time" content="2016-01-17T09:10:01.982Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo主题中添加相册功能">
+<meta name="twitter:description" content="基本上所有的hexo主题默认都没有实现相册功能，一方面相册功能的需求较少，毕竟hexo主要是写博客用的；另一方面实现相册功能比较麻烦，比如说：
+
+图片放哪里，放在source文件夹中，需要解析成静态文件，图片一旦多的话就会解析的非常慢
+
+怎么批量获取图片url(文件名)，图片那么多，不可能一个一个的手动输入图片url
+
+等等">
+  
+    <link rel="alternative" href="/atom.xml" title="那时候的我" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/blogImg/avatar1.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">那时候的我</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">啦啦啦，啦啦啦，我是卖报的小行家</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">首页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/photo">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/lwzhang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/1684901103/home?wvr=5" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/babel/" style="font-size: 10px;"> babel</a> <a href="/tags/transform/" style="font-size: 10px;"> transform</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/babel-cli/" style="font-size: 10px;">babel-cli</a> <a href="/tags/babel-core/" style="font-size: 10px;">babel-core</a> <a href="/tags/babel-node/" style="font-size: 10px;">babel-node</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/compass/" style="font-size: 20px;">compass</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/curry/" style="font-size: 10px;">curry</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo相册/" style="font-size: 10px;">hexo相册</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/placeholder/" style="font-size: 10px;">placeholder</a> <a href="/tags/rotate/" style="font-size: 10px;">rotate</a> <a href="/tags/sass/" style="font-size: 20px;">sass</a> <a href="/tags/spinners/" style="font-size: 10px;">spinners</a> <a href="/tags/sprite/" style="font-size: 20px;">sprite</a> <a href="/tags/sprites/" style="font-size: 20px;">sprites</a> <a href="/tags/transform/" style="font-size: 20px;">transform</a> <a href="/tags/transform多值顺序/" style="font-size: 10px;">transform多值顺序</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/yilia主题/" style="font-size: 10px;">yilia主题</a> <a href="/tags/刮奖效果/" style="font-size: 10px;">刮奖效果</a> <a href="/tags/合并图片/" style="font-size: 20px;">合并图片</a> <a href="/tags/图片渐入效果/" style="font-size: 10px;">图片渐入效果</a> <a href="/tags/地址选择器/" style="font-size: 10px;">地址选择器</a> <a href="/tags/城市选择器/" style="font-size: 10px;">城市选择器</a> <a href="/tags/小三角/" style="font-size: 10px;">小三角</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/滑动拼图/" style="font-size: 10px;">滑动拼图</a> <a href="/tags/滚动条/" style="font-size: 10px;">滚动条</a> <a href="/tags/相册/" style="font-size: 10px;">相册</a> <a href="/tags/科里化/" style="font-size: 10px;">科里化</a> <a href="/tags/雪碧图/" style="font-size: 20px;">雪碧图</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.zhangxinxu.com/wordpress/category/js/">张鑫旭</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://barretlee.com">小胡子哥</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我有一只小毛驴，我从来也不骑。有一天我心血来潮骑着去赶集。我手里拿着小皮鞭我心里正得意。不知怎么哗啦啦啦啦啦，我摔了一身泥</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">那时候的我</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/assets/blogImg/avatar1.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">那时候的我</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">啦啦啦，啦啦啦，我是卖报的小行家</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">首页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/photo">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/lwzhang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/1684901103/home?wvr=5" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-hexo主题中添加相册功能" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/02/hexo主题中添加相册功能/" class="article-date">
+  	<time datetime="2016-01-02T13:58:15.000Z" itemprop="datePublished">2016-01-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo主题中添加相册功能
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo相册/">hexo相册</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yilia主题/">yilia主题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/相册/">相册</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/hexo/">hexo</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/assets/blogImg/20150108_68360c07b3d015595d520b6131a3ec97.png.jpg" alt=""></p>
+<p>基本上所有的<code>hexo</code>主题默认都没有实现相册功能，一方面相册功能的需求较少，毕竟<code>hexo</code>主要是写博客用的；另一方面实现相册功能比较麻烦，比如说：</p>
+<ul>
+<li><p>图片放哪里，放在<code>source</code>文件夹中，需要解析成静态文件，图片一旦多的话就会解析的非常慢</p>
+</li>
+<li><p>怎么批量获取图片<code>url</code>(文件名)，图片那么多，不可能一个一个的手动输入图片<code>url</code></p>
+</li>
+<li><p>等等</p>
+</li>
+</ul>
+<a id="more"></a>
+<p>所以需要找到一个好的解决方法。</p>
+<p><strong>注意：本博客使用的是<code>yilia</code>主题，该主题作者<a href="https://github.com/litten" target="_blank" rel="external">litten</a>有实现了相册功能，但他是同步<code>instagram</code>的图片，我会用不同的方法实现一个相册功能。</strong></p>
+<h2 id="u65B0_u5EFA_u4E00_u4E2A_u9875_u9762"><a href="#u65B0_u5EFA_u4E00_u4E2A_u9875_u9762" class="headerlink" title="新建一个页面"></a>新建一个页面</h2><p><code>hexo new page &quot;photo&quot;</code></p>
+<p>执行上面命令，会在<code>source</code>文件夹中生成<code>photo</code>文件夹，打开<code>photo</code>文件夹中的<code>index.md</code>文件，修改内容如下：</p>
+<pre><code>title: 相册
+noDate: &apos;true&apos;
+---
+&lt;link type=&quot;text/css&quot; href=&quot;/fancybox/jquery.fancybox.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;div class=&quot;instagram&quot;&gt;&lt;section class=&quot;archives album&quot;&gt;&lt;ul class=&quot;img-box-ul&quot;&gt;&lt;/ul&gt;&lt;/section&gt;&lt;/div&gt;
+</code></pre><p>相册的样式使用该主题作者的相册样式，如果大家使用其他主题，样式可以自己实现。</p>
+<h2 id="u56FE_u7247_u4F4D_u7F6E"><a href="#u56FE_u7247_u4F4D_u7F6E" class="headerlink" title="图片位置"></a>图片位置</h2><p>图片不能放在<code>source</code>文件中，因为需要编译成静态文件，非常慢，那放在哪好呢？一般我们会把博客备份到<code>github</code>，这样可以在不同电脑上写博客。那么我们也可以把相册一起上传到<code>github</code>，所以，在博客根目录下建一个放置图片的文件夹<code>photos</code>，这样你上传再多的图片都可以。</p>
+<h2 id="u83B7_u53D6_u56FE_u7247"><a href="#u83B7_u53D6_u56FE_u7247" class="headerlink" title="获取图片"></a>获取图片</h2><p>原生<code>js</code>不能很好的处理文件，所以用<code>js</code>并不能获取图片的文件名。虽然<code>js</code>不能处理文件，但是<code>nodejs</code>可以啊。在<code>source\photo</code>文件夹中新建一个<code>tool.js</code>文件，内容如下：</p>
+<pre><code>&quot;use strict&quot;;
+const fs = require(&quot;fs&quot;);
+const path = &quot;../../photos&quot;;
+
+fs.readdir(path, function (err, files) {
+    if (err) {
+        return;
+    }
+    let arr = [];
+    (function iterator(index) {
+        if (index == files.length) {
+            fs.writeFile(&quot;output.json&quot;, JSON.stringify(arr, null, &quot;\t&quot;));
+            return;
+        }
+
+        fs.stat(path + &quot;/&quot; + files[index], function (err, stats) {
+            if (err) {
+                return;
+            }
+            if (stats.isFile()) {
+                arr.push(files[index]);
+            }
+            iterator(index + 1);
+        })
+    }(0));
+});
+</code></pre><p><code>tool.js</code>的作用是把所有的图片名称放在一个<code>json</code>文件中。运行<code>node tool.js</code>就会在<code>source\photo</code>下创建一个<code>output.json</code>文件。每次你要添加新图片时，都要运行<code>node tool.js</code>。</p>
+<p>有了这个<code>json</code>文件，接下来就要用到<code>js</code>生成<code>html</code>代码了。</p>
+<h2 id="u751F_u6210html_u4EE3_u7801"><a href="#u751F_u6210html_u4EE3_u7801" class="headerlink" title="生成html代码"></a>生成<code>html</code>代码</h2><p>在<code>yourBlog\themes\yilia\source\js</code>(<code>yourBlog</code>为你的博客根目录，将<code>yilia</code>替换为你使用的主题)文件夹下新建一个<code>photo.js</code>的文件夹。为什么在这里建呢？因为编译之后会出现在<code>public\js</code>文件夹中，博客使用的<code>js</code>都在这。<br><code>photo.js</code>代码如下：</p>
+<pre><code>define([], function () {
+    return {
+        page: 1,
+        offset: 20,
+        init: function () {
+            var that = this;
+            $.getJSON(&quot;/photo/output.json&quot;, function (data) {
+                that.render(that.page, data);
+
+                that.scroll(data);
+            });
+        },
+
+        render: function (page, data) {
+            var begin = (page - 1) * this.offset;
+            var end = page * this.offset;
+            if (begin &gt;= data.length) return;
+            var html, li = &quot;&quot;;
+            for (var i = begin; i &lt; end &amp;&amp; i &lt; data.length; i++) {
+                li += &apos;&lt;li&gt;&lt;div class=&quot;img-box&quot;&gt;&apos; +
+                    &apos;&lt;a class=&quot;img-bg&quot; rel=&quot;example_group&quot; href=&quot;https://github.com/lwzhang/blog/blob/master/photos/&apos; + data[i] + &apos;?raw=true&quot;&gt;&lt;/a&gt;&apos; +
+                    &apos;&lt;img lazy-src=&quot;https://github.com/lwzhang/blog/blob/master/photos/&apos; + data[i] + &apos;?raw=true&quot; /&gt;&apos; +
+                    &apos;&lt;/li&gt;&apos;;
+            }
+
+            $(&quot;.img-box-ul&quot;).append(li);
+            $(&quot;.img-box-ul&quot;).lazyload();
+            $(&quot;a[rel=example_group]&quot;).fancybox();
+        },
+
+        scroll: function (data) {
+            var that = this;
+            $(window).scroll(function() {
+                var windowPageYOffset = window.pageYOffset;
+                var windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;
+                var sensitivity = 0;
+
+                var offsetTop = $(&quot;.instagram&quot;).offset().top + $(&quot;.instagram&quot;).height();
+
+                if (offsetTop &gt;= windowPageYOffset &amp;&amp; offsetTop &lt; windowPageYOffsetAddHeight + sensitivity) {
+                    that.render(++that.page, data);
+                }
+            })
+        }
+    }
+})
+</code></pre><p>因为不可能一次性将所有的图片都插入到页面中，所以我做了分页功能，一次加载20张图片。</p>
+<p>引入<code>photo.js</code>最直接的方法是在<code>index.md</code>文件中引入：</p>
+<pre><code>title: 相册
+noDate: &apos;true&apos;
+---
+&lt;link type=&quot;text/css&quot; href=&quot;/fancybox/jquery.fancybox.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;div class=&quot;instagram&quot;&gt;&lt;section class=&quot;archives album&quot;&gt;&lt;ul class=&quot;img-box-ul&quot;&gt;&lt;/ul&gt;&lt;/section&gt;&lt;/div&gt;
+
+&lt;script src=&quot;/js/photo.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>如果大家和我用的是同一主题，在<code>yourBlog\themes\yilia\source\js\main.js</code>文件末尾增加如下代码：</p>
+<pre><code>if($(&quot;.instagram&quot;).length) {
+    require([&apos;/js/photo.js&apos;, &apos;/fancybox/jquery.fancybox.js&apos;, &apos;/js/jquery.lazyload.js&apos;], function(obj) {
+        obj.init();
+    });
+}
+</code></pre><p>如果不是，看大家使用的主题有什么限制了。</p>
+<h2 id="u751F_u6210_u9759_u6001_u6587_u4EF6"><a href="#u751F_u6210_u9759_u6001_u6587_u4EF6" class="headerlink" title="生成静态文件"></a>生成静态文件</h2><p>别忘了要在主题的配置文件<code>_config.yml</code>的<code>menu</code>下添加一个相册的菜单：</p>
+<pre><code>menu:
+  首页: /
+  归档: /archives
+  随笔: /tags/随笔
+  相册: photo
+</code></pre><p>最后运行<code>hexo g</code>生成静态文件。就可以在本地查看或者上传<code>github</code>查看相册功能了。</p>
+<p>相册功能就完成了。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/18/babel无法编译？/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">babel无法编译？</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<div class="post_spread" style="margin: 30px">
+  <div class="ds-share flat" data-thread-key="post-hexo主题中添加相册功能" data-title="hexo主题中添加相册功能" data-images=">" data-content="&lt;p&gt;&lt;img src=&quot;/assets/blogImg/20150108_68360c07b3d015595d520b6131a3ec97.png.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;基本上所有的&lt;code&gt;hexo&lt;/code&gt;主题默认都没有实现相册功能，一方面相册功能的需求较少，毕竟&lt;code&gt;hexo&lt;/code&gt;主要是写博客用的；另一方面实现相册功能比较麻烦，比如说：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;图片放哪里，放在&lt;code&gt;source&lt;/code&gt;文件夹中，需要解析成静态文件，图片一旦多的话就会解析的非常慢&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;怎么批量获取图片&lt;code&gt;url&lt;/code&gt;(文件名)，图片那么多，不可能一个一个的手动输入图片&lt;code&gt;url&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;等等&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;>" data-url="http://lwzhang.github.io/2016/01/02/hexo主题中添加相册功能/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+  </div>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-hexo主题中添加相册功能" data-title="hexo主题中添加相册功能" data-url="http://lwzhang.github.io/2016/01/02/hexo主题中添加相册功能/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"zlwxlj"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+</div>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 那时候的我
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script>
+	var yiliaConfig = {
+		fancybox: false,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
