@@ -4,18 +4,17 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>《数据结构与算法JavaScript描述》中的一处错误 | 那时候的我</title>
+  <title>Tag: 微信Logo | 那时候的我</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在看《数据结构与算法JavaScript描述》这本书，看到选择排序这部分时，发现一个比较大的错误。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="《数据结构与算法JavaScript描述》中的一处错误">
-<meta property="og:url" content="http://lwzhang.github.io/2015/03/04/《数据结构与算法JavaScript描述》中的一处错误/index.html">
+  <meta name="description" content="我有一只小毛驴，我从来也不骑。有一天我心血来潮骑着去赶集。我手里拿着小皮鞭我心里正得意。不知怎么哗啦啦啦啦啦，我摔了一身泥">
+<meta property="og:type" content="website">
+<meta property="og:title" content="那时候的我">
+<meta property="og:url" content="http://lwzhang.github.io/tags/微信Logo/index.html">
 <meta property="og:site_name" content="那时候的我">
-<meta property="og:description" content="最近在看《数据结构与算法JavaScript描述》这本书，看到选择排序这部分时，发现一个比较大的错误。">
-<meta property="og:updated_time" content="2015-12-27T06:26:38.531Z">
+<meta property="og:description" content="我有一只小毛驴，我从来也不骑。有一天我心血来潮骑着去赶集。我手里拿着小皮鞭我心里正得意。不知怎么哗啦啦啦啦啦，我摔了一身泥">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《数据结构与算法JavaScript描述》中的一处错误">
-<meta name="twitter:description" content="最近在看《数据结构与算法JavaScript描述》这本书，看到选择排序这部分时，发现一个比较大的错误。">
+<meta name="twitter:title" content="那时候的我">
+<meta name="twitter:description" content="我有一只小毛驴，我从来也不骑。有一天我心血来潮骑着去赶集。我手里拿着小皮鞭我心里正得意。不知怎么哗啦啦啦啦啦，我摔了一身泥">
   
     <link rel="alternative" href="/atom.xml" title="那时候的我" type="application/atom+xml">
   
@@ -201,144 +200,57 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-《数据结构与算法JavaScript描述》中的一处错误" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2015/03/04/《数据结构与算法JavaScript描述》中的一处错误/" class="article-date">
-  	<time datetime="2015-03-04T00:00:00.000Z" itemprop="datePublished">2015-03-04</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2016/02/04/纯css实现一个微信logo，需要几个标签？/" class="archive-article-date">
+  	<time datetime="2016-02-04T03:13:24.000Z" itemprop="datePublished">Feb 4</time>
 </a>
-    </div>
+        </div>
+    	 
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      《数据结构与算法JavaScript描述》中的一处错误
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/02/04/纯css实现一个微信logo，需要几个标签？/">纯CSS实现一个微信logo，需要几个标签？</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信Logo/">微信Logo</a></li></ul>
 	</div>
 
-        
+          
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+	<a class="article-category-link" href="/categories/CSS3/">CSS3</a>
 	</div>
 
 
+        </div>
         <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在看《数据结构与算法JavaScript描述》这本书，看到选择排序这部分时，发现一个比较大的错误。<br><a id="more"></a><br>原书的选择排序算法是这样的：</p>
-<pre><code>function selectionSort() {
-    var min, temp;
-    for (var outer = 0; outer &lt;= this.dataStore.length - 2; ++outer) {
-        min = outer;
-        for (var inner = outer + 1; inner &lt;= this.dataStore.length - 1; ++inner) {
-            if (this.dataStore[inner] &lt; this.dataStore[min]) {
-                min = inner;
-            }
-            swap(this.dataStore, outer, min);
-        }    
-    }
-}
-</code></pre><p>错误在于，它把swap函数放在了内循环里面了，其实swap函数应该放在内循环外面，原理就不多说了，书上都有：</p>
-<pre><code>function selectionSort() {
-    var min, temp;
-    for (var outer = 0; outer &lt;= this.dataStore.length - 2; ++outer) {
-        min = outer;
-        for (var inner = outer + 1; inner &lt;= this.dataStore.length - 1; ++inner) {
-            if (this.dataStore[inner] &lt; this.dataStore[min]) {
-                min = inner;
-            }
-        }    
-        swap(this.dataStore, outer, min);
-    }
-}
-</code></pre>
-      
-    </div>
-    
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/03/07/CSS3实现图片渐入效果/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          CSS3实现图片渐入效果
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/01/21/HTML5实现刮奖效果/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTML5实现刮奖效果</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-
-
-
-
-
-
-<div class="post_spread" style="margin: 30px">
-  <div class="ds-share flat" data-thread-key="post-《数据结构与算法JavaScript描述》中的一处错误" data-title="《数据结构与算法JavaScript描述》中的一处错误" data-images=">" data-content="&lt;p&gt;最近在看《数据结构与算法JavaScript描述》这本书，看到选择排序这部分时，发现一个比较大的错误。&lt;br&gt;>" data-url="http://lwzhang.github.io/2015/03/04/《数据结构与算法JavaScript描述》中的一处错误/">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-
-        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
-  </div>
-  <section id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-《数据结构与算法JavaScript描述》中的一处错误" data-title="《数据结构与算法JavaScript描述》中的一处错误" data-url="http://lwzhang.github.io/2015/03/04/《数据结构与算法JavaScript描述》中的一处错误/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name:"zlwxlj"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-    </script>
-    <!-- 多说公共JS代码 end -->
-  </section>
-</div>
+    
 
 </div>
       <footer id="footer">
@@ -364,9 +276,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false
 	}
