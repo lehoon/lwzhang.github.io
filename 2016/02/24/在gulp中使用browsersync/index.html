@@ -4,17 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>那时候的我</title>
+  <title>在Gulp中使用BrowserSync | 那时候的我</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我有一只小毛驴，我从来也不骑。有一天我心血来潮骑着去赶集。我手里拿着小皮鞭我心里正得意。不知怎么哗啦啦啦啦啦，我摔了一身泥">
-<meta property="og:type" content="website">
-<meta property="og:title" content="那时候的我">
-<meta property="og:url" content="http://lwzhang.github.io/index.html">
+  <meta name="description" content="很早就听说过BrowserSync，也看过一些相关文章，可就是没用过。之前一直在用Gulp开发项目，每次编写完Sass后还要用按F5刷新页面看效果，想想也是够傻的，这么好用的东西竟然现在才开始用。
+BrowserSync可以同时同步刷新多个浏览器，更神奇的是你在一个浏览器中滚动页面、点击按钮、输入框中输入信息等用户行为也会同步到每个浏览器中。
+安装browser-sync模块1npm instal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Gulp中使用BrowserSync">
+<meta property="og:url" content="http://lwzhang.github.io/2016/02/24/在gulp中使用browsersync/index.html">
 <meta property="og:site_name" content="那时候的我">
-<meta property="og:description" content="我有一只小毛驴，我从来也不骑。有一天我心血来潮骑着去赶集。我手里拿着小皮鞭我心里正得意。不知怎么哗啦啦啦啦啦，我摔了一身泥">
+<meta property="og:description" content="很早就听说过BrowserSync，也看过一些相关文章，可就是没用过。之前一直在用Gulp开发项目，每次编写完Sass后还要用按F5刷新页面看效果，想想也是够傻的，这么好用的东西竟然现在才开始用。
+BrowserSync可以同时同步刷新多个浏览器，更神奇的是你在一个浏览器中滚动页面、点击按钮、输入框中输入信息等用户行为也会同步到每个浏览器中。
+安装browser-sync模块1npm instal">
+<meta property="og:updated_time" content="2016-02-24T15:42:34.655Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="那时候的我">
-<meta name="twitter:description" content="我有一只小毛驴，我从来也不骑。有一天我心血来潮骑着去赶集。我手里拿着小皮鞭我心里正得意。不知怎么哗啦啦啦啦啦，我摔了一身泥">
+<meta name="twitter:title" content="在Gulp中使用BrowserSync">
+<meta name="twitter:description" content="很早就听说过BrowserSync，也看过一些相关文章，可就是没用过。之前一直在用Gulp开发项目，每次编写完Sass后还要用按F5刷新页面看效果，想想也是够傻的，这么好用的东西竟然现在才开始用。
+BrowserSync可以同时同步刷新多个浏览器，更神奇的是你在一个浏览器中滚动页面、点击按钮、输入框中输入信息等用户行为也会同步到每个浏览器中。
+安装browser-sync模块1npm instal">
   
     <link rel="alternative" href="/atom.xml" title="那时候的我" type="application/atom+xml">
   
@@ -200,9 +207,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-在gulp中使用browsersync" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-在gulp中使用browsersync" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/02/24/在gulp中使用browsersync/" class="article-date">
@@ -218,12 +223,27 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/24/在gulp中使用browsersync/">在Gulp中使用BrowserSync</a>
+    <h1 class="article-title" itemprop="name">
+      在Gulp中使用BrowserSync
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BrowserSync/">BrowserSync</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gulp/">Gulp</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/自动化构建工具/">自动化构建工具</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -248,24 +268,19 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BrowserSync/">BrowserSync</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gulp/">Gulp</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/自动化构建工具/">自动化构建工具</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/17/解决iscroll-js上拉下拉刷新手指划出屏幕无法弹回问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">解决iscroll.js上拉下拉刷新手指划出屏幕页面无法回弹问题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -276,600 +291,42 @@
 
 
 
+<div class="post_spread" style="margin: 30px">
+  <div class="ds-share flat" data-thread-key="post-在gulp中使用browsersync" data-title="在Gulp中使用BrowserSync" data-images=">" data-content=">" data-url="http://lwzhang.github.io/2016/02/24/在gulp中使用browsersync/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
 
-  
-    <article id="post-解决iscroll-js上拉下拉刷新手指划出屏幕无法弹回问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/17/解决iscroll-js上拉下拉刷新手指划出屏幕无法弹回问题/" class="article-date">
-  	<time datetime="2016-02-17T12:41:50.000Z" itemprop="datePublished">2016-02-17</time>
-</a>
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/17/解决iscroll-js上拉下拉刷新手指划出屏幕无法弹回问题/">解决iscroll.js上拉下拉刷新手指划出屏幕页面无法回弹问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/assets/blogImg/20150102_a4ddb186ca87d8af09a3bf9f7c8d6df0.jpg" alt=""></p>
-<p>使用过iscroll.js的上拉下拉刷新效果的朋友应该都碰到过这个问题：在iOS的浏览器中，上拉或下拉刷新时，当手指划出屏幕后，页面无法弹回。很多人因为解决不了这个问题，干脆就那样不解决了，还有的直接就不用HTML了，使用原生代替HTML页面。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iscroll-js/">iscroll.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/上拉下拉刷新/">上拉下拉刷新</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/无法回弹/">无法回弹</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/17/解决iscroll-js上拉下拉刷新手指划出屏幕无法弹回问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
-  
-</article>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-在gulp中使用browsersync" data-title="在Gulp中使用BrowserSync" data-url="http://lwzhang.github.io/2016/02/24/在gulp中使用browsersync/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"zlwxlj"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+</div>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-纯css实现一个微信logo，需要几个标签？" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/04/纯css实现一个微信logo，需要几个标签？/" class="article-date">
-  	<time datetime="2016-02-04T03:13:24.000Z" itemprop="datePublished">2016-02-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/04/纯css实现一个微信logo，需要几个标签？/">纯CSS实现一个微信logo，需要几个标签？</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/assets/blogImg/QQ图片20160204131450.png" alt=""></p>
-<p>纯CSS实现一个微信logo并不难，难的是怎样用最少的<code>html</code>标签实现。我一直在想怎样用一个标签就能实现，最后还是没想出来，就只好用两个标签了。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信Logo/">微信Logo</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/CSS3/">CSS3</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/04/纯css实现一个微信logo，需要几个标签？/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo主题中添加相册功能" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/17/hexo主题中添加相册功能/" class="article-date">
-  	<time datetime="2016-01-17T10:50:15.000Z" itemprop="datePublished">2016-01-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/17/hexo主题中添加相册功能/">hexo主题中添加相册功能</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/assets/blogImg/20150108_68360c07b3d015595d520b6131a3ec97.png.jpg" alt=""></p>
-<p>基本上所有的<code>hexo</code>主题默认都没有实现相册功能，一方面相册功能的需求较少，毕竟<code>hexo</code>主要是写博客用的；另一方面实现相册功能比较麻烦，比如说：</p>
-<ul>
-<li><p>图片放哪里，放在<code>source</code>文件夹中，需要解析成静态文件，图片一旦多的话就会解析的非常慢</p>
-</li>
-<li><p>怎么批量获取图片<code>url</code>(文件名)，图片那么多，不可能一个一个的手动输入图片<code>url</code></p>
-</li>
-<li><p>等等</p>
-</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo相册/">hexo相册</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yilia主题/">yilia主题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/相册/">相册</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/hexo/">hexo</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/17/hexo主题中添加相册功能/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-babel无法编译？" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/18/babel无法编译？/" class="article-date">
-  	<time datetime="2015-11-18T00:00:00.000Z" itemprop="datePublished">2015-11-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/18/babel无法编译？/">babel无法编译？</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>ECMAScript 6(ES6)</code>的发展或者说普及之快可以说是难以想象的，对很多人来说<code>ECMAScript 5(ES5)</code>都还普及呢。现代浏览器对<code>ES6</code>新特新或多或少的有些支持，但支持度不高，所以要想在浏览器中直接使用<code>ES6</code>的新特性，还得等上一段时间。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/babel/"> babel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/babel-cli/">babel-cli</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/babel-core/">babel-core</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/babel-node/">babel-node</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/ES6/">ES6</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/18/babel无法编译？/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css3 transform属性多个值的顺序问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/14/css3 transform属性多个值的顺序问题/" class="article-date">
-  	<time datetime="2015-11-14T00:00:00.000Z" itemprop="datePublished">2015-11-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/14/css3 transform属性多个值的顺序问题/">css3 transform属性多个值的顺序问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对于<code>transform</code>属性的多值的顺序问题，我自己就被困扰过。后来知道了跟顺序有关，但是不知道为什么。我想应该很多人跟我以前一样，知其然不知其所以然。如果不知道的，也许这篇文章会对大家有所帮助。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transform/"> transform</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transform多值顺序/">transform多值顺序</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/CSS3/">CSS3</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/14/css3 transform属性多个值的顺序问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-元素rotate之后，宽度该怎么计算？" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/13/元素rotate之后，宽度该怎么计算？/" class="article-date">
-  	<time datetime="2015-11-13T00:00:00.000Z" itemprop="datePublished">2015-11-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/13/元素rotate之后，宽度该怎么计算？/">元素rotate之后，宽度该怎么计算？</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>通常，利用<code>transform: rotate()</code>元素之后，我们并不会去在意元素大小的变化，因为看上去并没有什么变化。虽然看上去没有变化，其实是有变化的。下面用一个例子来说明一下。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rotate/">rotate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transform/">transform</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/CSS3/">CSS3</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/13/元素rotate之后，宽度该怎么计算？/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Sass与Compass合并雪碧图(二)" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/30/Sass与Compass合并雪碧图(二)/" class="article-date">
-  	<time datetime="2015-08-30T00:00:00.000Z" itemprop="datePublished">2015-08-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/30/Sass与Compass合并雪碧图(二)/">Sass与Compass合并雪碧图(二)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上一篇文章介绍了怎样使用<code>compass</code>合并雪碧图，生成的<code>icons.css</code>文件中单位是<code>px</code>，PC端可以直接在html文件中使用，但在移动端，我们需要根据不同分辨率的屏幕，来缩放图片大小，显然使用<code>px</code>单位肯定是不行的。所以需要做一下单位转换的工作。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compass/">compass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sprite/">sprite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sprites/">sprites</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/合并图片/">合并图片</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/雪碧图/">雪碧图</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/SASS/">SASS</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/30/Sass与Compass合并雪碧图(二)/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Sass与Compass合并雪碧图(一)" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/29/Sass与Compass合并雪碧图(一)/" class="article-date">
-  	<time datetime="2015-08-29T00:00:00.000Z" itemprop="datePublished">2015-08-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/29/Sass与Compass合并雪碧图(一)/">Sass与Compass合并雪碧图(一)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>雪碧图就是很多张小图片合并成一张大图片，以减少HTTP请求，从而提升加载速度。有很多软件可以合并雪碧图，但通常不太容易维护，使用compass生成雪碧图应该算是非常方便的方法了，可以轻松的生成雪碧图，而且易维护。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compass/">compass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sprite/">sprite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sprites/">sprites</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/合并图片/">合并图片</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/雪碧图/">雪碧图</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/SASS/">SASS</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/29/Sass与Compass合并雪碧图(一)/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Flexbox + js实现滑动拼图游戏" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/23/Flexbox + js实现滑动拼图游戏/" class="article-date">
-  	<time datetime="2015-08-23T00:00:00.000Z" itemprop="datePublished">2015-08-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/23/Flexbox + js实现滑动拼图游戏/">Flexbox + js实现滑动拼图游戏</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>滑动拼图就是把一张图片分成几等份，打乱顺序（下图），然后通过滑动拼凑成一张完整的图片。<br><img src="/assets/blogImg/o_pintu.png" alt=""><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flex/">flex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/滑动拼图/">滑动拼图</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/23/Flexbox + js实现滑动拼图游戏/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -893,8 +350,8 @@
 		fancybox: true,
 		mathjax: false,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
