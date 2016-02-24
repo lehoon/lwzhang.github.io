@@ -4,7 +4,7 @@
   <subtitle><![CDATA[啦啦啦，啦啦啦，我是卖报的小行家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://lwzhang.github.io/"/>
-  <updated>2016-02-24T15:42:34.655Z</updated>
+  <updated>2016-02-24T15:44:31.775Z</updated>
   <id>http://lwzhang.github.io/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://lwzhang.github.io/2016/02/24/%E5%9C%A8gulp%E4%B8%AD%E4%BD%BF%E7%94%A8browsersync/"/>
     <id>http://lwzhang.github.io/2016/02/24/在gulp中使用browsersync/</id>
     <published>2016-02-24T11:58:51.000Z</published>
-    <updated>2016-02-24T15:42:34.655Z</updated>
+    <updated>2016-02-24T15:44:31.775Z</updated>
     <content type="html"><![CDATA[<p>很早就听说过BrowserSync，也看过一些相关文章，可就是没用过。之前一直在用Gulp开发项目，每次编写完Sass后还要用按<code>F5</code>刷新页面看效果，想想也是够傻的，这么好用的东西竟然现在才开始用。</p>
 <p>BrowserSync可以同时同步刷新多个浏览器，更神奇的是你在一个浏览器中滚动页面、点击按钮、输入框中输入信息等用户行为也会同步到每个浏览器中。</p>
+<a id="more"></a>
 <h3 id="u5B89_u88C5browser-sync_u6A21_u5757"><a href="#u5B89_u88C5browser-sync_u6A21_u5757" class="headerlink" title="安装browser-sync模块"></a>安装<code>browser-sync</code>模块</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> browser-<span class="keyword">sync</span> -<span class="keyword">g</span></span></span><br></pre></td></tr></table></figure>
 <h3 id="u547D_u4EE4_u884C_u76F4_u63A5_u4F7F_u7528"><a href="#u547D_u4EE4_u884C_u76F4_u63A5_u4F7F_u7528" class="headerlink" title="命令行直接使用"></a>命令行直接使用</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser-<span class="keyword">sync</span> start --server --<span class="keyword">files</span> <span class="string">"css/*.css"</span></span><br></pre></td></tr></table></figure>
 <p>使用上面命令会开启一个迷你服务器，自动帮你打开浏览器，默认地址<code>localhost:3000</code>，默认打开<code>index.html</code>，如果没有，需要手动加上你要打开的页面，如<code>localhost:3000/test.html</code>。</p>
@@ -39,7 +40,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>很早就听说过BrowserSync，也看过一些相关文章，可就是没用过。之前一直在用Gulp开发项目，每次编写完Sass后还要用按<code>F5</code>刷新页面看效果，想想也是够傻的，这么好用的东西竟然现在才开始用。</p>
-<p>BrowserSync可以同时同步刷]]>
+<p>BrowserSync可以同时同步刷新多个浏览器，更神奇的是你在一个浏览器中滚动页面、点击按钮、输入框中输入信息等用户行为也会同步到每个浏览器中。</p>]]>
+    
     </summary>
     
       <category term="BrowserSync" scheme="http://lwzhang.github.io/tags/BrowserSync/"/>
