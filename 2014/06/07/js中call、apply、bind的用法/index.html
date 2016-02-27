@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>js中call、apply、bind的用法 | 那时候的我</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天看博客时，看到了这样的一段js代码：
+1var bind = Function.prototype.call.bind(Function.prototype.bind);
+我想突然看到这样的一段代码，即使js能力再强的人，可能也需要花点时间去理解。像我这样的菜鸟就更不用说了。其实，原文已经对这端代码做出了解释，但我还是想用我的想法去解释这段代码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js中call、apply、bind的用法">
+<meta property="og:url" content="http://lwzhang.github.io/2014/06/07/js中call、apply、bind的用法/index.html">
+<meta property="og:site_name" content="那时候的我">
+<meta property="og:description" content="今天看博客时，看到了这样的一段js代码：
+1var bind = Function.prototype.call.bind(Function.prototype.bind);
+我想突然看到这样的一段代码，即使js能力再强的人，可能也需要花点时间去理解。像我这样的菜鸟就更不用说了。其实，原文已经对这端代码做出了解释，但我还是想用我的想法去解释这段代码。">
+<meta property="og:updated_time" content="2016-02-27T10:57:45.686Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js中call、apply、bind的用法">
+<meta name="twitter:description" content="今天看博客时，看到了这样的一段js代码：
+1var bind = Function.prototype.call.bind(Function.prototype.bind);
+我想突然看到这样的一段代码，即使js能力再强的人，可能也需要花点时间去理解。像我这样的菜鸟就更不用说了。其实，原文已经对这端代码做出了解释，但我还是想用我的想法去解释这段代码。">
+  
+    <link rel="alternative" href="/atom.xml" title="那时候的我" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/blogImg/avatar1.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">那时候的我</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">啦啦啦，啦啦啦，我是卖报的小行家</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">首页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/photo">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/lwzhang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/1684901103/home?wvr=5" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/babel/" style="font-size: 10px;"> babel</a> <a href="/tags/transform/" style="font-size: 10px;"> transform</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Array-comprehensions/" style="font-size: 10px;">Array comprehensions</a> <a href="/tags/BrowserSync/" style="font-size: 10px;">BrowserSync</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML5/" style="font-size: 20px;">HTML5</a> <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/babel-cli/" style="font-size: 10px;">babel-cli</a> <a href="/tags/babel-core/" style="font-size: 10px;">babel-core</a> <a href="/tags/babel-node/" style="font-size: 10px;">babel-node</a> <a href="/tags/bind/" style="font-size: 10px;">bind</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/canvas/" style="font-size: 20px;">canvas</a> <a href="/tags/compass/" style="font-size: 20px;">compass</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/curry/" style="font-size: 10px;">curry</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo相册/" style="font-size: 10px;">hexo相册</a> <a href="/tags/iscroll-js/" style="font-size: 10px;">iscroll.js</a> <a href="/tags/js位运算/" style="font-size: 10px;">js位运算</a> <a href="/tags/js数组排序/" style="font-size: 10px;">js数组排序</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/placeholder/" style="font-size: 10px;">placeholder</a> <a href="/tags/rotate/" style="font-size: 10px;">rotate</a> <a href="/tags/sass/" style="font-size: 20px;">sass</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spinners/" style="font-size: 10px;">spinners</a> <a href="/tags/sprite/" style="font-size: 20px;">sprite</a> <a href="/tags/sprites/" style="font-size: 20px;">sprites</a> <a href="/tags/transform/" style="font-size: 20px;">transform</a> <a href="/tags/transform多值顺序/" style="font-size: 10px;">transform多值顺序</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/yilia主题/" style="font-size: 10px;">yilia主题</a> <a href="/tags/上拉下拉刷新/" style="font-size: 10px;">上拉下拉刷新</a> <a href="/tags/刮奖效果/" style="font-size: 10px;">刮奖效果</a> <a href="/tags/合并图片/" style="font-size: 20px;">合并图片</a> <a href="/tags/图片渐入效果/" style="font-size: 10px;">图片渐入效果</a> <a href="/tags/地址选择器/" style="font-size: 10px;">地址选择器</a> <a href="/tags/城市选择器/" style="font-size: 10px;">城市选择器</a> <a href="/tags/小三角/" style="font-size: 10px;">小三角</a> <a href="/tags/微信Logo/" style="font-size: 10px;">微信Logo</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/无法回弹/" style="font-size: 10px;">无法回弹</a> <a href="/tags/滑动拼图/" style="font-size: 10px;">滑动拼图</a> <a href="/tags/滚动条/" style="font-size: 10px;">滚动条</a> <a href="/tags/相册/" style="font-size: 10px;">相册</a> <a href="/tags/科里化/" style="font-size: 10px;">科里化</a> <a href="/tags/雪碧图/" style="font-size: 20px;">雪碧图</a> <a href="/tags/风车/" style="font-size: 10px;">风车</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.zhangxinxu.com/wordpress/category/js/">张鑫旭</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://barretlee.com">小胡子哥</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我有一只小毛驴，我从来也不骑。有一天我心血来潮骑着去赶集。我手里拿着小皮鞭我心里正得意。不知怎么哗啦啦啦啦啦，我摔了一身泥</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">那时候的我</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/assets/blogImg/avatar1.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">那时候的我</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">啦啦啦，啦啦啦，我是卖报的小行家</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">首页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/photo">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/lwzhang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/1684901103/home?wvr=5" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-js中call、apply、bind的用法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/06/07/js中call、apply、bind的用法/" class="article-date">
+  	<time datetime="2014-06-07T10:45:27.000Z" itemprop="datePublished">2014-06-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js中call、apply、bind的用法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apply/">apply</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bind/">bind</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/call/">call</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天看博客时，看到了这样的一段js代码：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">bind</span> = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">call</span>.<span class="keyword">bind</span>(<span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">bind</span>);</span><br></pre></td></tr></table></figure>
+<p>我想突然看到这样的一段代码，即使js能力再强的人，可能也需要花点时间去理解。像我这样的菜鸟就更不用说了。其实，原文已经对这端代码做出了解释，但我还是想用我的想法去解释这段代码。</p>
+<a id="more"></a>
+<p>上面那段代码涉及到了<code>call</code>、<code>bind</code>，所以我想先区别一下<code>call</code>、<code>apply</code>、<code>bind</code>的用法。这三个方法的用法非常相似，将函数绑定到上下文中，即用来改变函数中<code>this</code>的指向。举个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> zlw = &#123;</span><br><span class="line">    name: <span class="string">"zlw"</span>,</span><br><span class="line">    sayHello: <span class="function"><span class="keyword">function</span> (<span class="params">age</span>) </span>&#123;</span><br><span class="line">         <span class="built_in">console</span>.log(<span class="string">"hello, i am "</span>, <span class="keyword">this</span>.name + <span class="string">" "</span> + age <span class="string">" years old"</span>);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>  xlj = &#123;</span><br><span class="line">    name: <span class="string">"xlj"</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">zlw.sayHello(<span class="number">24</span>);<span class="comment">// hello, i am zlw 24 years old</span></span><br></pre></td></tr></table></figure>
+<p>下面看看<code>call</code>、<code>apply</code>方法的用法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zlw.sayHello.call(xlj, <span class="number">24</span>);<span class="comment">// hello, i am xlj 24 years old</span></span><br><span class="line">zlw.sayHello.apply(xlj, [<span class="number">24</span>]);<span class="comment">// hello, i am xlj 24 years old</span></span><br></pre></td></tr></table></figure>
+<p>结果都相同。从写法上我们就能看出二者之间的异同。相同之处在于，第一个参数都是要绑定的上下文，后面的参数是要传递给调用该方法的函数的。不同之处在于，<code>call</code>方法传递给调用函数的参数是逐个列出的，而<code>apply</code>则是要写在数组中。</p>
+<p>我们再来看看<code>bind</code>方法的用法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zlw.sayHello.bind(xlj, <span class="number">24</span>)(); <span class="comment">//hello, i am xlj 24 years old</span></span><br><span class="line">zlw.sayHello.bind(xlj, [<span class="number">24</span>])(); <span class="comment">//hello, i am xlj 24 years old</span></span><br></pre></td></tr></table></figure>
+<p><code>bind</code>方法传递给调用函数的参数可以逐个列出，也可以写在数组中。<code>bind</code>方法与<code>call</code>、<code>apply</code>最大的不同就是前者返回一个绑定上下文的函数，而后两者是直接执行了函数。由于这个原因，上面的代码也可以这样写:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zlw.sayHello.bind(xlj)(<span class="number">24</span>); <span class="comment">//hello, i am xlj 24 years old</span></span><br><span class="line">zlw.sayHello.bind(xlj)([<span class="number">24</span>]); <span class="comment">//hello, i am xlj 24 years old</span></span><br></pre></td></tr></table></figure>
+<p><code>bind</code>方法还可以这样写<code>fn.bind(obj, arg1)(arg2)</code>。</p>
+<p>用一句话总结<code>bind</code>的用法：该方法创建一个新函数，称为绑定函数，绑定函数会以创建它时传入<code>bind</code>方法的第一个参数作为<code>this</code>，传入bind方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</p>
+<p>现在回到开始的那段代码：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">bind</span> = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">call</span>.<span class="keyword">bind</span>(<span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">bind</span>);</span><br></pre></td></tr></table></figure>
+<p>我们可以这样理解这段代码：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> bind = fn.<span class="function"><span class="title">bind</span><span class="params">(obj)</span></span></span><br></pre></td></tr></table></figure>
+<p><code>fn</code>相当于<code>Function.prototype.call</code>，<code>obj</code>相当于<code>Function.prototype.bind</code>。而<code>fn.bind(obj)</code>一般可以写成这样<code>obj.fn</code>，为什么呢？因为<code>fn</code>绑定了<code>obj</code>，<code>fn</code>中的<code>this</code>就指向了<code>obj</code>。我们知道，函数中<code>this</code>的指向一般是指向调用该函数的对象。所以那段代码可以写成这样:</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">bind</span> = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">bind</span>.<span class="keyword">call</span>;</span><br></pre></td></tr></table></figure>
+<p>大家想一想<code>Function.prototype.call.bind(Function.prototype.bind)</code>返回的是什么？</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.<span class="built_in">log</span>(<span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">call</span>.<span class="keyword">bind</span>(<span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">bind</span>)) // <span class="keyword">call</span>()</span><br></pre></td></tr></table></figure>
+<p>返回的是<code>call</code>函数，但这个<code>call</code>函数中的上下文的指向是<code>Function.prototype.bind</code>。这个<code>call</code>函数可以这样用</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">bind</span> = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">call</span>.<span class="keyword">bind</span>(<span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">bind</span>);</span><br><span class="line"></span><br><span class="line">var zlw = &#123;</span><br><span class="line">    <span class="keyword">name</span>: <span class="string">"zlw"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span></span> hello () &#123;</span><br><span class="line">    console.<span class="built_in">log</span>(<span class="string">"hello, I am "</span>, this.<span class="keyword">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bind</span>(hello, zlw)() // hello, I am zlw</span><br></pre></td></tr></table></figure>
+<p>大家可能会感到疑惑，为什么是这样写<code>bind(hello, zlw)</code>而不是这样写<code>bind(zlw, hello)</code>？既然<code>Function.prototype.call.bind(Function.prototype.bind)</code>相当于<code>Function.prototype.bind.call</code>，那么先来看下<code>Function.prototype.bind.call</code>怎么用。<code>call</code>的用法大家都知道：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">bind</span>.<span class="keyword">call</span>(obj, arg)</span><br></pre></td></tr></table></figure>
+<p>其实就相当于<code>obj.bind(arg)</code>。我们需要的是<code>hello</code>函数绑定对象<code>zlw</code>，即<code>hello.bind(zlw)</code>也就是<code>Function.prototype.bind.call(hello, zlw)</code>，所以应该这样写<code>bind(hello, zlw)</code>。</p>
+<p>现在又有一个疑问，既然<code>Function.prototype.call.bind(Function.prototype.bind)</code>相当于<code>Function.prototype.bind.call</code>，我们为什么要这么写：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">bind</span> = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">call</span>.<span class="keyword">bind</span>(<span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">bind</span>);</span><br></pre></td></tr></table></figure>
+<p>而不直接这样写呢：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">bind</span> = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">bind</span>.<span class="keyword">call</span>;</span><br></pre></td></tr></table></figure>
+<p>先来看一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"xlj"</span>;</span><br><span class="line"><span class="keyword">var</span> zlw = &#123;</span><br><span class="line">    name: <span class="string">"zlw"</span></span><br><span class="line">    hello: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">zlw.hello(); <span class="comment">// zlw</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hello = zlw.hello;</span><br><span class="line">hello(); <span class="comment">// xlj</span></span><br></pre></td></tr></table></figure>
+<p>有些人可能会意外，<code>hello()</code>的结果应该是<code>zlw</code>才对啊。其实，将<code>zlw.hello</code>赋值给变量<code>hello</code>，再调用<code>hello()</code>，<code>hello</code>函数中的<code>this</code>已经指向了<code>window</code>，与<code>zlw.hello</code>不再是同一个上下文，而全局变量<code>name</code>是<code>window</code>的一个属性，所以结果就是<code>xlj</code>。再看下面的代码：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> hello</span> = zlw.hello.bind(zlw);</span><br><span class="line">hello(); <span class="comment">// zlw</span></span><br></pre></td></tr></table></figure>
+<p>结果是<code>zlw</code>，这时<code>hello</code>函数与<code>zlw.hello</code>是同一个上下文。其实上面的疑惑已经解开了，直接这样写：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">bind</span> = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">bind</span>.<span class="keyword">call</span>;</span><br></pre></td></tr></table></figure>
+<p><code>bind</code>函数中的上下文已经与<code>Function.prototype.bind.call</code>中的不一样了，所以使用<code>bind</code>函数会出错。而这样写</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">bind</span> = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">call</span>.<span class="keyword">bind</span>(<span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">bind</span>);</span><br></pre></td></tr></table></figure>
+<p><code>bind</code>函数中的上下文与<code>Function.prototype.call.bind(Function.prototype.bind)</code>中是一样的。</p>
+<p>关于这个这段代码的解释这到这边了，感觉语言组织能力不是很好，文章写得有些啰嗦了。文中可能会有错误，希望大家指正。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/07/13/ES6对数组的扩展/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          ES6对数组的扩展
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/04/27/js中数组对象排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js中数组对象排序</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<div class="post_spread" style="margin: 30px">
+  <div class="ds-share flat" data-thread-key="post-js中call、apply、bind的用法" data-title="js中call、apply、bind的用法" data-images=">" data-content="&lt;p&gt;今天看博客时，看到了这样的一段js代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight fortran&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var &lt;span class=&quot;keyword&quot;&gt;bind&lt;/span&gt; = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Function&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;prototype&lt;/span&gt;&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;call&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;bind&lt;/span&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;Function&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;prototype&lt;/span&gt;&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;bind&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;我想突然看到这样的一段代码，即使js能力再强的人，可能也需要花点时间去理解。像我这样的菜鸟就更不用说了。其实，原文已经对这端代码做出了解释，但我还是想用我的想法去解释这段代码。&lt;/p&gt;>" data-url="http://lwzhang.github.io/2014/06/07/js中call、apply、bind的用法/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+  </div>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-js中call、apply、bind的用法" data-title="js中call、apply、bind的用法" data-url="http://lwzhang.github.io/2014/06/07/js中call、apply、bind的用法/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"zlwxlj"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+</div>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 那时候的我
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

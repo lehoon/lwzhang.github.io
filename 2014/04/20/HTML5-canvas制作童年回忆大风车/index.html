@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>HTML5 canvas制作童年回忆大风车 | 那时候的我</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天看到一篇CSS3写的大风车http://www.cnblogs.com/yaojaa/archive/2013/01/30/2882521.html，感觉CSS3太神奇了，这在以前用CSS是想都不敢想的。记得去年自己用canvas也写过这样的大风车，今天我打算用canvas制作一个一模一样的，连速度都一致的大风车。
+大家请看下面两张图，你们看得出这两张图有什么区别吗？哪张是CSS3写的哪张是c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 canvas制作童年回忆大风车">
+<meta property="og:url" content="http://lwzhang.github.io/2014/04/20/HTML5-canvas制作童年回忆大风车/index.html">
+<meta property="og:site_name" content="那时候的我">
+<meta property="og:description" content="今天看到一篇CSS3写的大风车http://www.cnblogs.com/yaojaa/archive/2013/01/30/2882521.html，感觉CSS3太神奇了，这在以前用CSS是想都不敢想的。记得去年自己用canvas也写过这样的大风车，今天我打算用canvas制作一个一模一样的，连速度都一致的大风车。
+大家请看下面两张图，你们看得出这两张图有什么区别吗？哪张是CSS3写的哪张是c">
+<meta property="og:image" content="http://lwzhang.github.io/assets/blogImg/QQ图片20160227195136.png">
+<meta property="og:updated_time" content="2016-02-27T11:53:07.847Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5 canvas制作童年回忆大风车">
+<meta name="twitter:description" content="今天看到一篇CSS3写的大风车http://www.cnblogs.com/yaojaa/archive/2013/01/30/2882521.html，感觉CSS3太神奇了，这在以前用CSS是想都不敢想的。记得去年自己用canvas也写过这样的大风车，今天我打算用canvas制作一个一模一样的，连速度都一致的大风车。
+大家请看下面两张图，你们看得出这两张图有什么区别吗？哪张是CSS3写的哪张是c">
+  
+    <link rel="alternative" href="/atom.xml" title="那时候的我" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/blogImg/avatar1.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">那时候的我</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">啦啦啦，啦啦啦，我是卖报的小行家</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">首页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/photo">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/lwzhang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/1684901103/home?wvr=5" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/babel/" style="font-size: 10px;"> babel</a> <a href="/tags/transform/" style="font-size: 10px;"> transform</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Array-comprehensions/" style="font-size: 10px;">Array comprehensions</a> <a href="/tags/BrowserSync/" style="font-size: 10px;">BrowserSync</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/HTML5/" style="font-size: 20px;">HTML5</a> <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/babel-cli/" style="font-size: 10px;">babel-cli</a> <a href="/tags/babel-core/" style="font-size: 10px;">babel-core</a> <a href="/tags/babel-node/" style="font-size: 10px;">babel-node</a> <a href="/tags/bind/" style="font-size: 10px;">bind</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/canvas/" style="font-size: 20px;">canvas</a> <a href="/tags/compass/" style="font-size: 20px;">compass</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/curry/" style="font-size: 10px;">curry</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo相册/" style="font-size: 10px;">hexo相册</a> <a href="/tags/iscroll-js/" style="font-size: 10px;">iscroll.js</a> <a href="/tags/js位运算/" style="font-size: 10px;">js位运算</a> <a href="/tags/js数组排序/" style="font-size: 10px;">js数组排序</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/placeholder/" style="font-size: 10px;">placeholder</a> <a href="/tags/rotate/" style="font-size: 10px;">rotate</a> <a href="/tags/sass/" style="font-size: 20px;">sass</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/spinners/" style="font-size: 10px;">spinners</a> <a href="/tags/sprite/" style="font-size: 20px;">sprite</a> <a href="/tags/sprites/" style="font-size: 20px;">sprites</a> <a href="/tags/transform/" style="font-size: 20px;">transform</a> <a href="/tags/transform多值顺序/" style="font-size: 10px;">transform多值顺序</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/yilia主题/" style="font-size: 10px;">yilia主题</a> <a href="/tags/上拉下拉刷新/" style="font-size: 10px;">上拉下拉刷新</a> <a href="/tags/刮奖效果/" style="font-size: 10px;">刮奖效果</a> <a href="/tags/合并图片/" style="font-size: 20px;">合并图片</a> <a href="/tags/图片渐入效果/" style="font-size: 10px;">图片渐入效果</a> <a href="/tags/地址选择器/" style="font-size: 10px;">地址选择器</a> <a href="/tags/城市选择器/" style="font-size: 10px;">城市选择器</a> <a href="/tags/小三角/" style="font-size: 10px;">小三角</a> <a href="/tags/微信Logo/" style="font-size: 10px;">微信Logo</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/无法回弹/" style="font-size: 10px;">无法回弹</a> <a href="/tags/滑动拼图/" style="font-size: 10px;">滑动拼图</a> <a href="/tags/滚动条/" style="font-size: 10px;">滚动条</a> <a href="/tags/相册/" style="font-size: 10px;">相册</a> <a href="/tags/科里化/" style="font-size: 10px;">科里化</a> <a href="/tags/雪碧图/" style="font-size: 20px;">雪碧图</a> <a href="/tags/风车/" style="font-size: 10px;">风车</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.zhangxinxu.com/wordpress/category/js/">张鑫旭</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://barretlee.com">小胡子哥</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我有一只小毛驴，我从来也不骑。有一天我心血来潮骑着去赶集。我手里拿着小皮鞭我心里正得意。不知怎么哗啦啦啦啦啦，我摔了一身泥</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">那时候的我</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/assets/blogImg/avatar1.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">那时候的我</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">啦啦啦，啦啦啦，我是卖报的小行家</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">首页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/photo">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/lwzhang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/1684901103/home?wvr=5" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-HTML5-canvas制作童年回忆大风车" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/04/20/HTML5-canvas制作童年回忆大风车/" class="article-date">
+  	<time datetime="2014-04-20T11:12:08.000Z" itemprop="datePublished">2014-04-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5 canvas制作童年回忆大风车
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/风车/">风车</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/HTML5/">HTML5</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天看到一篇CSS3写的大风车<a href="http://www.cnblogs.com/yaojaa/archive/2013/01/30/2882521.html" target="_blank" rel="external">http://www.cnblogs.com/yaojaa/archive/2013/01/30/2882521.html</a>，感觉CSS3太神奇了，这在以前用CSS是想都不敢想的。记得去年自己用canvas也写过这样的大风车，今天我打算用canvas制作一个一模一样的，连速度都一致的大风车。</p>
+<p>大家请看下面两张图，你们看得出这两张图有什么区别吗？哪张是<code>CSS3</code>写的哪张是<code>canvas</code>写的？</p>
+<p><img src="/assets/blogImg/QQ图片20160227195136.png" alt=""></p>
+<a id="more"></a>
+<p>下面就来介绍制作风车的过程。先上代码吧：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">canvas</span> <span class="attribute">id</span> = "<span class="attribute">canvas</span>" <span class="attribute">width</span>=<span class="value">"300"</span> <span class="attribute">height</span>=<span class="value">"300"</span>&gt;</span><span class="tag">&lt;/<span class="title">canvas</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">        (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> Pinwheel = <span class="function"><span class="keyword">function</span> (<span class="params">canvas, options</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">this</span>.canvas = <span class="built_in">document</span>.getElementById(canvas);</span><br><span class="line">                <span class="keyword">this</span>.options = options;</span><br><span class="line">            &#125;;</span><br><span class="line">            Pinwheel.prototype = &#123;</span><br><span class="line">                constructor: Pinwheel,</span><br><span class="line">                show: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">var</span> canvas = <span class="keyword">this</span>.canvas,<span class="comment">//取得canvas元素</span></span><br><span class="line">                            width = canvas.width,<span class="comment">//canvas元素的宽度</span></span><br><span class="line">                            height = canvas.height,<span class="comment">//canvas元素的高度</span></span><br><span class="line">                            color = <span class="keyword">this</span>.options.color,<span class="comment">//风车叶子的颜色</span></span><br><span class="line">                            radius = <span class="keyword">this</span>.options.radius,<span class="comment">//整个风车的半径</span></span><br><span class="line">                            wheelRadius = <span class="keyword">this</span>.options.wheelRadius,<span class="comment">//风车叶子的半径</span></span><br><span class="line">                            part = <span class="keyword">this</span>.options.part,<span class="comment">//PI/2分成几份</span></span><br><span class="line">                            ctx = canvas.getContext(<span class="string">"2d"</span>),<span class="comment">//获取上下文</span></span><br><span class="line">                            num = <span class="keyword">this</span>.options.num,<span class="comment">//叶子数量</span></span><br><span class="line">                            center = &#123;x: width / <span class="number">2</span>, y: height / <span class="number">2</span>&#125;,<span class="comment">//绘图区域的中心</span></span><br><span class="line">                            point, <span class="comment">//叶子圆心位置</span></span><br><span class="line">                            start = <span class="number">0</span>,<span class="comment">//绘制叶子的开始角</span></span><br><span class="line">                            angle = <span class="number">0</span>,<span class="comment">//start = angle</span></span><br><span class="line">                            end = <span class="built_in">Math</span>.PI,<span class="comment">//绘制叶子的结束角</span></span><br><span class="line">                            offset = <span class="built_in">Math</span>.PI * (<span class="number">360</span> / num) / <span class="number">180</span>,<span class="comment">//两个相邻叶子之间的角度</span></span><br><span class="line">                            rotateAngle = offset / part;<span class="comment">//每次旋转的角度</span></span><br><span class="line"><span class="comment">//                    window.timer = setInterval(function () &#123;</span></span><br><span class="line">                        ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i += <span class="number">1</span>) &#123;</span><br><span class="line">                            ctx.beginPath();<span class="comment">//开始绘制叶子</span></span><br><span class="line">                            <span class="keyword">var</span> wheelGradient = ctx.createRadialGradient(center.x, center.y, <span class="number">100</span>, center.x, center.y, <span class="number">0</span>);<span class="comment">//创建径向渐变</span></span><br><span class="line">                            wheelGradient.addColorStop(<span class="number">0</span>, color[i]);<span class="comment">//起始颜色</span></span><br><span class="line">                            wheelGradient.addColorStop(<span class="number">1</span>, <span class="string">"#000"</span>);<span class="comment">//结束颜色</span></span><br><span class="line">                            ctx.fillStyle = wheelGradient;<span class="comment">//填充渐变样式</span></span><br><span class="line">                            point = &#123;x: center.x + <span class="built_in">Math</span>.cos(offset * i + angle) * radius, y: center.y + <span class="built_in">Math</span>.sin(offset * i + angle) * radius&#125;;<span class="comment">//叶子圆心位置</span></span><br><span class="line">                            <span class="keyword">var</span> x = start + offset * i;<span class="comment">//绘制叶子的开始角</span></span><br><span class="line">                            <span class="keyword">var</span> y = end + offset * i;<span class="comment">//绘制叶子的结束角</span></span><br><span class="line">                            ctx.arc(point.x, point.y, wheelRadius, x, y, <span class="literal">false</span>);<span class="comment">//绘制</span></span><br><span class="line">                            ctx.fill();<span class="comment">//填充</span></span><br><span class="line">                            ctx.closePath();<span class="comment">//结束绘制</span></span><br><span class="line">                        &#125;</span><br><span class="line">                        ctx.beginPath();</span><br><span class="line">                        <span class="keyword">var</span> dotGradient = ctx.createRadialGradient(center.x, center.y, <span class="number">0</span>, center.x, center.y, <span class="number">40</span>);</span><br><span class="line">                        dotGradient.addColorStop(<span class="number">0</span>, <span class="string">"#fff"</span>);</span><br><span class="line">                        dotGradient.addColorStop(<span class="number">1</span>, <span class="string">"#666"</span>);</span><br><span class="line">                        ctx.fillStyle = dotGradient;</span><br><span class="line">                        ctx.arc(center.x, center.y, <span class="number">25</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="built_in">Math</span>.PI, <span class="literal">false</span>);</span><br><span class="line">                        ctx.fill();</span><br><span class="line">                        ctx.closePath();</span><br><span class="line">                        angle += rotateAngle;</span><br><span class="line">                        start = angle;</span><br><span class="line">                        end = <span class="built_in">Math</span>.PI + angle;</span><br><span class="line"><span class="comment">//                    &#125;, 20)</span></span><br><span class="line">                &#125;,</span><br><span class="line">                hide: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    clearInterval(<span class="built_in">window</span>.timer);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> options = &#123;</span><br><span class="line">                num: <span class="number">4</span>,</span><br><span class="line">                color: [<span class="string">"red"</span>, <span class="string">"yellow"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>],</span><br><span class="line">                radius: <span class="number">50</span>,</span><br><span class="line">                wheelRadius: <span class="number">50</span>,</span><br><span class="line">                part: <span class="number">50</span></span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> a = <span class="keyword">new</span> Pinwheel(<span class="string">"canvas"</span>, options);</span><br><span class="line">            a.show();</span><br><span class="line">        &#125;());</span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>首先，确定需要的各项参数：</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var canvas = <span class="keyword">this</span>.canvas,<span class="comment">//取得canvas元素</span></span><br><span class="line"><span class="variable">width</span> = canvas.<span class="variable">width</span>,<span class="comment">//canvas元素的宽度</span></span><br><span class="line"><span class="variable">height</span> = canvas.<span class="variable">height</span>,<span class="comment">//canvas元素的高度</span></span><br><span class="line"><span class="built_in">color</span> = <span class="keyword">this</span>.options.<span class="built_in">color</span>,<span class="comment">//风车叶子的颜色</span></span><br><span class="line">radius = <span class="keyword">this</span>.options.radius,<span class="comment">//整个风车的半径</span></span><br><span class="line">wheelRadius = <span class="keyword">this</span>.options.wheelRadius,<span class="comment">//风车叶子的半径</span></span><br><span class="line">part = <span class="keyword">this</span>.options.part,<span class="comment">//PI/2分成几份</span></span><br><span class="line">ctx = canvas.getContext(<span class="string">"2d"</span>),<span class="comment">//获取上下文</span></span><br><span class="line">num = <span class="keyword">this</span>.options.num,<span class="comment">//叶子数量</span></span><br><span class="line">center = &#123;x: <span class="variable">width</span> / <span class="number">2</span>, y: <span class="variable">height</span> / <span class="number">2</span>&#125;,<span class="comment">//绘图区域的中心</span></span><br><span class="line"><span class="built_in">point</span>, <span class="comment">//叶子圆心位置</span></span><br><span class="line">start = <span class="number">0</span>,<span class="comment">//绘制叶子的开始角</span></span><br><span class="line">angle = <span class="number">0</span>,<span class="comment">//start = angle</span></span><br><span class="line">end = Math.<span class="constant">PI</span>,<span class="comment">//绘制叶子的结束角</span></span><br><span class="line">offset = Math.<span class="constant">PI</span> * (<span class="number">360</span> / num) / <span class="number">180</span>,<span class="comment">//两个相邻叶子之间的角度</span></span><br><span class="line">rotateAngle = offset / part;<span class="comment">//每次旋转的角度</span></span><br></pre></td></tr></table></figure>
+<p>循环绘制每个叶子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; num; i += <span class="number">1</span>) &#123;</span><br><span class="line">　　ctx.beginPath();<span class="comment">//开始绘制叶子</span></span><br><span class="line">　　var wheelGradient = ctx.createRadialGradient(center.x, center.y, <span class="number">100</span>, center.x, center.y, <span class="number">0</span>);<span class="comment">//创建径向渐变</span></span><br><span class="line">　　wheelGradient.addColorStop(<span class="number">0</span>, color[i]);<span class="comment">//起始颜色</span></span><br><span class="line">　　wheelGradient.addColorStop(<span class="number">1</span>, <span class="string">"#000"</span>);<span class="comment">//结束颜色</span></span><br><span class="line">　　ctx.fillStyle = wheelGradient;<span class="comment">//填充渐变样式</span></span><br><span class="line">　　point = &#123;x: center.x + Math.<span class="built_in">cos</span>(offset * i + angle) * radius, y: center.y + Math.<span class="built_in">sin</span>(offset * i + angle) * radius&#125;;<span class="comment">//叶子圆心位置</span></span><br><span class="line">　　var x = start + offset * i;<span class="comment">//绘制叶子的开始角</span></span><br><span class="line">　　var y = end + offset * i;<span class="comment">//绘制叶子的结束角</span></span><br><span class="line">　　ctx.arc(point.x, point.y, wheelRadius, x, y, <span class="literal">false</span>);<span class="comment">//绘制</span></span><br><span class="line">　　ctx.fill();<span class="comment">//填充</span></span><br><span class="line">　　ctx.closePath();<span class="comment">//结束绘制</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>绘制中间的大圆点：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ctx.beginPath();</span><br><span class="line">var dotGradient = ctx.createRadialGradient(center.x, center.y, <span class="number">0</span>, center.x, center.y, <span class="number">40</span>);</span><br><span class="line">dotGradient.addColorStop(<span class="number">0</span>, <span class="string">"#fff"</span>);</span><br><span class="line">dotGradient.addColorStop(<span class="number">1</span>, <span class="string">"#666"</span>);</span><br><span class="line">ctx.fillStyle = dotGradient;</span><br><span class="line">ctx.arc(center.x, center.y, <span class="number">25</span>, <span class="number">0</span>, <span class="number">2</span> * Math.PI, <span class="literal">false</span>);</span><br><span class="line">ctx.fill();</span><br><span class="line">ctx.closePath();</span><br></pre></td></tr></table></figure>
+<p>上面的代码已经可以制作静态的风车了，但是我们要做的是动态的，于是我们需要一个计时器。下面是计时器代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">　　window.timer = setInterval(function () &#123;</span><br><span class="line">　　　　ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, width, height);<span class="comment">//每次调用计时器需要重绘</span></span><br><span class="line">　　　　<span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; num; i += <span class="number">1</span>) &#123;</span><br><span class="line">　　　　　　ctx.beginPath();<span class="comment">//开始绘制叶子</span></span><br><span class="line">　　　　　　var wheelGradient = ctx.createRadialGradient(center.x, center.y, <span class="number">100</span>, center.x, center.y, <span class="number">0</span>);<span class="comment">//创建径向渐变</span></span><br><span class="line">　　　　　　wheelGradient.addColorStop(<span class="number">0</span>, color[i]);<span class="comment">//起始颜色</span></span><br><span class="line">　　　　　　wheelGradient.addColorStop(<span class="number">1</span>, <span class="string">"#000"</span>);<span class="comment">//结束颜色</span></span><br><span class="line">　　　　　　ctx.fillStyle = wheelGradient;<span class="comment">//填充渐变样式</span></span><br><span class="line">　　　　　　point = &#123;x: center.x + Math.<span class="built_in">cos</span>(offset * i + angle) * radius, y: center.y + Math.<span class="built_in">sin</span>(offset * i + angle) * radius&#125;;<span class="comment">//叶子圆心位置</span></span><br><span class="line">　　　　　　var x = start + offset * i;<span class="comment">//绘制叶子的开始角</span></span><br><span class="line">　　　　　　var y = end + offset * i;<span class="comment">//绘制叶子的结束角</span></span><br><span class="line">　　　　　　ctx.arc(point.x, point.y, wheelRadius, x, y, <span class="literal">false</span>);<span class="comment">//绘制</span></span><br><span class="line">　　　　　　ctx.fill();<span class="comment">//填充</span></span><br><span class="line">　　　　　　ctx.closePath();<span class="comment">//结束绘制</span></span><br><span class="line">　　　　&#125;</span><br><span class="line">　　　　ctx.beginPath();</span><br><span class="line">　　　　var dotGradient = ctx.createRadialGradient(center.x, center.y, <span class="number">0</span>, center.x, center.y, <span class="number">40</span>);</span><br><span class="line">　　　　dotGradient.addColorStop(<span class="number">0</span>, <span class="string">"#fff"</span>);</span><br><span class="line">　　　　dotGradient.addColorStop(<span class="number">1</span>, <span class="string">"#666"</span>);</span><br><span class="line">　　　　ctx.fillStyle = dotGradient;</span><br><span class="line">　　　　ctx.arc(center.x, center.y, <span class="number">25</span>, <span class="number">0</span>, <span class="number">2</span> * Math.PI, <span class="literal">false</span>);</span><br><span class="line">　　　　ctx.fill();</span><br><span class="line">　　　　ctx.closePath();</span><br><span class="line">　　　　angle += rotateAngle;</span><br><span class="line">　　　　start = angle;</span><br><span class="line">　　　　end = Math.PI + angle;</span><br><span class="line">　　&#125;, <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+<p>动态的风车基本上就做完了，这是运行大风车代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var options = &#123;</span><br><span class="line">　　num: <span class="number">4</span>,</span><br><span class="line">　　color: [<span class="string">"red"</span>, <span class="string">"yellow"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>],</span><br><span class="line">　　radius: <span class="number">50</span>,</span><br><span class="line">　　wheelRadius: <span class="number">50</span>,</span><br><span class="line">　　part: <span class="number">50</span></span><br><span class="line">　　&#125;;</span><br><span class="line">var a = <span class="keyword">new</span> Pinwheel(<span class="string">"canvas"</span>, options);</span><br><span class="line">a.show();</span><br></pre></td></tr></table></figure>
+<p>修改<code>options</code>对象的属性就会改变风车的状态。　　</p>
+<p>需要停止风车运转调用这个函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hide: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">　　clearInterval(<span class="built_in">window</span>.timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是展示结果的时候了:</p>
+<div style="text-align: center;" id="canvasBox"><br><script src="/scripts/dafengche.js"></script><br></div>
+
+<p>以前写这些代码是没有注释的，今天花了好大功夫加上注释，然后在原有基础上做了一些修改，做成了和CSS3写的一模一样的风车。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/04/27/js中数组对象排序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          js中数组对象排序
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<div class="post_spread" style="margin: 30px">
+  <div class="ds-share flat" data-thread-key="post-HTML5-canvas制作童年回忆大风车" data-title="HTML5 canvas制作童年回忆大风车" data-images=">" data-content="&lt;p&gt;今天看到一篇CSS3写的大风车&lt;a href=&quot;http://www.cnblogs.com/yaojaa/archive/2013/01/30/2882521.html&quot;&gt;http://www.cnblogs.com/yaojaa/archive/2013/01/30/2882521.html&lt;/a&gt;，感觉CSS3太神奇了，这在以前用CSS是想都不敢想的。记得去年自己用canvas也写过这样的大风车，今天我打算用canvas制作一个一模一样的，连速度都一致的大风车。&lt;/p&gt;
+&lt;p&gt;大家请看下面两张图，你们看得出这两张图有什么区别吗？哪张是&lt;code&gt;CSS3&lt;/code&gt;写的哪张是&lt;code&gt;canvas&lt;/code&gt;写的？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blogImg/QQ图片20160227195136.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;>" data-url="http://lwzhang.github.io/2014/04/20/HTML5-canvas制作童年回忆大风车/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+  </div>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-HTML5-canvas制作童年回忆大风车" data-title="HTML5 canvas制作童年回忆大风车" data-url="http://lwzhang.github.io/2014/04/20/HTML5-canvas制作童年回忆大风车/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"zlwxlj"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+</div>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 那时候的我
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
